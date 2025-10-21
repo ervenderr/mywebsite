@@ -1,0 +1,9 @@
+<!-- This is a placeholder for favicon.ico -->
+<!-- To create a proper .ico file, you need to: -->
+<!-- 1. Use an online converter like https://favicon.io/ -->
+<!-- 2. Upload the icon.svg file -->
+<!-- 3. Download the generated favicon.ico -->
+<!-- 4. Place it in the /public folder -->
+
+<!-- Alternative: Use this SVG as favicon -->
+<!-- Modern browsers support SVG favicons -->

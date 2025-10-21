@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Download,
   ExternalLink,
-  Github,
+  Code2,
   Mail,
-  Linkedin,
+  Users2,
   Coffee,
   Users,
   Briefcase,
@@ -15,27 +15,28 @@ import {
   Server,
   Database,
   Smartphone,
-} from "lucide-react"
-import Link from "next/link"
-import ContactForm from "@/components/contact-form"
-import ProjectCard from "@/components/project-card"
-import SkillBadge from "@/components/skill-badge"
-import ExperienceItem from "@/components/experience-item"
-import { ThemeToggle } from "@/components/theme-toggle"
-import HeroBackground from "@/components/hero-background"
-import AnimatedProfile from "@/components/animated-profile"
-import AnimatedSkillTags from "@/components/animated-skill-tags"
-import TypingEffect from "@/components/typing-effect"
-import ScrollAnimation from "@/components/scroll-animation"
-import SectionHeader from "@/components/section-header"
-import AnimatedList from "@/components/animated-list"
+} from "lucide-react";
+import Link from "next/link";
+import ContactForm from "@/components/contact-form";
+import ProjectCard from "@/components/project-card";
+import ProjectCardMulti from "@/components/project-card-multi";
+import SkillBadge from "@/components/skill-badge";
+import ExperienceItem from "@/components/experience-item";
+import { ThemeToggle } from "@/components/theme-toggle";
+import HeroBackground from "@/components/hero-background";
+import AnimatedProfile from "@/components/animated-profile";
+import AnimatedSkillTags from "@/components/animated-skill-tags";
+import TypingEffect from "@/components/typing-effect";
+import ScrollAnimation from "@/components/scroll-animation";
+import SectionHeader from "@/components/section-header";
+import AnimatedList from "@/components/animated-list";
 import {
   fadeUpVariant,
   slideInLeftVariant,
   slideInRightVariant,
   scaleUpVariant,
   fadeInVariant,
-} from "@/lib/animation-variants"
+} from "@/lib/animation-variants";
 
 export default function Home() {
   return (
@@ -47,30 +48,53 @@ export default function Home() {
             <span className="text-primary">Ervender</span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="#skills" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#skills"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Skills
             </Link>
-            <Link href="#projects" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#projects"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Projects
             </Link>
-            <Link href="#experience" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#experience"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Experience
             </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link
+              href="#contact"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Link href="https://github.com/ervenderr" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
+            <Link
+              href="https://github.com/ervenderr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Code2 className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
-            <Link href="https://linkedin.com/in/erven-idjad" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="h-5 w-5" />
+            <Link
+              href="https://linkedin.com/in/erven-idjad"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Users2 className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link href="mailto:ervenidjad12@gmail.com">
@@ -96,7 +120,11 @@ export default function Home() {
               {/* Left column - Profile image (moved from right to left for more prominence) */}
               <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
                 <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 relative">
-                  <AnimatedProfile src="/images/profile-new.png" alt="Erven Idjad" className="w-full h-full" />
+                  <AnimatedProfile
+                    src="/images/profile-new.png"
+                    alt="Erven Idjad"
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
 
@@ -114,19 +142,34 @@ export default function Home() {
                   I specialize in{" "}
                   <TypingEffect
                     texts={[
-                      "building exceptional digital experiences",
-                      "developing full-stack web applications",
-                      "creating AI-powered solutions",
-                      "transforming ideas into reality",
+                      "building blockchain healthcare solutions",
+                      "developing AI-powered security systems",
+                      "creating responsive web applications",
+                      "designing intuitive user interfaces",
+                      "implementing machine learning models",
                     ]}
                     className="text-primary font-medium"
                   />
                 </div>
 
-                <AnimatedSkillTags skills={["React.js", "Next.js", "TypeScript", "AWS", "AI"]} className="pt-2" />
+                <AnimatedSkillTags
+                  skills={[
+                    "React.js",
+                    "Next.js",
+                    "AWS Amplify",
+                    "Blockchain",
+                    "AI/ML",
+                    "Python",
+                  ]}
+                  className="pt-2"
+                />
 
                 <div className="flex flex-wrap gap-4 pt-4 animate-slide-up animate-delay-400">
-                  <Button asChild size="lg" className="group relative overflow-hidden">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="group relative overflow-hidden"
+                  >
                     <Link href="#contact">
                       <span className="relative z-10">Get in touch</span>
                       <span className="absolute inset-0 bg-primary/80 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
@@ -164,7 +207,12 @@ export default function Home() {
 
             {/* Scroll indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
-              <Button variant="ghost" size="sm" asChild className="rounded-full w-10 h-10 p-0">
+              <Button
+                variant="ghost"
+                size="sm"
+                asChild
+                className="rounded-full w-10 h-10 p-0"
+              >
                 <Link href="#about">
                   <ArrowDown className="h-5 w-5" />
                   <span className="sr-only">Scroll down</span>
@@ -184,20 +232,31 @@ export default function Home() {
             />
 
             <div className="grid md:grid-cols-2 gap-8 items-center pt-8">
-              <ScrollAnimation variants={slideInLeftVariant} className="space-y-4">
+              <ScrollAnimation
+                variants={slideInLeftVariant}
+                className="space-y-4"
+              >
                 <p>
-                  I'm a Junior Software Engineer at SparkSoft Solution, Inc., specializing in full-stack development
-                  with React.js, Next.js, and AWS technologies. With a strong foundation in computer science, I
-                  transform complex problems into elegant, user-friendly solutions.
+                  I'm a Software Engineer at SparkSoft Solution, Inc.,
+                  specializing in full-stack development with React.js, Next.js,
+                  and AWS technologies. With a Bachelor's degree in Computer
+                  Science from Western Mindanao State University, I transform
+                  complex problems into elegant, user-friendly solutions.
                 </p>
                 <p>
-                  My expertise spans from developing AI-powered security systems to building responsive web
-                  applications. I'm driven by a passion for clean code, innovative solutions, and continuous learning.
-                  Let's create something amazing together!
+                  My expertise spans from developing AI-powered security systems
+                  and blockchain healthcare applications to building
+                  enterprise-level HRIS systems. I'm passionate about leveraging
+                  cutting-edge technologies like machine learning, computer
+                  vision, and cloud computing to create innovative solutions
+                  that make a real impact.
                 </p>
               </ScrollAnimation>
 
-              <ScrollAnimation variants={slideInRightVariant} className="grid grid-cols-2 gap-4">
+              <ScrollAnimation
+                variants={slideInRightVariant}
+                className="grid grid-cols-2 gap-4"
+              >
                 <ScrollAnimation
                   variants={scaleUpVariant}
                   transition={{ delay: 0.1 }}
@@ -205,7 +264,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Briefcase className="h-6 w-6 text-primary" />
-                    <h3 className="font-bold text-4xl text-primary">2+</h3>
+                    <h3 className="font-bold text-4xl text-primary">1+</h3>
                   </div>
                   <p className="text-muted-foreground">Years Experience</p>
                 </ScrollAnimation>
@@ -217,7 +276,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Code className="h-6 w-6 text-primary" />
-                    <h3 className="font-bold text-4xl text-primary">18</h3>
+                    <h3 className="font-bold text-4xl text-primary">20+</h3>
                   </div>
                   <p className="text-muted-foreground">Projects Completed</p>
                 </ScrollAnimation>
@@ -229,7 +288,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Users className="h-6 w-6 text-primary" />
-                    <h3 className="font-bold text-4xl text-primary">5</h3>
+                    <h3 className="font-bold text-4xl text-primary">5+</h3>
                   </div>
                   <p className="text-muted-foreground">Clients Served</p>
                 </ScrollAnimation>
@@ -262,7 +321,9 @@ export default function Home() {
             <div className="pt-8">
               <div className="space-y-6">
                 <ScrollAnimation variants={fadeUpVariant}>
-                  <h3 className="text-xl font-semibold mb-4">Programming Languages</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Programming Languages
+                  </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="js" name="JavaScript" />,
@@ -276,8 +337,13 @@ export default function Home() {
                   />
                 </ScrollAnimation>
 
-                <ScrollAnimation variants={fadeUpVariant} transition={{ delay: 0.1 }}>
-                  <h3 className="text-xl font-semibold mb-4">Technologies & Frameworks</h3>
+                <ScrollAnimation
+                  variants={fadeUpVariant}
+                  transition={{ delay: 0.1 }}
+                >
+                  <h3 className="text-xl font-semibold mb-4">
+                    Technologies & Frameworks
+                  </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="react" name="React.js" />,
@@ -287,21 +353,31 @@ export default function Home() {
                       <SkillBadge key="bootstrap" name="Bootstrap" />,
                       <SkillBadge key="tailwind" name="Tailwind CSS" />,
                       <SkillBadge key="amplify" name="AWS Amplify" />,
-                      <SkillBadge key="s3" name="S3" />,
-                      <SkillBadge key="shadcn" name="Shadcn" />,
+                      <SkillBadge key="s3" name="AWS S3" />,
+                      <SkillBadge key="shadcn" name="Shadcn/UI" />,
                       <SkillBadge key="graphql" name="GraphQL" />,
                       <SkillBadge key="opencv" name="OpenCV" />,
                       <SkillBadge key="yolo" name="YOLOv8" />,
                       <SkillBadge key="flask" name="Flask" />,
                       <SkillBadge key="fastapi" name="FastAPI" />,
                       <SkillBadge key="prisma" name="Prisma" />,
+                      <SkillBadge key="blockchain" name="Blockchain" />,
+                      <SkillBadge key="solidity" name="Solidity" />,
+                      <SkillBadge key="web3" name="Web3.js" />,
+                      <SkillBadge key="antd" name="Ant Design" />,
+                      <SkillBadge key="vite" name="Vite" />,
                     ]}
                     className="flex flex-wrap gap-2"
                   />
                 </ScrollAnimation>
 
-                <ScrollAnimation variants={fadeUpVariant} transition={{ delay: 0.2 }}>
-                  <h3 className="text-xl font-semibold mb-4">Data Science & ML</h3>
+                <ScrollAnimation
+                  variants={fadeUpVariant}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h3 className="text-xl font-semibold mb-4">
+                    Data Science & ML
+                  </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="sklearn" name="scikit-learn" />,
@@ -315,8 +391,13 @@ export default function Home() {
                   />
                 </ScrollAnimation>
 
-                <ScrollAnimation variants={fadeUpVariant} transition={{ delay: 0.3 }}>
-                  <h3 className="text-xl font-semibold mb-4">Developer Tools</h3>
+                <ScrollAnimation
+                  variants={fadeUpVariant}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3 className="text-xl font-semibold mb-4">
+                    Developer Tools
+                  </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="vscode" name="Visual Studio Code" />,
@@ -359,22 +440,101 @@ export default function Home() {
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8"
             >
               <ScrollAnimation variants={scaleUpVariant}>
+                <ProjectCardMulti
+                  title="MediChain - Blockchain Healthcare System"
+                  description="A comprehensive blockchain-based healthcare management system featuring secure patient records, QR code sharing, emergency access, and decentralized health data management."
+                  tags={[
+                    "Blockchain",
+                    "React.js",
+                    "Node.js",
+                    "Solidity",
+                    "Web3",
+                    "Healthcare",
+                    "QR Codes",
+                  ]}
+                  imageUrls={[
+                    "/images/projects/medi1.png",
+                    "/images/projects/medi2.png",
+                    "/images/projects/medi3.png",
+                    "/images/projects/medi4.png",
+                  ]}
+                  demoUrl="https://medichain-health.vercel.app/"
+                  repoUrl="https://github.com/ervenderr/MediChain"
+                  role="Blockchain Developer"
+                />
+              </ScrollAnimation>
+
+              <ScrollAnimation variants={scaleUpVariant}>
+                <ProjectCard
+                  title="AI-Powered Fake News Detection System"
+                  description="An intelligent system that detects fake news and tracks source credibility using advanced NLP and machine learning algorithms with real-time monitoring and comprehensive analytics dashboard."
+                  tags={[
+                    "Python",
+                    "AI/ML",
+                    "NLP",
+                    "Fake News Detection",
+                    "Source Credibility",
+                    "Real-time Monitoring",
+                  ]}
+                  imageUrl="/images/projects/aiphisingdetection.png"
+                  demoUrl="https://github.com/ervenderr/AI-Powered-Fake-News-Detection-System-with-Source-Credibility-Tracking"
+                  repoUrl="https://github.com/ervenderr/AI-Powered-Fake-News-Detection-System-with-Source-Credibility-Tracking"
+                  role="AI/ML Engineer"
+                />
+              </ScrollAnimation>
+
+              <ScrollAnimation variants={scaleUpVariant}>
+                <ProjectCard
+                  title="Mae's Childcare Website"
+                  description="A modern, responsive website for a licensed childcare center featuring bilingual education programs, enrollment management, and parent communication tools."
+                  tags={[
+                    "React.js",
+                    "Next.js",
+                    "Responsive Design",
+                    "Education",
+                    "Parent Portal",
+                    "UI/UX",
+                  ]}
+                  imageUrl="/images/projects/maeschildcare.png"
+                  demoUrl="https://www.maeschildcare.com/"
+                  repoUrl="https://github.com/ervenderr/maeschildcare"
+                  role="Full Stack Developer"
+                />
+              </ScrollAnimation>
+
+              <ScrollAnimation variants={scaleUpVariant}>
                 <ProjectCard
                   title="Smart Entry Gate Security System"
-                  description="An automated security system with 95% accuracy in facial and license plate recognition using OpenCV, YOLOv8, and Tesseract_OCR."
-                  tags={["Python", "OpenCV", "YOLOv8", "Tesseract_OCR", "SQLite3", "ttkbootstrap"]}
+                  description="An automated security system with 95% accuracy in facial and license plate recognition using OpenCV, YOLOv8, and Tesseract_OCR. Thesis project with real-world implementation."
+                  tags={[
+                    "Python",
+                    "OpenCV",
+                    "YOLOv8",
+                    "Tesseract_OCR",
+                    "SQLite3",
+                    "Computer Vision",
+                    "AI",
+                  ]}
                   imageUrl="/images/projects/smart-entry.png"
                   demoUrl="https://github.com/ervenderr"
                   repoUrl="https://github.com/ervenderr"
-                  role="Full Stack Developer (Thesis Project)"
+                  role="AI/ML Engineer (Thesis Project)"
                 />
               </ScrollAnimation>
 
               <ScrollAnimation variants={scaleUpVariant}>
                 <ProjectCard
                   title="Fraud Detection in Job Postings"
-                  description="An NLP and Machine Learning system that detects fraudulent job postings by analyzing text content and extracting relevant features."
-                  tags={["Python", "scikit-learn", "NLP", "Flask", "pandas", "nltk"]}
+                  description="An NLP and Machine Learning system that detects fraudulent job postings by analyzing text content and extracting relevant features with 92% accuracy."
+                  tags={[
+                    "Python",
+                    "scikit-learn",
+                    "NLP",
+                    "Flask",
+                    "pandas",
+                    "nltk",
+                    "Machine Learning",
+                  ]}
                   imageUrl="/images/projects/fraud-detection.png"
                   demoUrl="https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning"
                   repoUrl="https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning"
@@ -386,7 +546,15 @@ export default function Home() {
                 <ProjectCard
                   title="Philippine Legal Assistant"
                   description="A comprehensive legal research tool that combines NLP and ML to analyze Philippine legal documents, providing intelligent search and question-answering capabilities."
-                  tags={["Python", "FastAPI", "Next.js", "NLP", "ML", "PDF Processing"]}
+                  tags={[
+                    "Python",
+                    "FastAPI",
+                    "Next.js",
+                    "NLP",
+                    "ML",
+                    "PDF Processing",
+                    "Legal Tech",
+                  ]}
                   imageUrl="/images/projects/legal-assistant.png"
                   demoUrl="https://github.com/ervenderr"
                   repoUrl="https://github.com/ervenderr"
@@ -396,45 +564,72 @@ export default function Home() {
 
               <ScrollAnimation variants={scaleUpVariant}>
                 <ProjectCard
-                  title="Netflix Clone"
-                  description="A clone of Netflix built using modern web technologies to mimic the look and functionality of the popular streaming service, including user authentication and video playback."
-                  tags={["TypeScript", "Next.js", "Tailwind CSS", "Prisma", "MongoDB"]}
-                  imageUrl="/images/projects/netflix-clone.png"
-                  demoUrl="https://github.com/ervenderr/Netflix-Clone"
-                  repoUrl="https://github.com/ervenderr/Netflix-Clone"
+                  title="Repair Management Dashboard"
+                  description="A comprehensive admin dashboard for installation and repair management system with real-time tracking, client management, and service analytics."
+                  tags={[
+                    "React.js",
+                    "Dashboard",
+                    "Analytics",
+                    "Client Management",
+                    "Real-time Tracking",
+                  ]}
+                  imageUrl="/images/projects/repair-dashboard.png"
+                  demoUrl="https://github.com/ervenderr"
+                  repoUrl="https://github.com/ervenderr"
                   role="Frontend Developer"
                 />
               </ScrollAnimation>
 
               <ScrollAnimation variants={scaleUpVariant}>
                 <ProjectCard
-                  title="Installation and Repair Management System"
-                  description="A robust system for managing client bookings with a PHP backend integrated with MySQL database, featuring secure authentication and dynamic booking forms."
-                  tags={["PHP", "JavaScript", "jQuery", "HTML/CSS", "Bootstrap", "MySQL"]}
-                  imageUrl="/images/projects/repair-system.png"
-                  demoUrl="https://github.com/ervenderr"
-                  repoUrl="https://github.com/ervenderr"
+                  title="Netflix Clone"
+                  description="A pixel-perfect Netflix clone with user authentication, video streaming, personalized recommendations, and responsive design across all devices."
+                  tags={[
+                    "TypeScript",
+                    "Next.js",
+                    "Tailwind CSS",
+                    "Prisma",
+                    "MongoDB",
+                    "Authentication",
+                  ]}
+                  imageUrl="/images/projects/netflix-clone.png"
+                  demoUrl="https://github.com/ervenderr/Netflix-Clone"
+                  repoUrl="https://github.com/ervenderr/Netflix-Clone"
                   role="Full Stack Developer"
                 />
               </ScrollAnimation>
 
               <ScrollAnimation variants={scaleUpVariant}>
                 <ProjectCard
-                  title="Recipe Finder Application"
-                  description="A web application that allows users to search for recipes based on ingredients, dietary restrictions, and meal types, providing detailed cooking instructions and nutritional information."
-                  tags={["JavaScript", "React", "API Integration", "CSS", "Responsive Design"]}
-                  imageUrl="/images/projects/recipe-finder.png"
+                  title="Library Management System"
+                  description="A comprehensive library management system with book cataloging, member management, borrowing system, and automated fine calculations."
+                  tags={[
+                    "PHP",
+                    "MySQL",
+                    "JavaScript",
+                    "Bootstrap",
+                    "Library Management",
+                    "Automation",
+                  ]}
+                  imageUrl="/images/projects/library-system.png"
                   demoUrl="https://github.com/ervenderr"
                   repoUrl="https://github.com/ervenderr"
-                  role="Frontend Developer"
+                  role="Full Stack Developer"
                 />
               </ScrollAnimation>
             </ScrollAnimation>
 
-            <ScrollAnimation variants={fadeInVariant} className="text-center pt-8">
+            <ScrollAnimation
+              variants={fadeInVariant}
+              className="text-center pt-8"
+            >
               <Button asChild variant="outline">
-                <Link href="https://github.com/ervenderr" target="_blank" rel="noopener noreferrer">
-                  View more on GitHub <Github className="ml-2 h-4 w-4" />
+                <Link
+                  href="https://github.com/ervenderr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View more on GitHub <Code2 className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </ScrollAnimation>
@@ -465,37 +660,60 @@ export default function Home() {
             >
               <ScrollAnimation variants={fadeUpVariant}>
                 <ExperienceItem
-                  title="Junior Software Engineer"
+                  title="Software Engineer"
                   company="SparkSoft Solution, Inc."
                   period="Oct 2024 - Present"
-                  description="Assigned to the HRIS for Government, focusing on the admin-side where HR manages attendance, leaves, PSB, PDS, Payroll, and thousands of employee records."
-                  technologies={["React.js", "Next.js", "AWS Amplify", "GraphQL", "S3", "GitHub Copilot"]}
+                  description="Architected and delivered full-stack attendance management system using Next.js 14, TypeScript, and AWS Amplify, serving 15,000+ employees with real-time biometric integration and automated workflows."
+                  technologies={[
+                    "Next.js 14",
+                    "TypeScript",
+                    "AWS Amplify",
+                    "GraphQL",
+                    "AWS S3",
+                    "Node.js",
+                    "Express",
+                  ]}
                   achievements={[
-                    "Designed and implemented admin-side features that improved attendance and biometrics management",
-                    "Enhanced AWS Amplify implementation, leading to faster and more secure API interactions",
-                    "Spearheaded the design and development of an intuitive UI/UX for the Attendance module",
-                    "Integrated AI-powered GitHub Copilot, accelerating development speed by 70% and reducing code errors",
+                    "Architected full-stack attendance management system serving 15,000+ employees with real-time biometric integration, role-based dashboards, and automated data export capabilities",
+                    "Built enterprise-grade workforce analytics platform with interactive reporting dashboards, geofenced attendance tracking, and multi-format data export, reducing HR processing time by 75%",
+                    "Developed secure ID verification API with Node.js/Express backend, QR code decryption, GraphQL integration, and S3 proxy system",
+                    "Implemented comprehensive security middleware including CORS, rate limiting, and SSRF protection with dual-parameter authentication",
                   ]}
                 />
               </ScrollAnimation>
 
-              <ScrollAnimation variants={fadeUpVariant} transition={{ delay: 0.1 }}>
+              <ScrollAnimation
+                variants={fadeUpVariant}
+                transition={{ delay: 0.1 }}
+              >
                 <ExperienceItem
                   title="Software Engineer Trainee"
                   company="SparkSoft Solution, Inc."
                   period="June 2024 - Oct 2024"
-                  description="Completed an intensive self-learning phase in the first month, mastering key technologies and tools including AWS Amplify, GraphQL, S3 bucket, React.js, Vite, Ant Design, and GitHub Copilot."
-                  technologies={["React.js", "Next.js", "AWS Amplify", "GraphQL", "S3", "Ant Design"]}
+                  description="Completed intensive self-learning phase mastering modern web technologies and cloud services. Focused on AWS Amplify, GraphQL, AWS S3, React.js, Vite, Ant Design, and GitHub Copilot integration."
+                  technologies={[
+                    "React.js",
+                    "Next.js",
+                    "AWS Amplify",
+                    "GraphQL",
+                    "AWS S3",
+                    "Ant Design",
+                    "Vite",
+                  ]}
                   achievements={[
-                    "Demonstrated proficiency by developing a full-stack cat adoption application utilizing the newly acquired tech stack",
-                    "Led the employee POV of the attendance module, delivering a responsive and user-friendly interface",
-                    "Played a key role in migrating legacy React codebase to Next.js, improving maintainability and performance",
-                    "Contributed to the design and implementation of user-friendly interfaces for efficient employee attendance management",
+                    "Developed full-stack cat adoption application demonstrating proficiency in the complete tech stack",
+                    "Led employee perspective development of attendance module with responsive, user-friendly interface",
+                    "Executed successful migration from legacy React codebase to Next.js, enhancing maintainability and performance",
+                    "Designed and implemented intuitive UI components for efficient employee attendance management system",
+                    "Accelerated onboarding process by creating comprehensive documentation for new development workflows",
                   ]}
                 />
               </ScrollAnimation>
 
-              <ScrollAnimation variants={fadeUpVariant} transition={{ delay: 0.2 }}>
+              <ScrollAnimation
+                variants={fadeUpVariant}
+                transition={{ delay: 0.2 }}
+              >
                 <ExperienceItem
                   title="IT Intern"
                   company="Knowles Training Institute"
@@ -512,7 +730,10 @@ export default function Home() {
               </ScrollAnimation>
             </ScrollAnimation>
 
-            <ScrollAnimation variants={fadeInVariant} className="text-center pt-8">
+            <ScrollAnimation
+              variants={fadeInVariant}
+              className="text-center pt-8"
+            >
               <Button asChild>
                 <Link href="/resume.pdf" target="_blank">
                   Download Full Resume <Download className="ml-2 h-4 w-4" />
@@ -531,12 +752,17 @@ export default function Home() {
               className="max-w-3xl mx-auto"
             />
 
-            <ScrollAnimation variants={fadeUpVariant} className="pt-8 max-w-3xl mx-auto">
+            <ScrollAnimation
+              variants={fadeUpVariant}
+              className="pt-8 max-w-3xl mx-auto"
+            >
               <div className="border-l-4 border-primary pl-6 pb-2 relative">
                 <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-1"></div>
                 <div className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <h3 className="text-xl font-bold">Bachelor's in Computer Science</h3>
+                    <h3 className="text-xl font-bold">
+                      Bachelor's in Computer Science
+                    </h3>
                     <span className="text-sm font-medium bg-secondary text-secondary-foreground px-3 py-1 rounded-full">
                       August 2020 - May 2024
                     </span>
@@ -544,12 +770,16 @@ export default function Home() {
                   <p className="text-lg text-primary font-medium">
                     Western Mindanao State University, Zamboanga City, PH
                   </p>
-                  <p className="text-muted-foreground">Academic award, Best in Portfolio</p>
+                  <p className="text-muted-foreground">
+                    Academic Award: Best in Portfolio
+                  </p>
                   <div className="pt-2">
                     <p className="text-muted-foreground">Key courses:</p>
                     <p className="text-muted-foreground">
-                      OOP, Data Structures, Algorithm, Software Engineering, Database System, Linear Algebra, Discrete
-                      Mathematics
+                      Object-Oriented Programming, Data Structures & Algorithms,
+                      Software Engineering, Database Systems, Computer Networks,
+                      Artificial Intelligence, Machine Learning, Linear Algebra,
+                      Discrete Mathematics
                     </p>
                   </div>
                 </div>
@@ -568,16 +798,22 @@ export default function Home() {
             />
 
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <ScrollAnimation variants={slideInLeftVariant} className="space-y-4">
+              <ScrollAnimation
+                variants={slideInLeftVariant}
+                className="space-y-4"
+              >
                 <div className="space-y-2 pt-4">
                   <div className="flex items-center gap-2">
                     <Mail className="h-5 w-5 text-primary" />
-                    <a href="mailto:ervenidjad12@gmail.com" className="hover:text-primary transition-colors">
+                    <a
+                      href="mailto:ervenidjad12@gmail.com"
+                      className="hover:text-primary transition-colors"
+                    >
                       ervenidjad12@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Github className="h-5 w-5 text-primary" />
+                    <Code2 className="h-5 w-5 text-primary" />
                     <a
                       href="https://github.com/ervenderr"
                       target="_blank"
@@ -588,7 +824,7 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Linkedin className="h-5 w-5 text-primary" />
+                    <Users2 className="h-5 w-5 text-primary" />
                     <a
                       href="https://linkedin.com/in/erven-idjad"
                       target="_blank"
@@ -612,7 +848,10 @@ export default function Home() {
                 </div>
               </ScrollAnimation>
 
-              <ScrollAnimation variants={slideInRightVariant} className="bg-background p-6 rounded-lg shadow-sm">
+              <ScrollAnimation
+                variants={slideInRightVariant}
+                className="bg-background p-6 rounded-lg shadow-sm"
+              >
                 <ContactForm />
               </ScrollAnimation>
             </div>
@@ -635,7 +874,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              <Github className="h-5 w-5" />
+              <Code2 className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
@@ -644,7 +883,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              <Linkedin className="h-5 w-5" />
+              <Users2 className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
@@ -667,5 +906,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

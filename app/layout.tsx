@@ -8,14 +8,52 @@ import SmoothScroll from "@/components/smooth-scroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ervender | Software Engineer",
+  title: "Erven Idjad | Software Engineer Portfolio",
   description:
-    "Portfolio website showcasing my projects and skills as a software engineer",
-  generator: "v0.dev",
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies. Experienced in building enterprise applications and AI-powered solutions.",
+  keywords: [
+    "Software Engineer",
+    "Full Stack Developer",
+    "React.js",
+    "Next.js",
+    "AWS",
+    "Blockchain",
+    "TypeScript",
+    "JavaScript",
+    "Erven Idjad",
+    "Portfolio",
+  ],
+  authors: [{ name: "Erven Idjad", url: "https://ervenderr.vercel.app" }],
+  creator: "Erven Idjad",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ervenderr.vercel.app",
+    title: "Erven Idjad | Software Engineer Portfolio",
+    description:
+      "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies.",
+    siteName: "Erven Idjad Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Erven Idjad | Software Engineer Portfolio",
+    description:
+      "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies.",
+    creator: "@ervenderr",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Add your Google Search Console verification code
   },
 };
 
