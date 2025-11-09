@@ -37,6 +37,7 @@ import {
   scaleUpVariant,
   fadeInVariant,
 } from "@/lib/animation-variants";
+import PortfolioChatbot from "@/components/portfolio-chatbot";
 
 export default function Home() {
   return (
@@ -461,6 +462,26 @@ export default function Home() {
                   demoUrl="https://medichain-health.vercel.app/"
                   repoUrl="https://github.com/ervenderr/MediChain"
                   role="Blockchain Developer"
+                />
+              </ScrollAnimation>
+
+              <ScrollAnimation variants={scaleUpVariant}>
+                <ProjectCard
+                  title="QC Employee ID Verification System"
+                  description="Enterprise-grade ID verification system for Quezon City Hall featuring QR code scanning with AES encryption, dual-parameter authentication, reCAPTCHA protection, and AWS integration. Serves 15,000+ government employees with advanced security middleware."
+                  tags={[
+                    "Node.js",
+                    "Express",
+                    "React.js",
+                    "AWS S3",
+                    "GraphQL",
+                    "QR Code",
+                    "Security",
+                    "Encryption",
+                  ]}
+                  imageUrl="/images/projects/qc-id-verification.png"
+                  demoUrl="https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID"
+                  role="Full Stack Developer (SparkSoft)"
                 />
               </ScrollAnimation>
 
@@ -905,6 +926,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* AI Chatbot */}
+      <PortfolioChatbot />
     </div>
   );
 }

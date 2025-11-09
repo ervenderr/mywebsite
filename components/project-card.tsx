@@ -10,7 +10,7 @@ interface ProjectCardProps {
   tags: string[]
   imageUrl: string
   demoUrl: string
-  repoUrl: string
+  repoUrl?: string
   role?: string
   achievements?: string[]
 }
@@ -47,11 +47,13 @@ export default function ProjectCard({ title, description, tags, imageUrl, demoUr
             Live Demo <ExternalLink className="ml-2 h-3 w-3" />
           </Link>
         </Button>
-        <Button asChild variant="outline" size="sm">
-          <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
-            Code <Github className="ml-2 h-3 w-3" />
-          </Link>
-        </Button>
+        {repoUrl && (
+          <Button asChild variant="outline" size="sm">
+            <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
+              Code <Github className="ml-2 h-3 w-3" />
+            </Link>
+          </Button>
+        )}
       </CardFooter>
     </Card>
   )
