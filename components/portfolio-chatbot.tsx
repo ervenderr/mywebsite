@@ -14,6 +14,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { MessageCircle, Send, X, Loader2, Bot, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { toast } from "sonner";
 
 interface Message {
   role: "user" | "assistant";
@@ -52,6 +53,52 @@ export default function PortfolioChatbot() {
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [isOpen]);
+
+  // Show welcome toast on component mount
+  useEffect(() => {
+    const hasSeenWelcome = sessionStorage.getItem("chatbot-welcome-shown");
+
+    if (!hasSeenWelcome) {
+      const timer = setTimeout(() => {
+        toast.custom((t) => (
+          <div className="bg-card border-2 border-border rounded-2xl shadow-lg p-4 max-w-sm animate-in slide-in-from-bottom-5">
+            <div className="flex gap-3 items-start">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Bot className="h-5 w-5 text-primary" />
+              </div>
+              <div className="flex-1 pt-1">
+                <p className="font-semibold text-sm mb-1">Hi there! 👋</p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  I'm Erven's AI assistant. Ask me anything about his portfolio!
+                </p>
+                <button
+                  onClick={() => {
+                    setIsOpen(true);
+                    toast.dismiss(t);
+                  }}
+                  className="text-sm font-medium text-primary hover:underline"
+                >
+                  Chat with me →
+                </button>
+              </div>
+              <button
+                onClick={() => toast.dismiss(t)}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        ), {
+          duration: 10000,
+          position: "bottom-right",
+        });
+        sessionStorage.setItem("chatbot-welcome-shown", "true");
+      }, 3000); // Show after 3 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleSendMessage = async () => {
     if (!input.trim() || isLoading) return;
