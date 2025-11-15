@@ -14,7 +14,48 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
 
   const projects = [
-    // Project 1: MediChain
+    // Project 1: Kitcha
+    {
+      type: "single",
+      title: "Kitcha - Smart Grocery & Meal Planner",
+      description:
+      "A full-stack, AI-powered grocery and meal planning application that helps users manage pantry inventory, plan meals, track budgets, and reduce food waste. Features AI-powered recipe suggestions, automated meal planning, and smart notifications.",
+      tags: [
+        "TypeScript",
+        "Next.js",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "Google Gemini AI",
+        "Express",
+        "Tailwind CSS",
+      ],
+      imageUrl: "/images/projects/kitcha.png",
+      demoUrl: "https://kitcha-ai.vercel.app/",
+      repoUrl: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
+      role: "Full Stack Developer",
+    },
+    // Project 2: QC Employee ID
+    {
+      type: "single",
+      title: "QC Employee ID Verification System",
+      description:
+      "Enterprise-grade ID verification system for Quezon City Hall featuring QR code scanning with AES encryption, dual-parameter authentication, reCAPTCHA protection, and AWS integration. Serves 15,000+ government employees with advanced security middleware.",
+      tags: [
+        "Node.js",
+        "Express",
+        "React.js",
+        "AWS S3",
+        "GraphQL",
+        "QR Code",
+        "Security",
+        "Encryption",
+      ],
+      imageUrl: "/images/projects/qc-id-verification.png",
+      demoUrl: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
+      role: "Full Stack Developer (SparkSoft)",
+    },
+    // Project 3: MediChain
     {
       type: "multi",
       title: "MediChain - Digital Health Wallet",
@@ -39,47 +80,6 @@ export default function ProjectsSection() {
       demoUrl: "https://medichain-health.vercel.app/",
       repoUrl: "https://github.com/ervenderr/MediChain",
       role: "Full Stack Developer",
-    },
-    // Project 2: Kitcha
-    {
-      type: "single",
-      title: "Kitcha - Smart Grocery & Meal Planner",
-      description:
-        "A full-stack, AI-powered grocery and meal planning application that helps users manage pantry inventory, plan meals, track budgets, and reduce food waste. Features AI-powered recipe suggestions, automated meal planning, and smart notifications.",
-      tags: [
-        "TypeScript",
-        "Next.js",
-        "Node.js",
-        "PostgreSQL",
-        "Prisma",
-        "Google Gemini AI",
-        "Express",
-        "Tailwind CSS",
-      ],
-      imageUrl: "/images/projects/kitcha.png",
-      demoUrl: "https://kitcha-ai.vercel.app/",
-      repoUrl: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
-      role: "Full Stack Developer",
-    },
-    // Project 3: QC Employee ID
-    {
-      type: "single",
-      title: "QC Employee ID Verification System",
-      description:
-        "Enterprise-grade ID verification system for Quezon City Hall featuring QR code scanning with AES encryption, dual-parameter authentication, reCAPTCHA protection, and AWS integration. Serves 15,000+ government employees with advanced security middleware.",
-      tags: [
-        "Node.js",
-        "Express",
-        "React.js",
-        "AWS S3",
-        "GraphQL",
-        "QR Code",
-        "Security",
-        "Encryption",
-      ],
-      imageUrl: "/images/projects/qc-id-verification.png",
-      demoUrl: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
-      role: "Full Stack Developer (SparkSoft)",
     },
     // Project 4: Fake News Detection
     {

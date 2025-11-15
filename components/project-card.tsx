@@ -18,12 +18,15 @@ interface ProjectCardProps {
 export default function ProjectCard({ title, description, tags, imageUrl, demoUrl, repoUrl, role }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md flex flex-col h-full">
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative aspect-video overflow-hidden bg-muted">
         <Image
           src={imageUrl || "/placeholder.svg?height=240&width=320"}
           alt={title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform hover:scale-105"
+          loading="lazy"
+          quality={85}
         />
       </div>
       <CardContent className="p-6 flex-grow">
