@@ -17,17 +17,18 @@ export default function ProjectsSection() {
     // Project 1: MediChain
     {
       type: "multi",
-      title: "MediChain - Blockchain Healthcare System",
+      title: "MediChain - Digital Health Wallet",
       description:
-        "A comprehensive blockchain-based healthcare management system featuring secure patient records, QR code sharing, emergency access, and decentralized health data management.",
+        "A modern, secure digital health records management system featuring comprehensive health record management, QR code sharing, emergency access, file attachments, and enhanced security with JWT authentication, hCaptcha bot protection, and rate limiting.",
       tags: [
-        "Blockchain",
-        "React.js",
-        "Node.js",
-        "Solidity",
-        "Web3",
+        "Next.js 15",
+        "TypeScript",
+        "ASP.NET Core 8",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "React Query",
+        "JWT",
         "Healthcare",
-        "QR Codes",
       ],
       imageUrls: [
         "/images/projects/medi1.png",
@@ -37,7 +38,7 @@ export default function ProjectsSection() {
       ],
       demoUrl: "https://medichain-health.vercel.app/",
       repoUrl: "https://github.com/ervenderr/MediChain",
-      role: "Blockchain Developer",
+      role: "Full Stack Developer",
     },
     // Project 2: Kitcha
     {

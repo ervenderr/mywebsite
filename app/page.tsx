@@ -141,11 +141,11 @@ export default function Home() {
                   I specialize in{" "}
                   <TypingEffect
                     texts={[
-                      "building blockchain healthcare solutions",
                       "developing AI-powered security systems",
                       "creating responsive web applications",
                       "designing intuitive user interfaces",
                       "implementing machine learning models",
+                      "building enterprise-level applications",
                     ]}
                     className="text-primary font-medium"
                   />
@@ -156,7 +156,7 @@ export default function Home() {
                     "React.js",
                     "Next.js",
                     "AWS Amplify",
-                    "Blockchain",
+                    "TypeScript",
                     "AI/ML",
                     "Python",
                   ]}
@@ -244,11 +244,11 @@ export default function Home() {
                 </p>
                 <p>
                   My expertise spans from developing AI-powered security systems
-                  and blockchain healthcare applications to building
-                  enterprise-level HRIS systems. I'm passionate about leveraging
-                  cutting-edge technologies like machine learning, computer
-                  vision, and cloud computing to create innovative solutions
-                  that make a real impact.
+                  to building enterprise-level HRIS systems and full-stack web
+                  applications. I'm passionate about leveraging cutting-edge
+                  technologies like machine learning, computer vision, and cloud
+                  computing to create innovative solutions that make a real
+                  impact.
                 </p>
               </ScrollAnimation>
 
@@ -326,11 +326,12 @@ export default function Home() {
                   <AnimatedList
                     items={[
                       <SkillBadge key="js" name="JavaScript" />,
+                      <SkillBadge key="ts" name="TypeScript" />,
                       <SkillBadge key="php" name="PHP" />,
                       <SkillBadge key="python" name="Python" />,
+                      <SkillBadge key="csharp" name="C#" />,
                       <SkillBadge key="html" name="HTML/CSS" />,
                       <SkillBadge key="cpp" name="C++" />,
-                      <SkillBadge key="ts" name="TypeScript" />,
                     ]}
                     className="flex flex-wrap gap-2"
                   />
@@ -355,14 +356,13 @@ export default function Home() {
                       <SkillBadge key="s3" name="AWS S3" />,
                       <SkillBadge key="shadcn" name="Shadcn/UI" />,
                       <SkillBadge key="graphql" name="GraphQL" />,
+                      <SkillBadge key="aspnet" name="ASP.NET Core" />,
+                      <SkillBadge key="ef" name="Entity Framework" />,
                       <SkillBadge key="opencv" name="OpenCV" />,
                       <SkillBadge key="yolo" name="YOLOv8" />,
                       <SkillBadge key="flask" name="Flask" />,
                       <SkillBadge key="fastapi" name="FastAPI" />,
                       <SkillBadge key="prisma" name="Prisma" />,
-                      <SkillBadge key="blockchain" name="Blockchain" />,
-                      <SkillBadge key="solidity" name="Solidity" />,
-                      <SkillBadge key="web3" name="Web3.js" />,
                       <SkillBadge key="antd" name="Ant Design" />,
                       <SkillBadge key="vite" name="Vite" />,
                     ]}
@@ -515,7 +515,7 @@ export default function Home() {
             </ScrollAnimation>
 
             <ScrollAnimation
-              variants={fadeInVariant}
+              variants={slideInRightVariant}
               className="text-center pt-8"
             >
               <Button asChild>

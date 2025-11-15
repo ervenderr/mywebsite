@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,8 +9,8 @@ interface ProjectCardMultiProps {
   readonly description: string;
   readonly tags: string[];
   readonly imageUrls: string[];
-  readonly demoUrl: string;
-  readonly repoUrl: string;
+  readonly demoUrl?: string;
+  readonly repoUrl?: string;
   readonly role?: string;
 }
 
@@ -58,16 +58,20 @@ export default function ProjectCardMulti({
         </div>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0 flex gap-4">
-        <Button asChild variant="outline" size="sm">
-          <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-            Live Demo <ExternalLink className="ml-2 h-3 w-3" />
-          </Link>
-        </Button>
-        <Button asChild variant="outline" size="sm">
-          <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
-            Code <ExternalLink className="ml-2 h-3 w-3" />
-          </Link>
-        </Button>
+        {demoUrl && (
+          <Button asChild variant="outline" size="sm">
+            <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+              Live Demo <ExternalLink className="ml-2 h-3 w-3" />
+            </Link>
+          </Button>
+        )}
+        {repoUrl && (
+          <Button asChild variant="outline" size="sm">
+            <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
+              Code <Github className="ml-2 h-3 w-3" />
+            </Link>
+          </Button>
+        )}
       </CardFooter>
     </Card>
   );

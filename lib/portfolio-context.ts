@@ -69,6 +69,7 @@ Programming Languages:
 - Node
 - PHP
 - Python
+- C#
 - HTML/CSS
 - C++
 
@@ -83,14 +84,13 @@ Technologies & Frameworks:
 - AWS S3
 - Shadcn/UI
 - GraphQL
+- ASP.NET Core
+- Entity Framework Core
 - OpenCV
 - YOLOv8
 - Flask
 - FastAPI
 - Prisma
-- Blockchain
-- Solidity
-- Web3.js
 - Ant Design
 - Vite
 
@@ -115,10 +115,11 @@ Developer Tools:
 
 FEATURED PROJECTS:
 
-1. MediChain - Blockchain Healthcare System
-   - Role: Blockchain Developer
-   - Description: A comprehensive blockchain-based healthcare management system featuring secure patient records, QR code sharing, emergency access, and decentralized health data management
-   - Technologies: Blockchain, React.js, Node.js, Solidity, Web3, Healthcare, QR Codes
+1. MediChain - Digital Health Wallet
+   - Role: Full Stack Developer
+   - Description: A modern, secure digital health records management system featuring comprehensive health record management (medications, allergies, conditions, lab results, vaccinations), QR code sharing with time-limited access, emergency access features, file attachments support, and enhanced security with JWT authentication, hCaptcha bot protection, and rate limiting. Built with Next.js 15, TypeScript, ASP.NET Core 8, and PostgreSQL.
+   - Technologies: Next.js 15, TypeScript, ASP.NET Core 8, Entity Framework Core, PostgreSQL, Tailwind CSS 3, React Query, JWT Authentication, hCaptcha, Healthcare
+   - Key Features: Multi-method authentication (email/phone), health record management, QR code sharing system, emergency access, file attachments, rate limiting, bot protection, mobile-first design
    - Demo: https://medichain-health.vercel.app/
    - GitHub: https://github.com/ervenderr/MediChain
 
@@ -189,12 +190,10 @@ AREAS OF EXPERTISE:
 - QR code encryption and authentication systems
 - AI-powered applications and security systems
 - AI integration with Google Gemini
-- Blockchain healthcare applications
 - Enterprise-level HRIS systems
 - Machine learning and computer vision
 - Cloud computing (AWS S3, GraphQL)
 - Government and public sector solutions
-- Building blockchain healthcare solutions
 - Developing AI-powered meal planning and grocery management systems
 - Creating responsive web applications
 - Designing intuitive user interfaces

@@ -9,7 +9,7 @@ interface ProjectCardProps {
   description: string
   tags: string[]
   imageUrl: string
-  demoUrl: string
+  demoUrl?: string
   repoUrl?: string
   role?: string
   achievements?: string[]
@@ -42,11 +42,13 @@ export default function ProjectCard({ title, description, tags, imageUrl, demoUr
         </div>
       </CardContent>
       <CardFooter className="px-6 pb-6 pt-0 flex gap-4">
-        <Button asChild variant="outline" size="sm">
-          <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-            Live Demo <ExternalLink className="ml-2 h-3 w-3" />
-          </Link>
-        </Button>
+        {demoUrl && (
+          <Button asChild variant="outline" size="sm">
+            <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+              Live Demo <ExternalLink className="ml-2 h-3 w-3" />
+            </Link>
+          </Button>
+        )}
         {repoUrl && (
           <Button asChild variant="outline" size="sm">
             <Link href={repoUrl} target="_blank" rel="noopener noreferrer">

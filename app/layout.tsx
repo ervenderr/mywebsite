@@ -10,16 +10,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Erven Idjad | Software Engineer Portfolio",
   description:
-    "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies. Experienced in building enterprise applications and AI-powered solutions.",
+    "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS. Experienced in building enterprise applications and AI-powered solutions.",
   keywords: [
     "Software Engineer",
     "Full Stack Developer",
     "React.js",
     "Next.js",
     "AWS",
-    "Blockchain",
     "TypeScript",
     "JavaScript",
+    "AI/ML",
     "Erven Idjad",
     "Portfolio",
   ],
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     url: "https://ervenderr.vercel.app",
     title: "Erven Idjad | Software Engineer Portfolio",
     description:
-      "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies.",
+      "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS.",
     siteName: "Erven Idjad Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Erven Idjad | Software Engineer Portfolio",
     description:
-      "Software Engineer specializing in full-stack development with React.js, Next.js, AWS, and blockchain technologies.",
+      "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS.",
     creator: "@ervenderr",
   },
   robots: {
