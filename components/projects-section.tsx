@@ -76,7 +76,6 @@ export default function ProjectsSection() {
       role: "Full Stack Developer",
     },
     // Project 4: MediChain
-
     {
       type: "multi",
       title: "MediChain - Digital Health Wallet",
@@ -102,7 +101,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/MediChain",
       role: "Full Stack Developer",
     },
-    // Project 4: Kitcha
+    // Project 5: Kitcha
     {
       type: "single",
       title: "Kitcha - Smart Grocery & Meal Planner",
@@ -123,7 +122,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
       role: "Full Stack Developer",
     },
-    // Project 5: QC Employee ID
+    // Project 6: QC Employee ID
     {
       type: "single",
       title: "QC Employee ID Verification System",
@@ -143,7 +142,7 @@ export default function ProjectsSection() {
       demoUrl: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
       role: "Full Stack Developer (SparkSoft)",
     },
-    // Project 6: Fake News Detection
+    // Project 7: Fake News Detection
     {
       type: "single",
       title: "AI-Powered Fake News Detection System",
@@ -164,7 +163,7 @@ export default function ProjectsSection() {
         "https://github.com/ervenderr/AI-Powered-Fake-News-Detection-System-with-Source-Credibility-Tracking",
       role: "AI/ML Engineer",
     },
-    // Project 7: Mae's Childcare
+    // Project 8: Mae's Childcare
     {
       type: "single",
       title: "Mae's Childcare Website",
@@ -183,7 +182,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/maeschildcare",
       role: "Full Stack Developer",
     },
-    // Project 8: Smart Entry Gate
+    // Project 9: Smart Entry Gate
     {
       type: "single",
       title: "Smart Entry Gate Security System",
@@ -203,7 +202,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "AI/ML Engineer (Thesis Project)",
     },
-    // Project 9: Fraud Detection
+    // Project 10: Fraud Detection
     {
       type: "single",
       title: "Fraud Detection in Job Postings",
@@ -225,7 +224,7 @@ export default function ProjectsSection() {
         "https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning",
       role: "Machine Learning Engineer",
     },
-    // Project 10: Philippine Legal Assistant
+    // Project 11: Philippine Legal Assistant
     {
       type: "single",
       title: "Philippine Legal Assistant",
@@ -245,7 +244,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "Full Stack Developer",
     },
-    // Project 11: Repair Management
+    // Project 12: Repair Management
     {
       type: "single",
       title: "Repair Management Dashboard",
@@ -263,7 +262,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "Frontend Developer",
     },
-    // Project 12: Netflix Clone
+    // Project 13: Netflix Clone
     {
       type: "single",
       title: "Netflix Clone",
@@ -282,7 +281,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/Netflix-Clone",
       role: "Full Stack Developer",
     },
-    // Project 13: Library Management
+    // Project 14: Library Management
     {
       type: "single",
       title: "Library Management System",

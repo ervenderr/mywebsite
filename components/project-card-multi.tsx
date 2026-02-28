@@ -30,7 +30,7 @@ export default function ProjectCardMulti({
           {imageUrls.map((imageUrl, index) => (
             <div
               key={imageUrl}
-              className="relative aspect-video overflow-hidden rounded-lg"
+              className="relative aspect-video overflow-hidden rounded-lg bg-muted"
             >
               <Image
                 src={imageUrl || "/placeholder.svg?height=240&width=320"}
@@ -38,6 +38,8 @@ export default function ProjectCardMulti({
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 16vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                quality={85}
               />
             </div>
           ))}
