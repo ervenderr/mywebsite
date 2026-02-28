@@ -27,6 +27,14 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  webpack: (config) => {
+    // Fix for react-pdf / pdfjs-dist in Next.js
+    config.resolve.alias.canvas = false;
+    return config;
+  },
+  async headers() {
+    return [];
+  },
 }
 
 if (userConfig) {

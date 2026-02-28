@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface SkillBadgeProps {
-  name: string
+  name: string;
 }
 
 export default function SkillBadge({ name }: SkillBadgeProps) {
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
-  const isDark = resolvedTheme === "dark"
+  const isDark = resolvedTheme === "dark";
 
   return (
     <div
-      className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+      className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default ${
         isDark
-          ? "bg-primary/20 text-primary hover:bg-primary/25 transition-colors"
-          : "bg-primary/10 text-primary hover:bg-primary/15 transition-colors"
+          ? "bg-primary/15 text-primary/90 hover:bg-primary/25 hover:shadow-sm hover:shadow-primary/10"
+          : "bg-primary/10 text-primary hover:bg-primary/20 hover:shadow-sm hover:shadow-primary/10"
       }`}
     >
       {name}
     </div>
-  )
+  );
 }

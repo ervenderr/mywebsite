@@ -14,7 +14,69 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
 
   const projects = [
-    // Project 1: MediChain
+    // Project 1: GuestPulse
+    {
+      type: "single",
+      title: "GuestPulse - AI Analytics Assistant",
+      description:
+        "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
+      tags: [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Ollama",
+        "OpenAI",
+        "Recharts",
+        "Vitest",
+        "AI/NLP",
+      ],
+      imageUrl: "/images/projects/guestpulse.png",
+      role: "AI/Analytics Engineer",
+    },
+    // Project 2: SpotMe
+    {
+      type: "single",
+      title: "SpotMe - Nearby Micro-Favor App",
+      description:
+        "A cross-platform mobile app connecting people needing quick help with nearby strangers within a 200m radius. Features panic button broadcasting, bounty-based task acceptance, QR code verification, real-time flash chat, and a karma-based trust system with glassmorphic UI.",
+      tags: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Supabase",
+        "PostGIS",
+        "Zustand",
+        "Real-time Chat",
+        "Mobile",
+      ],
+      imageUrl: "/images/projects/spotme.png",
+      demoUrl: "https://github.com/ervenderr/spotme",
+      repoUrl: "https://github.com/ervenderr/spotme",
+      role: "Full Stack Developer",
+    },
+    // Project 3: TaxSync PH
+    {
+      type: "single",
+      title: "TaxSync PH - Tax & Business Management",
+      description:
+        "A full-stack tax compliance and business management platform for Philippine businesses featuring OCR receipt scanning, multi-platform sales tracking, expense management, automated tax calculations, bookkeeping, and interactive analytics dashboards.",
+      tags: [
+        "Next.js 16",
+        "TypeScript",
+        "Supabase",
+        "Tesseract.js",
+        "Recharts",
+        "Tailwind CSS",
+        "OCR",
+        "FinTech",
+      ],
+      imageUrl: "/images/projects/taxsync-ph.png",
+      demoUrl: "https://github.com/ervenderr/taxsync-ph",
+      repoUrl: "https://github.com/ervenderr/taxsync-ph",
+      role: "Full Stack Developer",
+    },
+    // Project 4: MediChain
+
     {
       type: "multi",
       title: "MediChain - Digital Health Wallet",
@@ -40,7 +102,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/MediChain",
       role: "Full Stack Developer",
     },
-    // Project 2: Kitcha
+    // Project 4: Kitcha
     {
       type: "single",
       title: "Kitcha - Smart Grocery & Meal Planner",
@@ -61,7 +123,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
       role: "Full Stack Developer",
     },
-    // Project 3: QC Employee ID
+    // Project 5: QC Employee ID
     {
       type: "single",
       title: "QC Employee ID Verification System",
@@ -81,7 +143,7 @@ export default function ProjectsSection() {
       demoUrl: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
       role: "Full Stack Developer (SparkSoft)",
     },
-    // Project 4: Fake News Detection
+    // Project 6: Fake News Detection
     {
       type: "single",
       title: "AI-Powered Fake News Detection System",
@@ -102,7 +164,7 @@ export default function ProjectsSection() {
         "https://github.com/ervenderr/AI-Powered-Fake-News-Detection-System-with-Source-Credibility-Tracking",
       role: "AI/ML Engineer",
     },
-    // Project 5: Mae's Childcare
+    // Project 7: Mae's Childcare
     {
       type: "single",
       title: "Mae's Childcare Website",
@@ -121,7 +183,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/maeschildcare",
       role: "Full Stack Developer",
     },
-    // Project 6: Smart Entry Gate
+    // Project 8: Smart Entry Gate
     {
       type: "single",
       title: "Smart Entry Gate Security System",
@@ -141,7 +203,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "AI/ML Engineer (Thesis Project)",
     },
-    // Project 7: Fraud Detection
+    // Project 9: Fraud Detection
     {
       type: "single",
       title: "Fraud Detection in Job Postings",
@@ -163,7 +225,7 @@ export default function ProjectsSection() {
         "https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning",
       role: "Machine Learning Engineer",
     },
-    // Project 8: Philippine Legal Assistant
+    // Project 10: Philippine Legal Assistant
     {
       type: "single",
       title: "Philippine Legal Assistant",
@@ -183,7 +245,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "Full Stack Developer",
     },
-    // Project 9: Repair Management
+    // Project 11: Repair Management
     {
       type: "single",
       title: "Repair Management Dashboard",
@@ -201,7 +263,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr",
       role: "Frontend Developer",
     },
-    // Project 10: Netflix Clone
+    // Project 12: Netflix Clone
     {
       type: "single",
       title: "Netflix Clone",
@@ -220,7 +282,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/Netflix-Clone",
       role: "Full Stack Developer",
     },
-    // Project 11: Library Management
+    // Project 13: Library Management
     {
       type: "single",
       title: "Library Management System",
@@ -244,7 +306,7 @@ export default function ProjectsSection() {
   const visibleProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
-    <section id="projects" className="py-16 bg-muted/50">
+    <section id="projects" className="scroll-mt-20 py-16 bg-muted/50">
       <div className="container space-y-6">
         <SectionHeader
           title="Featured Projects"

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(gh repo:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node:*)",
+      "Bash(taskkill:*)",
+      "Bash(npm:*)"
+    ]
+  }
+}

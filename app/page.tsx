@@ -21,7 +21,7 @@ import ContactForm from "@/components/contact-form";
 import SkillBadge from "@/components/skill-badge";
 import ProjectsSection from "@/components/projects-section";
 import ExperienceItem from "@/components/experience-item";
-import { ThemeToggle } from "@/components/theme-toggle";
+import Header from "@/components/header";
 import HeroBackground from "@/components/hero-background";
 import AnimatedProfile from "@/components/animated-profile";
 import AnimatedSkillTags from "@/components/animated-skill-tags";
@@ -36,78 +36,12 @@ import {
   scaleUpVariant,
 } from "@/lib/animation-variants";
 import PortfolioChatbot from "@/components/portfolio-chatbot";
+import ResumeModal from "@/components/resume-modal";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="font-bold text-xl">
-            <span className="text-primary">Ervender</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link
-              href="#about"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="#skills"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Skills
-            </Link>
-            <Link
-              href="#projects"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#experience"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Experience
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <Link
-              href="https://github.com/ervenderr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Code2 className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-            <Link
-              href="https://linkedin.com/in/erven-idjad"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Users2 className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link href="mailto:ervenidjad12@gmail.com">
-              <Mail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
-            </Link>
-            <Button asChild size="sm" className="hidden md:inline-flex">
-              <Link href="/resume.pdf" target="_blank">
-                Resume <Download className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* Hero Section - Redesigned with prominent profile image */}
@@ -155,10 +89,10 @@ export default function Home() {
                   skills={[
                     "React.js",
                     "Next.js",
-                    "AWS Amplify",
                     "TypeScript",
-                    "AI/ML",
-                    "Python",
+                    "AI/LLM",
+                    "PostgreSQL",
+                    "AWS",
                   ]}
                   className="pt-2"
                 />
@@ -183,22 +117,22 @@ export default function Home() {
                 </div>
 
                 {/* Skill categories */}
-                <div className="grid grid-cols-4 gap-4 max-w-md pt-6 animate-fade-in animate-delay-500">
-                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-lg shadow-sm hover:bg-background/90 transition-colors">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-md pt-6 animate-fade-in animate-delay-500">
+                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-300">
                     <Monitor className="h-6 w-6 text-primary mb-2" />
-                    <span className="text-xs text-center">Frontend</span>
+                    <span className="text-xs font-medium text-center">Frontend</span>
                   </div>
-                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-lg shadow-sm hover:bg-background/90 transition-colors">
+                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-300">
                     <Server className="h-6 w-6 text-primary mb-2" />
-                    <span className="text-xs text-center">Backend</span>
+                    <span className="text-xs font-medium text-center">Backend</span>
                   </div>
-                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-lg shadow-sm hover:bg-background/90 transition-colors">
+                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-300">
                     <Database className="h-6 w-6 text-primary mb-2" />
-                    <span className="text-xs text-center">Database</span>
+                    <span className="text-xs font-medium text-center">Database</span>
                   </div>
-                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-lg shadow-sm hover:bg-background/90 transition-colors">
+                  <div className="flex flex-col items-center justify-center p-3 bg-background/80 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-300">
                     <Smartphone className="h-6 w-6 text-primary mb-2" />
-                    <span className="text-xs text-center">Mobile</span>
+                    <span className="text-xs font-medium text-center">Mobile</span>
                   </div>
                 </div>
               </div>
@@ -222,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 bg-muted/50">
+        <section id="about" className="scroll-mt-20 py-16 bg-muted/50">
           <div className="container space-y-6">
             <SectionHeader
               title="About Me"
@@ -259,49 +193,49 @@ export default function Home() {
                 <ScrollAnimation
                   variants={scaleUpVariant}
                   transition={{ delay: 0.1 }}
-                  className="bg-background p-6 rounded-lg shadow-sm"
+                  className="bg-background p-6 rounded-xl border border-border/50 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Briefcase className="h-6 w-6 text-primary" />
                     <h3 className="font-bold text-4xl text-primary">1+</h3>
                   </div>
-                  <p className="text-muted-foreground">Years Experience</p>
+                  <p className="text-sm text-muted-foreground">Years Experience</p>
                 </ScrollAnimation>
 
                 <ScrollAnimation
                   variants={scaleUpVariant}
                   transition={{ delay: 0.2 }}
-                  className="bg-background p-6 rounded-lg shadow-sm"
+                  className="bg-background p-6 rounded-xl border border-border/50 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Code className="h-6 w-6 text-primary" />
                     <h3 className="font-bold text-4xl text-primary">20+</h3>
                   </div>
-                  <p className="text-muted-foreground">Projects Completed</p>
+                  <p className="text-sm text-muted-foreground">Projects Completed</p>
                 </ScrollAnimation>
 
                 <ScrollAnimation
                   variants={scaleUpVariant}
                   transition={{ delay: 0.3 }}
-                  className="bg-background p-6 rounded-lg shadow-sm"
+                  className="bg-background p-6 rounded-xl border border-border/50 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Users className="h-6 w-6 text-primary" />
                     <h3 className="font-bold text-4xl text-primary">5+</h3>
                   </div>
-                  <p className="text-muted-foreground">Clients Served</p>
+                  <p className="text-sm text-muted-foreground">Clients Served</p>
                 </ScrollAnimation>
 
                 <ScrollAnimation
                   variants={scaleUpVariant}
                   transition={{ delay: 0.4 }}
-                  className="bg-background p-6 rounded-lg shadow-sm"
+                  className="bg-background p-6 rounded-xl border border-border/50 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Coffee className="h-6 w-6 text-primary" />
                     <h3 className="font-bold text-4xl text-primary">1000+</h3>
                   </div>
-                  <p className="text-muted-foreground">Cups of Coffee</p>
+                  <p className="text-sm text-muted-foreground">Cups of Coffee</p>
                 </ScrollAnimation>
               </ScrollAnimation>
             </div>
@@ -309,7 +243,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 container">
+        <section id="skills" className="scroll-mt-20 py-16 container">
           <div className="space-y-6">
             <SectionHeader
               title="Skills & Technologies"
@@ -318,9 +252,10 @@ export default function Home() {
             />
 
             <div className="pt-8">
-              <div className="space-y-6">
-                <ScrollAnimation variants={fadeUpVariant}>
-                  <h3 className="text-xl font-semibold mb-4">
+              <div className="grid gap-6 md:grid-cols-2">
+                <ScrollAnimation variants={fadeUpVariant} className="bg-muted/50 rounded-xl p-5 border border-border/30">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Code className="h-5 w-5 text-primary" />
                     Programming Languages
                   </h3>
                   <AnimatedList
@@ -340,29 +275,34 @@ export default function Home() {
                 <ScrollAnimation
                   variants={fadeUpVariant}
                   transition={{ delay: 0.1 }}
+                  className="bg-muted/50 rounded-xl p-5 border border-border/30 md:row-span-2"
                 >
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Server className="h-5 w-5 text-primary" />
                     Technologies & Frameworks
                   </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="react" name="React.js" />,
+                      <SkillBadge key="rn" name="React Native" />,
                       <SkillBadge key="next" name="Next.js" />,
+                      <SkillBadge key="expo" name="Expo" />,
                       <SkillBadge key="rest" name="REST APIs" />,
                       <SkillBadge key="git" name="Git" />,
-                      <SkillBadge key="bootstrap" name="Bootstrap" />,
                       <SkillBadge key="tailwind" name="Tailwind CSS" />,
                       <SkillBadge key="amplify" name="AWS Amplify" />,
                       <SkillBadge key="s3" name="AWS S3" />,
+                      <SkillBadge key="postgres" name="PostgreSQL" />,
+                      <SkillBadge key="dynamodb" name="DynamoDB" />,
+                      <SkillBadge key="supabase" name="Supabase" />,
                       <SkillBadge key="shadcn" name="Shadcn/UI" />,
                       <SkillBadge key="graphql" name="GraphQL" />,
                       <SkillBadge key="aspnet" name="ASP.NET Core" />,
                       <SkillBadge key="ef" name="Entity Framework" />,
-                      <SkillBadge key="opencv" name="OpenCV" />,
-                      <SkillBadge key="yolo" name="YOLOv8" />,
-                      <SkillBadge key="flask" name="Flask" />,
                       <SkillBadge key="fastapi" name="FastAPI" />,
                       <SkillBadge key="prisma" name="Prisma" />,
+                      <SkillBadge key="zustand" name="Zustand" />,
+                      <SkillBadge key="recharts" name="Recharts" />,
                       <SkillBadge key="antd" name="Ant Design" />,
                       <SkillBadge key="vite" name="Vite" />,
                     ]}
@@ -373,18 +313,22 @@ export default function Home() {
                 <ScrollAnimation
                   variants={fadeUpVariant}
                   transition={{ delay: 0.2 }}
+                  className="bg-muted/50 rounded-xl p-5 border border-border/30"
                 >
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Database className="h-5 w-5 text-primary" />
                     Data Science & ML
                   </h3>
                   <AnimatedList
                     items={[
-                      <SkillBadge key="sklearn" name="scikit-learn" />,
-                      <SkillBadge key="pandas" name="pandas" />,
-                      <SkillBadge key="nltk" name="nltk" />,
-                      <SkillBadge key="tesseract" name="Tesseract OCR" />,
-                      <SkillBadge key="cv" name="Computer Vision" />,
+                      <SkillBadge key="openai" name="OpenAI API" />,
+                      <SkillBadge key="ollama" name="Ollama" />,
+                      <SkillBadge key="llm" name="LLM Integration" />,
                       <SkillBadge key="nlp" name="NLP" />,
+                      <SkillBadge key="prompt" name="Prompt Engineering" />,
+                      <SkillBadge key="hf" name="HuggingFace" />,
+                      <SkillBadge key="opencv" name="OpenCV" />,
+                      <SkillBadge key="yolo" name="YOLOv8" />,
                     ]}
                     className="flex flex-wrap gap-2"
                   />
@@ -393,21 +337,22 @@ export default function Home() {
                 <ScrollAnimation
                   variants={fadeUpVariant}
                   transition={{ delay: 0.3 }}
+                  className="bg-muted/50 rounded-xl p-5 border border-border/30"
                 >
-                  <h3 className="text-xl font-semibold mb-4">
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Monitor className="h-5 w-5 text-primary" />
                     Developer Tools
                   </h3>
                   <AnimatedList
                     items={[
                       <SkillBadge key="vscode" name="Visual Studio Code" />,
-                      <SkillBadge key="intellij" name="IntelliJ" />,
+                      <SkillBadge key="vitest" name="Vitest" />,
+                      <SkillBadge key="playwright" name="Playwright" />,
                       <SkillBadge key="mysql" name="MySQL" />,
+                      <SkillBadge key="graphql-tool" name="GraphQL" />,
                       <SkillBadge key="github" name="GitHub" />,
-                      <SkillBadge key="copilot" name="Copilot" />,
+                      <SkillBadge key="claude-code" name="Claude Code" />,
                       <SkillBadge key="cursor" name="Cursor" />,
-                      <SkillBadge key="sqlite" name="SQLite3" />,
-                      <SkillBadge key="mongodb" name="MongoDB" />,
-                      <SkillBadge key="jupyter" name="Jupyter Notebook" />,
                     ]}
                     className="flex flex-wrap gap-2"
                   />
@@ -421,7 +366,7 @@ export default function Home() {
         <ProjectsSection />
 
         {/* Experience Section */}
-        <section id="experience" className="py-16 container">
+        <section id="experience" className="scroll-mt-20 py-16 container">
           <div className="space-y-6">
             <SectionHeader
               title="Work Experience"
@@ -446,8 +391,8 @@ export default function Home() {
                 <ExperienceItem
                   title="Software Engineer"
                   company="SparkSoft Solution, Inc."
-                  period="Oct 2024 - Present"
-                  description="Architected and delivered full-stack attendance management system using Next.js 14, TypeScript, and AWS Amplify, serving 15,000+ employees with real-time biometric integration and automated workflows."
+                  period="Jun 2024 - Present"
+                  description="Architected and deployed full-stack enterprise systems using Next.js 14, TypeScript, and AWS Amplify, supporting 15,000+ employees with real-time biometric integration and hardened security."
                   technologies={[
                     "Next.js 14",
                     "TypeScript",
@@ -456,12 +401,13 @@ export default function Home() {
                     "AWS S3",
                     "Node.js",
                     "Express",
+                    "AES Encryption",
                   ]}
                   achievements={[
-                    "Architected full-stack attendance management system serving 15,000+ employees with real-time biometric integration, role-based dashboards, and automated data export capabilities",
-                    "Built enterprise-grade workforce analytics platform with interactive reporting dashboards, geofenced attendance tracking, and multi-format data export, reducing HR processing time by 75%",
-                    "Developed secure ID verification API with Node.js/Express backend, QR code decryption, GraphQL integration, and S3 proxy system",
-                    "Implemented comprehensive security middleware including CORS, rate limiting, and SSRF protection with dual-parameter authentication",
+                    "Architected and deployed a full-stack attendance management system successfully supporting 15,000+ employees",
+                    "Engineered real-time biometric hardware integrations and automated data export pipelines, reducing HR processing time by 75%",
+                    "Developed a high-performance enterprise analytics dashboard with geofenced tracking and multi-format reporting",
+                    "Hardened system security with AES-encrypted QR decryption, GraphQL integration, and secure S3 proxy for sensitive data",
                   ]}
                 />
               </ScrollAnimation>
@@ -471,25 +417,24 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
               >
                 <ExperienceItem
-                  title="Software Engineer Trainee"
-                  company="SparkSoft Solution, Inc."
-                  period="June 2024 - Oct 2024"
-                  description="Completed intensive self-learning phase mastering modern web technologies and cloud services. Focused on AWS Amplify, GraphQL, AWS S3, React.js, Vite, Ant Design, and GitHub Copilot integration."
+                  title="AI/Analytics Engineer"
+                  company="GuestPulse (Freelance)"
+                  period="Dec 2025 - Feb 2026"
+                  description="Developed a sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations for 4 distinct hotel datasets."
                   technologies={[
-                    "React.js",
-                    "Next.js",
-                    "AWS Amplify",
-                    "GraphQL",
-                    "AWS S3",
-                    "Ant Design",
-                    "Vite",
+                    "Next.js 15",
+                    "TypeScript",
+                    "PostgreSQL",
+                    "Ollama",
+                    "OpenAI",
+                    "Recharts",
+                    "Vitest",
                   ]}
                   achievements={[
-                    "Developed full-stack cat adoption application demonstrating proficiency in the complete tech stack",
-                    "Led employee perspective development of attendance module with responsive, user-friendly interface",
-                    "Executed successful migration from legacy React codebase to Next.js, enhancing maintainability and performance",
-                    "Designed and implemented intuitive UI components for efficient employee attendance management system",
-                    "Accelerated onboarding process by creating comprehensive documentation for new development workflows",
+                    "Designed a 3-level deterministic routing engine with O(1) keyword indexing and fuzzy matching, classifying queries across 7 specialized handlers",
+                    "Integrated an LLM layer (Ollama/OpenAI) for context-aware reasoning, automated narrative insights, and proactive follow-up suggestions",
+                    "Built a semantic catalog with O(1) keyword indexing, fuzzy matching, typo detection, and 17 paraphrase patterns for robust NLU",
+                    "Maintained 200+ Vitest tests across unit and integration suites ensuring 99%+ routing accuracy for 34K+ lines of TypeScript",
                   ]}
                 />
               </ScrollAnimation>
@@ -501,14 +446,13 @@ export default function Home() {
                 <ExperienceItem
                   title="IT Intern"
                   company="Knowles Training Institute"
-                  period="March 2024 - May 2024"
-                  description="Enhanced website security, reducing breaches by monitoring and blocking suspicious IP addresses. Improved user experience on company websites using WordPress and Elementor."
+                  period="Mar 2024 - May 2024"
+                  description="Enhanced website security and user experience on company websites. Streamlined troubleshooting through effective collaboration with cross-functional teams."
                   technologies={["WordPress", "Elementor", "Web Security"]}
                   achievements={[
                     "Enhanced website security, reducing breaches by monitoring and blocking suspicious IP addresses",
                     "Improved user experience on company websites using WordPress and Elementor",
-                    "Streamlined troubleshooting and issue resolution processes through effective collaboration",
-                    "Ensured high-quality deployments by conducting thorough testing and quality assurance checks",
+                    "Streamlined troubleshooting and issue resolution through effective collaboration with cross-functional teams",
                   ]}
                 />
               </ScrollAnimation>
@@ -518,11 +462,13 @@ export default function Home() {
               variants={slideInRightVariant}
               className="text-center pt-8"
             >
-              <Button asChild>
-                <Link href="/resume.pdf" target="_blank">
-                  Download Full Resume <Download className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <ResumeModal
+                trigger={
+                  <Button>
+                    View Full Resume <Download className="ml-2 h-4 w-4" />
+                  </Button>
+                }
+              />
             </ScrollAnimation>
           </div>
         </section>
@@ -540,8 +486,8 @@ export default function Home() {
               variants={fadeUpVariant}
               className="pt-8 max-w-3xl mx-auto"
             >
-              <div className="border-l-4 border-primary pl-6 pb-2 relative">
-                <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-1"></div>
+              <div className="border-l-4 border-gradient-to-b border-primary/80 pl-6 pb-2 relative">
+                <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-1 ring-4 ring-primary/20"></div>
                 <div className="space-y-2">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <h3 className="text-xl font-bold">
@@ -573,7 +519,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16">
+        <section id="contact" className="scroll-mt-20 py-16 relative overflow-hidden">
           <div className="container">
             <SectionHeader
               title="Get In Touch"
@@ -586,55 +532,67 @@ export default function Home() {
                 variants={slideInLeftVariant}
                 className="space-y-4"
               >
-                <div className="space-y-2 pt-4">
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-5 w-5 text-primary" />
-                    <a
-                      href="mailto:ervenidjad12@gmail.com"
-                      className="hover:text-primary transition-colors"
-                    >
-                      ervenidjad12@gmail.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Code2 className="h-5 w-5 text-primary" />
-                    <a
-                      href="https://github.com/ervenderr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
-                      github.com/ervenderr
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users2 className="h-5 w-5 text-primary" />
-                    <a
-                      href="https://linkedin.com/in/erven-idjad"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
-                      linkedin.com/in/erven-idjad
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ExternalLink className="h-5 w-5 text-primary" />
-                    <a
-                      href="https://ervenderr.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors"
-                    >
-                      ervenderr.vercel.app
-                    </a>
-                  </div>
+                <div className="space-y-3 pt-4">
+                  <a
+                    href="mailto:ervenidjad12@gmail.com"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                      <Mail className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Email</p>
+                      <p className="text-sm font-medium">ervenidjad12@gmail.com</p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://github.com/ervenderr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                      <Code2 className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">GitHub</p>
+                      <p className="text-sm font-medium">github.com/ervenderr</p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/erven-idjad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                      <Users2 className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">LinkedIn</p>
+                      <p className="text-sm font-medium">linkedin.com/in/erven-idjad</p>
+                    </div>
+                  </a>
+                  <a
+                    href="https://ervenderr.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                      <ExternalLink className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground">Portfolio</p>
+                      <p className="text-sm font-medium">ervenderr.vercel.app</p>
+                    </div>
+                  </a>
                 </div>
               </ScrollAnimation>
 
               <ScrollAnimation
                 variants={slideInRightVariant}
-                className="bg-background p-6 rounded-lg shadow-sm"
+                className="bg-background p-6 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <ContactForm />
               </ScrollAnimation>
