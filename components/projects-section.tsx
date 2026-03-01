@@ -15,24 +15,24 @@ export default function ProjectsSection() {
 
   const projects = [
     // Project 1: GuestPulse
-    // {
-    //   type: "single",
-    //   title: "GuestPulse - AI Analytics Assistant",
-    //   description:
-    //     "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
-    //   tags: [
-    //     "Next.js 15",
-    //     "TypeScript",
-    //     "PostgreSQL",
-    //     "Ollama",
-    //     "OpenAI",
-    //     "Recharts",
-    //     "Vitest",
-    //     "AI/NLP",
-    //   ],
-    //   imageUrl: "/images/projects/guestpulse.png",
-    //   role: "AI/Analytics Engineer",
-    // },
+    {
+      type: "single",
+      title: "GuestPulse - AI Analytics Assistant",
+      description:
+        "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
+      tags: [
+        "Next.js 15",
+        "TypeScript",
+        "PostgreSQL",
+        "Ollama",
+        "OpenAI",
+        "Recharts",
+        "Vitest",
+        "AI/NLP",
+      ],
+      imageUrl: "/images/projects/guestpulse.png",
+      role: "AI/Analytics Engineer",
+    },
     // Project 2: SpotMe
     {
       type: "single",
