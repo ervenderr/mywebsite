@@ -7,7 +7,7 @@ import Link from "next/link";
 import ProjectCard from "@/components/project-card";
 import ProjectCardMulti from "@/components/project-card-multi";
 import ScrollAnimation from "@/components/scroll-animation";
-import SectionHeader from "@/components/section-header";
+import SectionHeader from "@/components/section-header";x
 import { scaleUpVariant, fadeInVariant } from "@/lib/animation-variants";
 
 export default function ProjectsSection() {
@@ -15,24 +15,24 @@ export default function ProjectsSection() {
 
   const projects = [
     // Project 1: GuestPulse
-    {
-      type: "single",
-      title: "GuestPulse - AI Analytics Assistant",
-      description:
-        "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
-      tags: [
-        "Next.js 15",
-        "TypeScript",
-        "PostgreSQL",
-        "Ollama",
-        "OpenAI",
-        "Recharts",
-        "Vitest",
-        "AI/NLP",
-      ],
-      imageUrl: "/images/projects/guestpulse.png",
-      role: "AI/Analytics Engineer",
-    },
+    // {
+    //   type: "single",
+    //   title: "GuestPulse - AI Analytics Assistant",
+    //   description:
+    //     "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
+    //   tags: [
+    //     "Next.js 15",
+    //     "TypeScript",
+    //     "PostgreSQL",
+    //     "Ollama",
+    //     "OpenAI",
+    //     "Recharts",
+    //     "Vitest",
+    //     "AI/NLP",
+    //   ],
+    //   imageUrl: "/images/projects/guestpulse.png",
+    //   role: "AI/Analytics Engineer",
+    // },
     // Project 2: SpotMe
     {
       type: "single",
@@ -70,7 +70,7 @@ export default function ProjectsSection() {
         "OCR",
         "FinTech",
       ],
-      imageUrl: "/images/projects/taxsync-ph.png",
+      imageUrl: "/images/projects/taxsync.png",
       demoUrl: "https://github.com/ervenderr/taxsync-ph",
       repoUrl: "https://github.com/ervenderr/taxsync-ph",
       role: "Full Stack Developer",
