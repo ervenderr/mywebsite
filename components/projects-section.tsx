@@ -71,7 +71,7 @@ export default function ProjectsSection() {
         "OCR",
         "FinTech",
       ],
-      imageUrl: "/images/projects/taxsync-ph.png",
+      imageUrl: "/images/projects/taxsync.png",
       demoUrl: "https://github.com/ervenderr/taxsync-ph",
       repoUrl: "https://github.com/ervenderr/taxsync-ph",
       role: "Full Stack Developer",

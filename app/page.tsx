@@ -197,7 +197,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Briefcase className="h-6 w-6 text-primary" />
-                    <h3 className="font-bold text-4xl text-primary">1+</h3>
+                    <h3 className="font-bold text-4xl text-primary">2+</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">Years Experience</p>
                 </ScrollAnimation>
