@@ -122,13 +122,14 @@ Developer Tools:
 
 FEATURED PROJECTS:
 
-1. GuestPulse - AI Hotel Analytics Assistant
-   - Role: AI/Analytics Engineer (Freelance)
-   - Description: A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI. Supports dynamic chart generation with Recharts (bar, line, pie, composed charts), conversational memory, and comprehensive test coverage with Vitest.
-   - Technologies: Next.js 15, TypeScript, PostgreSQL, Ollama, OpenAI API, Recharts, Vitest, AI/NLP, Prompt Engineering
-   - Key Features: Natural language to SQL translation, 3-level routing engine, real-time chart visualizations, LLM integration (Ollama + OpenAI), conversational memory, comprehensive testing
+1. MatchCraft - AI Resume Analyzer
+   - Role: Full Stack Developer
+   - Description: An AI-powered job application analyzer that compares your resume against a job posting and generates a match score (0-100), tailored resume with job-specific keywords, and a professional cover letter. Features real-time streaming analysis via Server-Sent Events, multi-model LLM fallback chain using OpenRouter free-tier models, PDF resume parsing and generation, stealth job scraping with curl_cffi and nodriver, SSRF protection, rate limiting, and Docker containerization for easy deployment.
+   - Technologies: Next.js 16, React 19, TypeScript, Tailwind CSS 4, Python, FastAPI, Pydantic, OpenRouter API, ReportLab, PyMuPDF, curl_cffi, nodriver, Docker, SSE
+   - Key Features: Match score with verdict, strong matches & skill gaps analysis, tailored resume generation, cover letter generation, real-time SSE streaming, multi-model LLM fallback, PDF upload & generation, Docker support
+   - GitHub: https://github.com/ervenderr/matchcraft
 
-3. SpotMe - Nearby Micro-Favor App
+2. SpotMe - Nearby Micro-Favor App
    - Role: Full Stack Developer
    - Description: A cross-platform mobile app connecting people needing quick help with nearby strangers within a 200-meter radius. Users can broadcast requests via a "Panic Button," set cash bounties ($1-$100), and helpers accept tasks verified through QR code scanning. Features real-time flash chat with auto-destruction, image sharing, karma-based trust tiers (Bronze, Silver, Gold/Guardian), selfie verification, auto-expiring requests, haptic feedback, and glassmorphic UI design.
    - Technologies: Expo SDK 54, React Native, TypeScript, Supabase (PostgreSQL + PostGIS), Zustand, react-native-maps, expo-camera, QR Code, Real-time Chat

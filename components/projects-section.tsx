@@ -14,24 +14,25 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
 
   const projects = [
-    // Project 1: GuestPulse
+    // Project 1: MatchCraft
     {
       type: "single",
-      title: "GuestPulse - AI Analytics Assistant",
+      title: "MatchCraft - AI Resume Analyzer",
       description:
-        "A sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations. Features a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI.",
+        "An AI-powered job application analyzer that compares your resume against a job posting and generates a match score, tailored resume, and cover letter. Features real-time streaming via SSE, multi-model LLM fallback, PDF parsing/generation, and Docker support.",
       tags: [
-        "Next.js 15",
+        "Next.js 16",
+        "React 19",
         "TypeScript",
-        "PostgreSQL",
-        "Ollama",
-        "OpenAI",
-        "Recharts",
-        "Vitest",
-        "AI/NLP",
+        "Python",
+        "FastAPI",
+        "OpenRouter",
+        "SSE",
+        "Docker",
       ],
-      imageUrl: "/images/projects/guestpulse.png",
-      role: "AI/Analytics Engineer",
+      imageUrl: "/images/projects/matchcraft.png",
+      repoUrl: "https://github.com/ervenderr/matchcraft",
+      role: "Full Stack Developer",
     },
     // Project 2: SpotMe
     {
@@ -198,8 +199,8 @@ export default function ProjectsSection() {
         "AI",
       ],
       imageUrl: "/images/projects/smart-entry.png",
-      demoUrl: "https://github.com/ervenderr",
-      repoUrl: "https://github.com/ervenderr",
+      demoUrl: "https://github.com/ervenderr/Monitoring-Gate-System-Using-Face-Recognition",
+      repoUrl: "https://github.com/ervenderr/Monitoring-Gate-System-Using-Face-Recognition",
       role: "AI/ML Engineer (Thesis Project)",
     },
     // Project 10: Fraud Detection
@@ -240,8 +241,8 @@ export default function ProjectsSection() {
         "Legal Tech",
       ],
       imageUrl: "/images/projects/legal-assistant.png",
-      demoUrl: "https://github.com/ervenderr",
-      repoUrl: "https://github.com/ervenderr",
+      demoUrl: "https://github.com/ervenderr/philippines-legal-assistant",
+      repoUrl: "https://github.com/ervenderr/philippines-legal-assistant",
       role: "Full Stack Developer",
     },
     // Project 12: Repair Management
@@ -258,8 +259,8 @@ export default function ProjectsSection() {
         "Real-time Tracking",
       ],
       imageUrl: "/images/projects/repair-dashboard.png",
-      demoUrl: "https://github.com/ervenderr",
-      repoUrl: "https://github.com/ervenderr",
+      demoUrl: "https://github.com/ervenderr/Installation-and-Repair-Management-System",
+      repoUrl: "https://github.com/ervenderr/Installation-and-Repair-Management-System",
       role: "Frontend Developer",
     },
     // Project 13: Netflix Clone
