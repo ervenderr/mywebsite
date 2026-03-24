@@ -21,10 +21,10 @@ export default function SkillBadge({ name }: SkillBadgeProps) {
 
   return (
     <div
-      className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-default ${
+      className={`inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200 cursor-default ${
         isDark
-          ? "bg-primary/15 text-primary/90 hover:bg-primary/25 hover:shadow-sm hover:shadow-primary/10"
-          : "bg-primary/10 text-primary hover:bg-primary/20 hover:shadow-sm hover:shadow-primary/10"
+          ? "bg-secondary text-foreground/80 hover:bg-secondary/80"
+          : "bg-secondary text-foreground/70 hover:bg-secondary/80"
       }`}
     >
       {name}

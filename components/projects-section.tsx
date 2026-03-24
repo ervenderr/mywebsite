@@ -310,7 +310,6 @@ export default function ProjectsSection() {
       <div className="container space-y-6">
         <SectionHeader
           title="Featured Projects"
-          subtitle="A selection of my recent work and personal projects"
           className="max-w-3xl mx-auto"
         />
 

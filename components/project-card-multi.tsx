@@ -24,7 +24,7 @@ export default function ProjectCardMulti({
   role,
 }: ProjectCardMultiProps) {
   return (
-    <Card className="overflow-hidden flex flex-col h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 border-border/50 hover:border-primary/20">
+    <Card className="overflow-hidden flex flex-col h-full group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 border-transparent hover:border-border/50">
       <div className="p-3">
         <div className="grid grid-cols-2 gap-2">
           {imageUrls.map((imageUrl, index) => (

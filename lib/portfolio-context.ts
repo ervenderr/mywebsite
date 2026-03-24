@@ -21,7 +21,7 @@ IMPORTANT RULES:
 PERSONAL INFORMATION:
 - Name: Erven Idjad
 - Role: Software Engineer
-- Current Position: Software Engineer at SparkSoft Solution, Inc. (June 2024 - Present)
+- Most Recent Position: Software Engineer at SparkSoft Solution, Inc. (June 2024 - April 2026)
 - Location: Zamboanga City, Philippines
 - Email: ervenidjad12@gmail.com
 - GitHub: github.com/ervenderr
@@ -37,28 +37,26 @@ EDUCATION:
 
 PROFESSIONAL EXPERIENCE:
 
-1. Software Engineer - SparkSoft Solution, Inc. (Jun 2024 - Present)
-   - Architected full-stack attendance management system serving 15,000+ employees with real-time biometric integration, role-based dashboards, and automated data export capabilities
-   - Built enterprise-grade workforce analytics platform with interactive reporting dashboards, geofenced attendance tracking, and multi-format data export, reducing HR processing time by 75%
-   - Developed secure ID verification system for Quezon City Hall with Node.js/Express backend, QR code AES encryption/decryption, dual-parameter authentication (Employee ID + Signature), GraphQL integration, and S3 proxy system serving 15,000+ government employees
-   - Built full-stack QR scanner interface with React.js featuring camera and upload scanning, mobile optimization, reCAPTCHA protection, and URL-based auto-verification
-   - Implemented comprehensive security middleware including CORS, rate limiting, SSRF protection, input validation, Helmet security headers, and timing-safe comparisons
-   - Executed successful migration from legacy React codebase to Next.js, enhancing maintainability and performance
-   - Accelerated onboarding process by creating comprehensive documentation for new development workflows
-   - Technologies: Next.js 14, TypeScript, AWS Amplify, GraphQL, AWS S3, Node.js, Express, React.js, Ant Design, AES Encryption, reCAPTCHA, Vite
+1. Software Engineer - SparkSoft Solution, Inc. (Jun 2024 - Apr 2026)
+   - Architected and deployed a full-stack attendance management system using Next.js 14, TypeScript, and AWS Amplify, successfully supporting 15,000+ employees
+   - Engineered real-time biometric hardware integrations and automated data export pipelines, reducing HR administrative processing time by 75%
+   - Developed a high-performance enterprise analytics dashboard featuring geofenced tracking and multi-format reporting for workforce optimization
+   - Hardened system security by building a Node.js/Express backend with AES-encrypted QR decryption, GraphQL integration, and a secure S3 proxy for sensitive data
+   - Technologies: Next.js 14, TypeScript, AWS Amplify, GraphQL, AWS S3, Node.js, Express, React.js, AES Encryption
 
-2. AI/Analytics Engineer (Freelance) - GuestPulse (Dec 2025 - Feb 2026)
+2. AI/Analytics Engineer (Independent Contractor) - GuestPulse (Dec 2025 - Feb 2026)
    - Built a sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations
    - Designed and implemented a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI
    - Created dynamic chart generation with Recharts supporting bar, line, pie, and composed chart types
    - Achieved comprehensive test coverage using Vitest with unit, integration, and E2E testing
    - Technologies: Next.js 15, TypeScript, PostgreSQL, Ollama, OpenAI API, Recharts, Vitest, AI/NLP
 
-3. IT Intern - Knowles Training Institute (Mar 2024 - May 2024)
-   - Enhanced website security by monitoring and blocking suspicious IP addresses
-   - Improved user experience on company websites using WordPress and Elementor
-   - Conducted thorough testing and quality assurance checks for deployments
-   - Technologies: WordPress, Elementor, Web Security
+3. Full Stack Developer (Independent Contractor) - MindScript Technologies LLC (Sep 2025 - Nov 2025)
+   - Engineered a specialized medical consultation platform integrating Claude LLM, designing complex system prompts and deterministic logic flows to guide AI behavior for over 100+ healthcare consultant agents
+   - Developed and managed high-performance endpoints using Python (FastAPI), ensuring rapid data retrieval and seamless communication between the LLM and the frontend
+   - Implemented global localization features, enabling the AI and platform to support multiple languages for diverse patient-consultant interactions
+   - Refactored a legacy React.js codebase, transforming spaghetti code into a clean, modular architecture, significantly improving maintainability and reducing bug reports
+   - Technologies: Python, FastAPI, React.js, Claude LLM, i18n, Localization
 
 SKILLS & TECHNOLOGIES:
 

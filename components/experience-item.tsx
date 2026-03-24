@@ -16,8 +16,8 @@ export default function ExperienceItem({
   achievements,
 }: ExperienceItemProps) {
   return (
-    <div className="border-l-4 border-primary/60 pl-6 pb-2 relative">
-      <div className="absolute w-4 h-4 bg-primary rounded-full -left-[10px] top-1 ring-4 ring-primary/20"></div>
+    <div className="border-l-2 border-primary/30 pl-6 pb-2 relative">
+      <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-1.5 ring-4 ring-background"></div>
       <div className="space-y-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <h3 className="text-xl font-bold">{title}</h3>

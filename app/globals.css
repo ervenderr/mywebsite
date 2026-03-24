@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 40 20% 98%;
+    --foreground: 220 15% 12%;
+    --card: 40 15% 96%;
+    --card-foreground: 220 15% 12%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 220 15% 12%;
+    --primary: 220 45% 42%;
+    --primary-foreground: 40 20% 98%;
+    --secondary: 40 10% 93%;
+    --secondary-foreground: 220 15% 12%;
+    --muted: 40 10% 94%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 220 20% 93%;
+    --accent-foreground: 220 15% 12%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --border: 40 10% 89%;
+    --input: 40 10% 89%;
+    --ring: 220 45% 42%;
+    --radius: 0.625rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 5.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 5.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 217.2 91.2% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 4%;
+    --foreground: 40 10% 88%;
+    --card: 0 0% 7%;
+    --card-foreground: 40 10% 88%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 40 10% 88%;
+    --primary: 220 50% 62%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 40 10% 88%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 220 5% 55%;
+    --accent: 220 30% 12%;
+    --accent-foreground: 40 10% 88%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 220 50% 62%;
   }
 }
 
@@ -224,18 +224,18 @@ html {
 /* Hero section background patterns */
 .hero-pattern {
   position: absolute;
-  opacity: 0.05;
-  background-size: 20px 20px;
-  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  opacity: 0.04;
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, hsl(var(--foreground) / 0.15) 1px, transparent 1px);
 }
 
 .hero-grid {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-image: linear-gradient(to right, hsl(var(--primary) / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary) / 0.04) 1px, transparent 1px);
   opacity: 0.3;
 }
 
@@ -244,18 +244,18 @@ html {
   width: 100%;
   height: 100%;
   background: radial-gradient(
-    circle at 50% 50%,
-    rgba(59, 130, 246, 0.1) 0%,
-    rgba(59, 130, 246, 0.05) 25%,
-    rgba(59, 130, 246, 0) 50%
+    ellipse 60% 50% at 50% 50%,
+    hsl(var(--primary) / 0.06) 0%,
+    hsl(var(--primary) / 0.02) 40%,
+    transparent 70%
   );
 }
 
 .hero-blob {
   position: absolute;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
-  filter: blur(40px);
+  background: linear-gradient(45deg, hsl(var(--primary) / 0.06), hsl(var(--primary) / 0.02));
+  filter: blur(60px);
 }
 
 /* Skill badge animations */
@@ -292,7 +292,7 @@ html {
   position: absolute;
   inset: -15px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0) 70%);
+  background: radial-gradient(circle at center, hsl(var(--primary) / 0.12) 0%, transparent 70%);
   filter: blur(15px);
   z-index: -1;
   animation: pulse 4s ease-in-out infinite;
@@ -303,7 +303,7 @@ html {
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  border: 2px dashed rgba(59, 130, 246, 0.3);
+  border: 2px dashed hsl(var(--primary) / 0.2);
   z-index: -1;
   animation: rotate 20s linear infinite;
 }
@@ -312,7 +312,7 @@ html {
 .code-symbol {
   position: absolute;
   font-family: monospace;
-  color: rgba(59, 130, 246, 0.2);
+  color: hsl(var(--primary) / 0.12);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -356,35 +356,35 @@ html {
 
 /* Dark mode specific styles */
 .dark .hero-blob {
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08));
+  background: linear-gradient(45deg, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.04));
   opacity: 0.7;
 }
 
 .dark .hero-gradient {
   background: radial-gradient(
-    circle at 50% 50%,
-    rgba(59, 130, 246, 0.15) 0%,
-    rgba(59, 130, 246, 0.08) 25%,
-    rgba(59, 130, 246, 0) 50%
+    ellipse 60% 50% at 50% 50%,
+    hsl(var(--primary) / 0.08) 0%,
+    hsl(var(--primary) / 0.03) 40%,
+    transparent 70%
   );
 }
 
 .dark .hero-grid {
-  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(to right, hsl(var(--primary) / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary) / 0.06) 1px, transparent 1px);
   opacity: 0.2;
 }
 
 .dark .code-symbol {
-  color: rgba(59, 130, 246, 0.3);
+  color: hsl(var(--primary) / 0.2);
 }
 
 .dark .profile-image-container::before {
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0) 70%);
+  background: radial-gradient(circle at center, hsl(var(--primary) / 0.18) 0%, transparent 70%);
 }
 
 .dark .profile-image-container::after {
-  border-color: rgba(59, 130, 246, 0.4);
+  border-color: hsl(var(--primary) / 0.25);
 }
 
 /* Responsive adjustments */

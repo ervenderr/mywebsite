@@ -19,14 +19,23 @@ import {
   User,
   Sparkles,
   RotateCcw,
+  ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { toast } from "sonner";
 
+interface Source {
+  title: string;
+  category: string;
+  score: number;
+}
+
 interface Message {
   role: "user" | "assistant";
   content: string;
+  sources?: Source[];
 }
 
 const INITIAL_MESSAGE: Message = {
@@ -40,6 +49,41 @@ const QUICK_PROMPTS = [
   "What's his tech stack?",
   "Tell me about his experience",
 ];
+
+function SourcesDisplay({ sources }: { sources: Source[] }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="mt-2 pt-2 border-t border-border/20">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex items-center gap-1 text-xs text-muted-foreground/70 hover:text-muted-foreground transition-colors"
+      >
+        {isExpanded ? (
+          <ChevronDown className="h-3 w-3" />
+        ) : (
+          <ChevronRight className="h-3 w-3" />
+        )}
+        {sources.length} source{sources.length !== 1 ? "s" : ""} used
+      </button>
+      {isExpanded && (
+        <div className="mt-1.5 space-y-1">
+          {sources.map((source, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-between text-xs text-muted-foreground/60 px-1"
+            >
+              <span className="truncate mr-2">{source.title}</span>
+              <span className="shrink-0 tabular-nums">
+                {Math.round(source.score * 100)}%
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function PortfolioChatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,7 +149,11 @@ export default function PortfolioChatbot() {
       if (data.success) {
         setMessages([
           ...newMessages,
-          { role: "assistant", content: data.response },
+          {
+            role: "assistant",
+            content: data.response,
+            sources: data.sources,
+          },
         ]);
       } else {
         let errorMessage =
@@ -164,20 +212,23 @@ export default function PortfolioChatbot() {
 
       {/* Chat Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="sm:max-w-[480px] max-w-[calc(100vw-2rem)] h-[600px] max-h-[calc(100vh-2rem)] flex flex-col p-0 gap-0 overflow-hidden border-border/50">
+        <DialogContent className="sm:max-w-[460px] max-w-[calc(100vw-2rem)] h-[min(600px,calc(100vh-3rem))] flex flex-col p-0 gap-0 overflow-hidden border-transparent bg-background">
           {/* Header */}
-          <DialogHeader className="px-4 py-3 border-b bg-muted/30 shrink-0">
+          <DialogHeader className="px-4 py-3 border-b border-border/50 shrink-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-9 w-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-sm">
-                  <Sparkles className="h-4 w-4 text-primary-foreground" />
+                <div className="relative h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="h-4 w-4 text-primary" />
+                  <span className="absolute -bottom-0.5 -right-0.5 text-[7px] font-semibold bg-primary text-primary-foreground px-1 rounded leading-tight">
+                    RAG
+                  </span>
                 </div>
                 <div>
                   <DialogTitle className="text-sm font-semibold">
-                    Erven's AI Assistant
+                    Erven&apos;s AI Assistant
                   </DialogTitle>
                   <DialogDescription className="text-xs mt-0">
-                    Powered by Gemini AI
+                    Powered by RAG + DeepSeek
                   </DialogDescription>
                 </div>
               </div>
@@ -206,7 +257,7 @@ export default function PortfolioChatbot() {
                   }`}
                 >
                   {message.role === "assistant" && (
-                    <div className="h-7 w-7 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                       <Bot className="h-3.5 w-3.5 text-primary" />
                     </div>
                   )}
@@ -214,7 +265,7 @@ export default function PortfolioChatbot() {
                     className={`max-w-[82%] rounded-2xl px-3.5 py-2.5 ${
                       message.role === "user"
                         ? "bg-primary text-primary-foreground rounded-br-md"
-                        : "bg-muted/80 border border-border/30 rounded-bl-md"
+                        : "bg-card rounded-bl-md"
                     }`}
                   >
                     {message.role === "user" ? (
@@ -222,70 +273,75 @@ export default function PortfolioChatbot() {
                         {message.content}
                       </p>
                     ) : (
-                      <div className="prose prose-sm dark:prose-invert max-w-none">
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          components={{
-                            p: ({ children }) => (
-                              <p className="mb-2 last:mb-0 text-sm leading-relaxed">
-                                {children}
-                              </p>
-                            ),
-                            ul: ({ children }) => (
-                              <ul className="mb-2 last:mb-0 list-disc list-inside space-y-1">
-                                {children}
-                              </ul>
-                            ),
-                            ol: ({ children }) => (
-                              <ol className="mb-2 last:mb-0 list-decimal list-inside space-y-1">
-                                {children}
-                              </ol>
-                            ),
-                            li: ({ children }) => (
-                              <li className="text-sm leading-relaxed ml-1">
-                                {children}
-                              </li>
-                            ),
-                            strong: ({ children }) => (
-                              <strong className="font-semibold text-foreground">
-                                {children}
-                              </strong>
-                            ),
-                            code: ({ children }) => (
-                              <code className="bg-background/50 px-1.5 py-0.5 rounded text-xs font-mono">
-                                {children}
-                              </code>
-                            ),
-                            a: ({ children, href }) => (
-                              <a
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary underline underline-offset-2 hover:text-primary/80"
-                              >
-                                {children}
-                              </a>
-                            ),
-                            h1: ({ children }) => (
-                              <h1 className="text-base font-bold mb-2">
-                                {children}
-                              </h1>
-                            ),
-                            h2: ({ children }) => (
-                              <h2 className="text-sm font-bold mb-1.5">
-                                {children}
-                              </h2>
-                            ),
-                            h3: ({ children }) => (
-                              <h3 className="text-sm font-semibold mb-1">
-                                {children}
-                              </h3>
-                            ),
-                          }}
-                        >
-                          {message.content}
-                        </ReactMarkdown>
-                      </div>
+                      <>
+                        <div className="prose prose-sm dark:prose-invert max-w-none">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              p: ({ children }) => (
+                                <p className="mb-2 last:mb-0 text-sm leading-relaxed">
+                                  {children}
+                                </p>
+                              ),
+                              ul: ({ children }) => (
+                                <ul className="mb-2 last:mb-0 list-disc list-inside space-y-1">
+                                  {children}
+                                </ul>
+                              ),
+                              ol: ({ children }) => (
+                                <ol className="mb-2 last:mb-0 list-decimal list-inside space-y-1">
+                                  {children}
+                                </ol>
+                              ),
+                              li: ({ children }) => (
+                                <li className="text-sm leading-relaxed ml-1">
+                                  {children}
+                                </li>
+                              ),
+                              strong: ({ children }) => (
+                                <strong className="font-semibold text-foreground">
+                                  {children}
+                                </strong>
+                              ),
+                              code: ({ children }) => (
+                                <code className="bg-background/50 px-1.5 py-0.5 rounded text-xs font-mono">
+                                  {children}
+                                </code>
+                              ),
+                              a: ({ children, href }) => (
+                                <a
+                                  href={href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-primary underline underline-offset-2 hover:text-primary/80"
+                                >
+                                  {children}
+                                </a>
+                              ),
+                              h1: ({ children }) => (
+                                <h1 className="text-base font-bold mb-2">
+                                  {children}
+                                </h1>
+                              ),
+                              h2: ({ children }) => (
+                                <h2 className="text-sm font-bold mb-1.5">
+                                  {children}
+                                </h2>
+                              ),
+                              h3: ({ children }) => (
+                                <h3 className="text-sm font-semibold mb-1">
+                                  {children}
+                                </h3>
+                              ),
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
+                        </div>
+                        {message.sources && message.sources.length > 0 && (
+                          <SourcesDisplay sources={message.sources} />
+                        )}
+                      </>
                     )}
                   </div>
                   {message.role === "user" && (
@@ -298,10 +354,10 @@ export default function PortfolioChatbot() {
 
               {isLoading && (
                 <div className="flex gap-2.5 justify-start">
-                  <div className="h-7 w-7 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shrink-0">
+                  <div className="h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Bot className="h-3.5 w-3.5 text-primary" />
                   </div>
-                  <div className="bg-muted/80 border border-border/30 rounded-2xl rounded-bl-md px-4 py-3">
+                  <div className="bg-card rounded-2xl rounded-bl-md px-4 py-3">
                     <div className="flex gap-1.5">
                       <span className="w-2 h-2 bg-primary/40 rounded-full animate-bounce [animation-delay:0ms]" />
                       <span className="w-2 h-2 bg-primary/40 rounded-full animate-bounce [animation-delay:150ms]" />
@@ -319,7 +375,7 @@ export default function PortfolioChatbot() {
                   <button
                     key={prompt}
                     onClick={() => handleSendMessage(prompt)}
-                    className="text-xs px-3 py-1.5 rounded-full border border-primary/20 text-primary/80 hover:bg-primary/10 hover:border-primary/30 transition-colors"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-card text-foreground/70 hover:text-foreground hover:bg-card/80 transition-colors"
                   >
                     {prompt}
                   </button>
@@ -329,7 +385,7 @@ export default function PortfolioChatbot() {
           </ScrollArea>
 
           {/* Input Area */}
-          <div className="border-t bg-background/80 p-3">
+          <div className="border-t border-border/50 p-3">
             <div className="flex gap-2 items-center">
               <Input
                 ref={inputRef}
@@ -338,7 +394,7 @@ export default function PortfolioChatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={isLoading}
-                className="flex-1 text-sm rounded-full border-border/50 bg-muted/30 focus-visible:ring-1 focus-visible:ring-primary/50 px-4"
+                className="flex-1 text-sm rounded-lg bg-card focus-visible:ring-1 focus-visible:ring-primary/50 px-3"
               />
               <Button
                 onClick={() => handleSendMessage()}
