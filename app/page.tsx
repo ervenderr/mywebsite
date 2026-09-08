@@ -176,10 +176,10 @@ export default function Home() {
                   verification with end-to-end encryption.
                 </p>
                 <p className="text-base leading-7">
-                  I have also delivered remote product work for Appstango and
-                  Center Court Capital, spanning secure deep links, iOS and
-                  serverless features, ticket-market monitoring, and secondary
-                  listing matching. I use AI-assisted engineering tools such as
+                  I have also delivered remote product work for SignalAEO and
+                  Center Court Capital, spanning answer-engine visibility,
+                  Android device-fleet automation, ticket-market monitoring,
+                  and secondary-listing matching. I use AI-assisted engineering tools such as
                   Claude Code and OpenAI Codex responsibly to accelerate
                   research, implementation, testing, and review.
                 </p>
@@ -424,23 +424,23 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
               >
                 <ExperienceItem
-                  title="Software Engineer (Contract)"
-                  company="Appstango"
-                  period="Feb 2026 - Jun 2026 · Remote"
-                  description="Delivered production features across serverless backend, iOS, and web applications for music and virtual-meeting products."
+                  title="Software Engineer"
+                  company="SignalAEO"
+                  period="May 2026 - Present · Remote"
+                  description="Build and maintain an AEO visibility platform, Android device fleet, and client operations tools for local-business search performance."
                   technologies={[
-                    "Node.js",
                     "TypeScript",
-                    "NestJS",
-                    "Swift",
-                    "AWS Lambda",
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Playwright",
+                    "Android Automation",
                     "Stripe",
-                    "Cognito",
                   ]}
                   achievements={[
-                    "Built secure deep-link destination controls and featured-content workflows across a NestJS backend and Swift iOS client",
-                    "Hardened share-page output against XSS and resolved a Stripe webhook race condition with targeted regression coverage",
-                    "Improved authentication recovery and account UX across Cognito-backed web and meeting products",
+                    "Built cross-platform AEO monitoring and rank-quality controls across ChatGPT, Gemini, Microsoft Copilot, and Google",
+                    "Developed fleet and voice-search tooling with health checks, tunnel recovery, job routing, and search-result evidence capture",
+                    "Delivered role-scoped client and admin dashboards, readable reports, Stripe billing, and provider-backed email status tracking",
                   ]}
                 />
               </ScrollAnimation>

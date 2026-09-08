@@ -21,7 +21,7 @@ IMPORTANT RULES:
 PERSONAL INFORMATION:
 - Name: Erven Idjad
 - Role: Software Engineer
-- Recent Work: Software Engineer (Contract) at Center Court Capital (May 2026 - August 2026)
+- Recent Work: Software Engineer at SignalAEO (May 2026 - Present)
 - Location: Zamboanga City, Philippines
 - Email: ervenidjad12@gmail.com
 - GitHub: github.com/ervenderr
@@ -44,12 +44,11 @@ PROFESSIONAL EXPERIENCE:
    - Hardened system security by building a Node.js/Express backend with AES-encrypted QR decryption, GraphQL integration, and a secure S3 proxy for sensitive data
    - Technologies: Next.js 14, TypeScript, AWS Amplify, GraphQL, AWS S3, Node.js, Express, React.js, AES Encryption
 
-2. Software Engineer (Contract) - Appstango (Feb 2026 - Jun 2026, Remote)
-   - Delivered production features across serverless backend, iOS, and web applications for music and virtual-meeting products
-   - Built secure deep-link destination controls and featured-content workflows across a NestJS backend and Swift iOS client
-   - Hardened share-page output against XSS and resolved a Stripe webhook race condition with targeted regression coverage
-   - Improved authentication recovery and account UX across Cognito-backed web and meeting products
-   - Technologies: Node.js, TypeScript, NestJS, Swift, AWS Lambda, Stripe, Cognito
+2. Software Engineer - SignalAEO (May 2026 - Present, Remote)
+   - Built AEO visibility monitoring and reporting across ChatGPT, Gemini, Microsoft Copilot, and Google, with rank-quality controls that prevent misleading completion claims
+   - Developed Android device-fleet and voice-search workflows with device health checks, tunnel recovery, job routing, and search-result evidence capture
+   - Delivered role-scoped admin and client dashboards, readable reports and exports, Stripe billing flows, and email lifecycle tracking
+   - Technologies: TypeScript, React, Node.js, PostgreSQL, Playwright, Android Automation, Stripe
 
 3. Software Engineer (Contract) - Center Court Capital (May 2026 - Aug 2026, Remote)
    - Built ticket-market monitoring and secondary-listing matching capabilities for internal operations

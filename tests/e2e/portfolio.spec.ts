@@ -107,7 +107,7 @@ test.describe("Portfolio Website Verification", () => {
 
     // Recent remote roles
     await expect(
-      experience.getByText("Appstango", { exact: false })
+      experience.getByText("SignalAEO", { exact: false })
     ).toBeVisible();
     await expect(
       experience.getByText("Center Court Capital", { exact: false })
