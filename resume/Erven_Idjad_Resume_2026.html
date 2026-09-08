@@ -7,28 +7,26 @@
     <style>
       @page { size: Letter; margin: 0; }
       * { box-sizing: border-box; }
-      body { margin: 0; background: #fff; color: #111827; font-family: Arial, Helvetica, sans-serif; }
-      .page { width: 8.5in; min-height: 11in; padding: .43in .52in .38in; }
-      header { border-bottom: 2px solid #1f4e79; padding-bottom: 7px; margin-bottom: 8px; }
-      h1 { margin: 0; color: #173b5c; font-size: 22px; letter-spacing: .6px; line-height: 1.05; }
-      .title { margin: 3px 0 4px; font-size: 10.5px; font-weight: 700; color: #334155; }
-      .contact { font-size: 8.1px; color: #374151; white-space: nowrap; }
-      section { margin: 8px 0 0; }
-      h2 { color: #173b5c; border-bottom: 1px solid #8ba9c3; font-size: 10.3px; letter-spacing: .8px; line-height: 1.2; margin: 0 0 5px; padding-bottom: 2px; text-transform: uppercase; }
-      .summary { font-size: 9.35px; line-height: 1.3; margin: 0; }
+      body { margin: 0; background: #fff; color: #000; font-family: "Times New Roman", Times, serif; }
+      .page { width: 8.5in; min-height: 11in; padding: .42in .55in .34in; }
+      header { margin-bottom: 12px; text-align: center; }
+      h1 { font-size: 25px; font-weight: 400; letter-spacing: .4px; line-height: 1.05; margin: 0 0 5px; }
+      .contact { font-size: 9.4px; line-height: 1.3; }
+      section { margin-top: 8px; }
+      h2 { border-bottom: 1.2px solid #000; font-size: 13px; font-weight: 400; line-height: 1.05; margin: 0 0 6px; padding-bottom: 1px; }
+      .row { align-items: baseline; display: flex; font-size: 9.75px; justify-content: space-between; line-height: 1.16; }
+      .row .right { margin-left: 15px; text-align: right; white-space: nowrap; }
+      .education { margin-bottom: 8px; }
+      .education .degree { font-size: 9.65px; }
+      .education ul { margin-top: 1px; }
       .role { margin: 0 0 6px; page-break-inside: avoid; }
-      .role-head { align-items: baseline; display: flex; font-size: 9.55px; justify-content: space-between; line-height: 1.2; }
-      .role-title { font-weight: 700; }
-      .role-company { color: #1f4e79; font-weight: 700; }
-      .role-date { color: #475569; font-size: 8.65px; font-weight: 700; text-align: right; white-space: nowrap; }
-      ul { margin: 2px 0 0 14px; padding: 0; }
-      li { font-size: 8.9px; line-height: 1.25; margin: 1.3px 0; padding-left: 1px; }
-      .skills { font-size: 8.95px; line-height: 1.35; margin: 0; }
-      .skills strong { color: #1f2937; }
-      .education { align-items: baseline; display: flex; font-size: 9px; justify-content: space-between; line-height: 1.25; }
-      .education .school { font-weight: 700; }
-      .education .date { color: #475569; font-size: 8.55px; font-weight: 700; white-space: nowrap; }
-      .education-note { font-size: 8.65px; margin: 2px 0 0; }
+      .company { font-size: 10.2px; }
+      .job { font-size: 9.7px; }
+      ul { margin: 1px 0 0 15px; padding: 0; }
+      li { font-size: 8.8px; line-height: 1.17; margin: 1.1px 0; padding-left: 1px; }
+      .skills { font-size: 9px; line-height: 1.2; margin: 0; }
+      .skills + .skills { margin-top: 1px; }
+      strong { font-weight: 700; }
       @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
     </style>
   </head>
@@ -36,63 +34,89 @@
     <main class="page">
       <header>
         <h1>ERVEN IDJAD</h1>
-        <p class="title">SOFTWARE ENGINEER · FULL-STACK, CLOUD &amp; AI-ASSISTED DEVELOPMENT</p>
         <div class="contact">+63 981 706 8891 &nbsp;|&nbsp; ervenidjad12@gmail.com &nbsp;|&nbsp; github.com/ervenderr &nbsp;|&nbsp; linkedin.com/in/erven-idjad &nbsp;|&nbsp; mywebsite-rouge-one.vercel.app</div>
       </header>
 
       <section>
-        <h2>Professional Summary</h2>
-        <p class="summary">Software Engineer with experience shipping secure web, cloud, mobile, and data-driven products for enterprise, SaaS, and local-service clients. Strong in TypeScript, React, Next.js, Node.js, AWS, testing, and technical SEO/AEO. Uses Claude Code and OpenAI Codex for AI-assisted research, implementation, testing, and code review while retaining ownership of engineering decisions and delivery.</p>
+        <h2>EDUCATION</h2>
+        <div class="education">
+          <div class="row"><span>Western Mindanao State University</span><span class="right">August 2020 – May 2024</span></div>
+          <div class="row degree"><span>Bachelor of Science in Computer Science</span><span class="right">Zamboanga City, Philippines</span></div>
+          <ul>
+            <li>Academic Award: Best in Portfolio</li>
+            <li>Coursework: OOP, Data Structures &amp; Algorithms, Software Engineering, Database Systems, AI/ML</li>
+          </ul>
+        </div>
       </section>
 
       <section>
-        <h2>Professional Experience</h2>
+        <h2>PROFESSIONAL EXPERIENCE</h2>
 
         <article class="role">
-          <div class="role-head"><span><span class="role-title">Software Engineer</span> · <span class="role-company">SparkSoft Solution, Inc.</span></span><span class="role-date">Jun 2024 – Apr 2026 · Remote</span></div>
+          <div class="row company"><span>SparkSoft Solution, Inc.</span><span class="right">Remote</span></div>
+          <div class="row job"><span>Software Engineer</span><span class="right">Jun 2024 – Apr 2026</span></div>
           <ul>
             <li>Architected and deployed a Next.js, TypeScript, and AWS Amplify attendance platform supporting 15,000+ employees.</li>
-            <li>Integrated biometric devices and automated export pipelines, reducing HR administrative processing time by 75%.</li>
-            <li>Built secure Node.js/Express services for AES-encrypted QR verification, GraphQL integration, and protected S3 image delivery.</li>
+            <li>Integrated biometric hardware and automated data-export pipelines, reducing HR processing time by 75%.</li>
+            <li>Built enterprise analytics and secure Node.js/Express services for AES-encrypted QR verification, GraphQL integration, and protected S3 delivery.</li>
           </ul>
         </article>
 
         <article class="role">
-          <div class="role-head"><span><span class="role-title">Software Engineer</span> · <span class="role-company">SignalAEO</span></span><span class="role-date">May 2026 – Present · Remote</span></div>
+          <div class="row company"><span>SignalAEO</span><span class="right">Remote</span></div>
+          <div class="row job"><span>Software Engineer (Contract)</span><span class="right">May 2026 – Present</span></div>
           <ul>
-            <li>Built AEO visibility monitoring and reporting across ChatGPT, Gemini, Microsoft Copilot, and Google, with quality controls that prevent misleading ranking claims.</li>
+            <li>Built AEO visibility monitoring and reporting across ChatGPT, Gemini, Microsoft Copilot, and Google, with rank-quality controls that prevent misleading claims.</li>
             <li>Developed Android device-fleet and voice-search workflows with health checks, tunnel recovery, job routing, and search-result evidence capture.</li>
-            <li>Delivered role-scoped admin and client dashboards, readable reports and exports, Stripe billing flows, and email lifecycle tracking.</li>
+            <li>Delivered role-scoped client and admin dashboards, readable reports and exports, Stripe billing flows, and email lifecycle tracking.</li>
           </ul>
         </article>
 
         <article class="role">
-          <div class="role-head"><span><span class="role-title">Software Engineer (Contract)</span> · <span class="role-company">Center Court Capital</span></span><span class="role-date">May 2026 – Aug 2026 · Remote</span></div>
+          <div class="row company"><span>Center Court Capital</span><span class="right">Remote</span></div>
+          <div class="row job"><span>Software Engineer (Contract)</span><span class="right">May 2026 – Aug 2026</span></div>
           <ul>
-            <li>Built typed market-data monitoring and secondary-listing matching components for ticketing operations.</li>
-            <li>Implemented section normalization, fuzzy matching, polling, and filter UI integration with unit and integration coverage.</li>
-            <li>Created Playwright capture workflows and reproducible research across multiple venue archetypes.</li>
+            <li>Built ticket-market monitoring and secondary-listing matching workflows with typed polling, section normalization, fuzzy matching, and filter UI integration.</li>
+            <li>Created Playwright capture workflows and reproducible market-data research across multiple venue types.</li>
+            <li>Added unit and integration coverage for matching, polling, and data-quality safeguards.</li>
           </ul>
         </article>
 
         <article class="role">
-          <div class="role-head"><span><span class="role-title">Technical SEO &amp; AEO Web Developer</span> · <span class="role-company">Independent</span></span><span class="role-date">Oct 2025 – Jul 2026 · Remote</span></div>
+          <div class="row company"><span>GuestPulse</span><span class="right">Remote</span></div>
+          <div class="row job"><span>AI/Analytics Engineer (Freelance)</span><span class="right">Dec 2025 – Feb 2026</span></div>
           <ul>
-            <li>Improved a Next.js local-service website’s discoverability with canonical metadata, Open Graph data, and ChildCare JSON-LD.</li>
-            <li>Shipped sitemap and robots routes, Google Search Console verification, Vercel Analytics, and image/content optimizations.</li>
+            <li>Developed an AI hotel analytics assistant using Next.js and PostgreSQL that translates natural-language questions into SQL queries and real-time visualizations.</li>
+            <li>Designed deterministic query routing and integrated Ollama/OpenAI for context-aware insights, follow-up suggestions, and natural-language understanding.</li>
+            <li>Built a semantic catalog with keyword indexing, fuzzy matching, typo detection, and paraphrase patterns for reliable intent detection.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="row company"><span>MindScript Technologies LLC</span><span class="right">Remote</span></div>
+          <div class="row job"><span>Full Stack Developer (Freelance)</span><span class="right">Sept 2025 – Nov 2025</span></div>
+          <ul>
+            <li>Engineered a medical consultation platform using Claude LLM, structured prompts, and deterministic flows for healthcare-consultant workflows.</li>
+            <li>Built FastAPI endpoints and multilingual platform features for fast data retrieval and clear AI/frontend communication.</li>
+            <li>Refactored a legacy React.js codebase into a cleaner modular architecture that improved maintainability.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <div class="row company"><span>Independent</span><span class="right">Remote</span></div>
+          <div class="row job"><span>Technical SEO &amp; AEO Web Developer</span><span class="right">Oct 2025 – Jul 2026</span></div>
+          <ul>
+            <li>Improved a Next.js local-service website with canonical metadata, Open Graph data, and ChildCare JSON-LD.</li>
+            <li>Shipped sitemap/robots routes, Search Console verification, analytics, and image/content optimization.</li>
           </ul>
         </article>
       </section>
 
       <section>
-        <h2>Skills</h2>
-        <p class="skills"><strong>Languages:</strong> TypeScript, JavaScript, Python, Node.js, Swift, PHP, HTML/CSS, SQL &nbsp; <strong>Frameworks/Cloud:</strong> React, Next.js, React Native, NestJS, Express, FastAPI, AWS Amplify, Lambda, S3, GraphQL, REST APIs &nbsp; <strong>Data/Quality:</strong> PostgreSQL, DynamoDB, MySQL, Playwright, Vitest, Git, CI/CD &nbsp; <strong>AI-Assisted Engineering:</strong> Claude Code, OpenAI Codex, LLM integration, prompt engineering &nbsp; <strong>SEO/AEO:</strong> Schema.org, JSON-LD, metadata, sitemap, robots.txt, analytics</p>
-      </section>
-
-      <section>
-        <h2>Education</h2>
-        <div class="education"><span><span class="school">Western Mindanao State University</span> · Bachelor of Science in Computer Science · Zamboanga City, Philippines</span><span class="date">Aug 2020 – May 2024</span></div>
-        <p class="education-note">Academic Award: Best in Portfolio · Coursework: OOP, Data Structures &amp; Algorithms, Software Engineering, Database Systems, AI/ML</p>
+        <h2>TECHNICAL SKILLS</h2>
+        <p class="skills"><strong>Programming Languages:</strong> TypeScript, JavaScript, Python, Node.js, PHP, HTML/CSS, SQL, FastAPI</p>
+        <p class="skills"><strong>Technologies/Frameworks:</strong> React.js, Next.js, REST APIs, AWS Amplify, S3, PostgreSQL, DynamoDB, MySQL, GraphQL, Playwright, Vitest</p>
+        <p class="skills"><strong>AI/Developer Tools:</strong> OpenAI API, Claude Code, OpenAI Codex, Ollama, LLM Integration, NLP, Prompt Engineering, Git, GitHub, Android Automation, Stripe</p>
       </section>
     </main>
   </body>
