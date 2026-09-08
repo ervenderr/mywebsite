@@ -57,13 +57,13 @@ test.describe("Portfolio Website Verification", () => {
 
     // Modal should have resume-related content
     await expect(dialog.getByText("Download")).toBeVisible();
-    await expect(dialog.getByText("Open")).toBeVisible();
+    await expect(dialog.getByRole("button", { name: "Open" })).toBeVisible();
 
     // Verify no download was triggered
     expect(downloadTriggered).toBe(false);
   });
 
-  test("GuestPulse project card appears in projects section", async ({
+  test("technical SEO project card appears in projects section", async ({
     page,
   }) => {
     // Scroll to projects section to trigger animations
@@ -72,11 +72,11 @@ test.describe("Portfolio Website Verification", () => {
 
     const projects = page.locator("#projects");
     await expect(
-      projects.getByText("GuestPulse", { exact: false })
+      projects.getByText("Mae's Childcare", { exact: false })
     ).toBeVisible({ timeout: 10000 });
   });
 
-  test("skills section shows updated AI/ML skills", async ({ page }) => {
+  test("skills section shows AI-assisted engineering tools", async ({ page }) => {
     // Scroll to skills section to trigger animations
     await page.locator("#skills").scrollIntoViewIfNeeded();
     await page.waitForTimeout(1000);
@@ -84,15 +84,11 @@ test.describe("Portfolio Website Verification", () => {
     const skills = page.locator("#skills");
 
     // Check for AI/ML category skills - these are inside SkillBadge components
-    await expect(skills.getByText("OpenAI API")).toBeVisible({
-      timeout: 10000,
-    });
-    await expect(skills.getByText("Ollama")).toBeVisible();
-    await expect(skills.getByText("LLM Integration")).toBeVisible();
-    await expect(skills.getByText("Prompt Engineering")).toBeVisible();
+    await expect(skills.getByText("Claude Code").first()).toBeVisible({ timeout: 10000 });
+    await expect(skills.getByText("OpenAI Codex").first()).toBeVisible();
   });
 
-  test("experience section shows merged SparkSoft and GuestPulse roles", async ({
+  test("experience section shows recent remote roles", async ({
     page,
   }) => {
     // Scroll to experience section
@@ -109,12 +105,12 @@ test.describe("Portfolio Website Verification", () => {
       experience.getByText("Jun 2024", { exact: false })
     ).toBeVisible();
 
-    // GuestPulse freelance role
+    // Recent remote roles
     await expect(
-      experience.getByText("GuestPulse", { exact: false })
+      experience.getByText("Appstango", { exact: false })
     ).toBeVisible();
     await expect(
-      experience.getByText("Dec 2025", { exact: false })
+      experience.getByText("Center Court Capital", { exact: false })
     ).toBeVisible();
   });
 

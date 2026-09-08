@@ -21,7 +21,7 @@ IMPORTANT RULES:
 PERSONAL INFORMATION:
 - Name: Erven Idjad
 - Role: Software Engineer
-- Most Recent Position: Software Engineer at SparkSoft Solution, Inc. (June 2024 - April 2026)
+- Recent Work: Software Engineer (Contract) at Center Court Capital (May 2026 - August 2026)
 - Location: Zamboanga City, Philippines
 - Email: ervenidjad12@gmail.com
 - GitHub: github.com/ervenderr
@@ -44,19 +44,26 @@ PROFESSIONAL EXPERIENCE:
    - Hardened system security by building a Node.js/Express backend with AES-encrypted QR decryption, GraphQL integration, and a secure S3 proxy for sensitive data
    - Technologies: Next.js 14, TypeScript, AWS Amplify, GraphQL, AWS S3, Node.js, Express, React.js, AES Encryption
 
-2. AI/Analytics Engineer (Independent Contractor) - GuestPulse (Dec 2025 - Feb 2026)
-   - Built a sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations
-   - Designed and implemented a 3-level deterministic routing engine with O(1) keyword indexing and LLM integration via Ollama/OpenAI
-   - Created dynamic chart generation with Recharts supporting bar, line, pie, and composed chart types
-   - Achieved comprehensive test coverage using Vitest with unit, integration, and E2E testing
-   - Technologies: Next.js 15, TypeScript, PostgreSQL, Ollama, OpenAI API, Recharts, Vitest, AI/NLP
+2. Software Engineer (Contract) - Appstango (Feb 2026 - Jun 2026, Remote)
+   - Delivered production features across serverless backend, iOS, and web applications for music and virtual-meeting products
+   - Built secure deep-link destination controls and featured-content workflows across a NestJS backend and Swift iOS client
+   - Hardened share-page output against XSS and resolved a Stripe webhook race condition with targeted regression coverage
+   - Improved authentication recovery and account UX across Cognito-backed web and meeting products
+   - Technologies: Node.js, TypeScript, NestJS, Swift, AWS Lambda, Stripe, Cognito
 
-3. Full Stack Developer (Independent Contractor) - MindScript Technologies LLC (Sep 2025 - Nov 2025)
-   - Engineered a specialized medical consultation platform integrating Claude LLM, designing complex system prompts and deterministic logic flows to guide AI behavior for over 100+ healthcare consultant agents
-   - Developed and managed high-performance endpoints using Python (FastAPI), ensuring rapid data retrieval and seamless communication between the LLM and the frontend
-   - Implemented global localization features, enabling the AI and platform to support multiple languages for diverse patient-consultant interactions
-   - Refactored a legacy React.js codebase, transforming spaghetti code into a clean, modular architecture, significantly improving maintainability and reducing bug reports
-   - Technologies: Python, FastAPI, React.js, Claude LLM, i18n, Localization
+3. Software Engineer (Contract) - Center Court Capital (May 2026 - Aug 2026, Remote)
+   - Built ticket-market monitoring and secondary-listing matching capabilities for internal operations
+   - Implemented typed polling and secondary-listing matching with section normalization, fuzzy matching, and filter UI integration
+   - Built Playwright capture workflows and reproducible market-data research across multiple venue archetypes
+   - Added extensive unit and integration coverage for matching, polling, and data-quality gates
+   - Technologies: TypeScript, React, Node.js, Playwright, Automated Testing, Data Integration
+
+4. Technical SEO & AEO Web Developer - Independent (Oct 2025 - Jul 2026, Remote)
+   - Improved discoverability, crawlability, and on-page quality for a local-service website built with Next.js
+   - Implemented canonical metadata, Open Graph data, and structured ChildCare schema for richer search and answer-engine context
+   - Shipped sitemap and robots routes plus Google Search Console verification to support indexing and crawlability
+   - Added Vercel Analytics and optimized image delivery and content accuracy for measurement and performance
+   - Technologies: Next.js, Technical SEO, Schema.org, JSON-LD, Sitemap, Robots, Vercel Analytics
 
 SKILLS & TECHNOLOGIES:
 
@@ -97,6 +104,8 @@ AI/ML & Data Science:
 - OpenAI API
 - Ollama
 - LLM Integration
+- Claude Code
+- OpenAI Codex
 - Prompt Engineering
 - HuggingFace
 - scikit-learn

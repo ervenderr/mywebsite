@@ -87,7 +87,7 @@ export default function Home() {
                   skills={[
                     "Python",
                     "TypeScript",
-                    "AI / ML",
+                    "AI-assisted engineering",
                     "React",
                     "Next.js",
                     "Cloud",
@@ -176,11 +176,12 @@ export default function Home() {
                   verification with end-to-end encryption.
                 </p>
                 <p className="text-base leading-7">
-                  I also freelance on AI projects — building medical
-                  consultation platforms with LLM integration and hotel
-                  analytics engines that translate natural language into SQL. I
-                  care about writing clean, tested code and shipping things that
-                  work.
+                  I have also delivered remote product work for Appstango and
+                  Center Court Capital, spanning secure deep links, iOS and
+                  serverless features, ticket-market monitoring, and secondary
+                  listing matching. I use AI-assisted engineering tools such as
+                  Claude Code and OpenAI Codex responsibly to accelerate
+                  research, implementation, testing, and review.
                 </p>
               </ScrollAnimation>
 
@@ -330,6 +331,8 @@ export default function Home() {
                       <SkillBadge key="llm" name="LLM Integration" />,
                       <SkillBadge key="nlp" name="NLP" />,
                       <SkillBadge key="prompt" name="Prompt Engineering" />,
+                      <SkillBadge key="claude" name="Claude Code" />,
+                      <SkillBadge key="codex" name="OpenAI Codex" />,
                       <SkillBadge key="hf" name="HuggingFace" />,
                       <SkillBadge key="opencv" name="OpenCV" />,
                       <SkillBadge key="yolo" name="YOLOv8" />,
@@ -356,6 +359,7 @@ export default function Home() {
                       <SkillBadge key="graphql-tool" name="GraphQL" />,
                       <SkillBadge key="github" name="GitHub" />,
                       <SkillBadge key="claude-code" name="Claude Code" />,
+                      <SkillBadge key="openai-codex" name="OpenAI Codex" />,
                       <SkillBadge key="cursor" name="Cursor" />,
                     ]}
                     className="flex flex-wrap gap-2"
@@ -420,24 +424,23 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
               >
                 <ExperienceItem
-                  title="AI/Analytics Engineer"
-                  company="GuestPulse (Independent Contractor)"
-                  period="Dec 2025 - Feb 2026"
-                  description="Developed a sophisticated AI hotel analytics assistant that translates natural language into complex SQL queries and real-time visualizations for 4 distinct hotel datasets."
+                  title="Software Engineer (Contract)"
+                  company="Appstango"
+                  period="Feb 2026 - Jun 2026 · Remote"
+                  description="Delivered production features across serverless backend, iOS, and web applications for music and virtual-meeting products."
                   technologies={[
-                    "Next.js 15",
+                    "Node.js",
                     "TypeScript",
-                    "PostgreSQL",
-                    "Ollama",
-                    "OpenAI",
-                    "Recharts",
-                    "Vitest",
+                    "NestJS",
+                    "Swift",
+                    "AWS Lambda",
+                    "Stripe",
+                    "Cognito",
                   ]}
                   achievements={[
-                    "Designed a 3-level deterministic routing engine with O(1) keyword indexing and fuzzy matching, classifying queries across 7 specialized handlers",
-                    "Integrated an LLM layer (Ollama/OpenAI) for context-aware reasoning, automated narrative insights, and proactive follow-up suggestions",
-                    "Built a semantic catalog with O(1) keyword indexing, fuzzy matching, typo detection, and 17 paraphrase patterns for robust NLU",
-                    "Maintained 200+ Vitest tests across unit and integration suites ensuring 99%+ routing accuracy for 34K+ lines of TypeScript",
+                    "Built secure deep-link destination controls and featured-content workflows across a NestJS backend and Swift iOS client",
+                    "Hardened share-page output against XSS and resolved a Stripe webhook race condition with targeted regression coverage",
+                    "Improved authentication recovery and account UX across Cognito-backed web and meeting products",
                   ]}
                 />
               </ScrollAnimation>
@@ -447,22 +450,47 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
               >
                 <ExperienceItem
-                  title="Full Stack Developer"
-                  company="MindScript Technologies LLC (Independent Contractor)"
-                  period="Sep 2025 - Nov 2025"
-                  description="Engineered a specialized medical consultation platform integrating Claude LLM with deterministic logic flows to guide AI behavior for 100+ healthcare consultant agents."
+                  title="Software Engineer (Contract)"
+                  company="Center Court Capital"
+                  period="May 2026 - Aug 2026 · Remote"
+                  description="Built reliable ticket-market monitoring and secondary-listing matching capabilities for internal operations."
                   technologies={[
-                    "Python",
-                    "FastAPI",
-                    "React.js",
-                    "Claude LLM",
-                    "i18n",
+                    "TypeScript",
+                    "React",
+                    "Playwright",
+                    "Node.js",
+                    "Automated Testing",
+                    "Data Integration",
                   ]}
                   achievements={[
-                    "Engineered a medical consultation platform integrating Claude LLM, designing complex system prompts and deterministic logic flows for 100+ healthcare consultant agents",
-                    "Developed high-performance endpoints using Python (FastAPI), ensuring rapid data retrieval and seamless LLM-frontend communication",
-                    "Implemented global localization features, enabling the AI and platform to support multiple languages for diverse patient-consultant interactions",
-                    "Refactored a legacy React.js codebase from spaghetti code into a clean, modular architecture, reducing bug reports significantly",
+                    "Implemented typed polling and secondary-listing matching with section normalization, fuzzy matching, and filter UI integration",
+                    "Built Playwright capture workflows and reproducible market-data research across multiple venue archetypes",
+                    "Added extensive unit and integration coverage for matching, polling, and data-quality gates",
+                  ]}
+                />
+              </ScrollAnimation>
+
+              <ScrollAnimation
+                variants={fadeUpVariant}
+                transition={{ delay: 0.3 }}
+              >
+                <ExperienceItem
+                  title="Technical SEO & AEO Web Developer"
+                  company="Independent"
+                  period="Oct 2025 - Jul 2026 · Remote"
+                  description="Improved discoverability, crawlability, and on-page quality for a local-service website built with Next.js."
+                  technologies={[
+                    "Next.js",
+                    "Technical SEO",
+                    "Schema.org",
+                    "JSON-LD",
+                    "Vercel Analytics",
+                    "Performance Optimization",
+                  ]}
+                  achievements={[
+                    "Implemented canonical metadata, Open Graph data, and structured ChildCare schema for richer search and answer-engine context",
+                    "Shipped sitemap and robots routes plus Google Search Console verification to support indexing and crawlability",
+                    "Improved image delivery and content accuracy while adding analytics for measurement",
                   ]}
                 />
               </ScrollAnimation>

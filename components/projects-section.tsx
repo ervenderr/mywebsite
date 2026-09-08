@@ -55,7 +55,28 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/spotme",
       role: "Full Stack Developer",
     },
-    // Project 3: TaxSync PH
+    // Project 3: Mae's Childcare
+    {
+      type: "single",
+      title: "Mae's Childcare Website",
+      description:
+        "A responsive local-service website for a licensed childcare center, improved with technical SEO and answer-engine-ready structured data, crawl controls, analytics, and accessible program information.",
+      tags: [
+        "React.js",
+        "Next.js",
+        "Technical SEO",
+        "Schema.org / JSON-LD",
+        "Sitemap & Robots",
+        "Vercel Analytics",
+        "Education",
+        "UI/UX",
+      ],
+      imageUrl: "/images/projects/maeschildcare.png",
+      demoUrl: "https://www.maeschildcare.com/",
+      repoUrl: "https://github.com/ervenderr/maeschildcare",
+      role: "Technical SEO & AEO Web Developer",
+    },
+    // Project 4: TaxSync PH
     {
       type: "single",
       title: "TaxSync PH - Tax & Business Management",
@@ -76,7 +97,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/taxsync-ph",
       role: "Full Stack Developer",
     },
-    // Project 4: MediChain
+    // Project 5: MediChain
     {
       type: "multi",
       title: "MediChain - Digital Health Wallet",
@@ -102,7 +123,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/MediChain",
       role: "Full Stack Developer",
     },
-    // Project 5: Kitcha
+    // Project 6: Kitcha
     {
       type: "single",
       title: "Kitcha - Smart Grocery & Meal Planner",
@@ -123,7 +144,7 @@ export default function ProjectsSection() {
       repoUrl: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
       role: "Full Stack Developer",
     },
-    // Project 6: QC Employee ID
+    // Project 7: QC Employee ID
     {
       type: "single",
       title: "QC Employee ID Verification System",
@@ -143,7 +164,7 @@ export default function ProjectsSection() {
       demoUrl: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
       role: "Full Stack Developer (SparkSoft)",
     },
-    // Project 7: Fake News Detection
+    // Project 8: Fake News Detection
     {
       type: "single",
       title: "AI-Powered Fake News Detection System",
@@ -163,25 +184,6 @@ export default function ProjectsSection() {
       repoUrl:
         "https://github.com/ervenderr/AI-Powered-Fake-News-Detection-System-with-Source-Credibility-Tracking",
       role: "AI/ML Engineer",
-    },
-    // Project 8: Mae's Childcare
-    {
-      type: "single",
-      title: "Mae's Childcare Website",
-      description:
-        "A modern, responsive website for a licensed childcare center featuring bilingual education programs, enrollment management, and parent communication tools.",
-      tags: [
-        "React.js",
-        "Next.js",
-        "Responsive Design",
-        "Education",
-        "Parent Portal",
-        "UI/UX",
-      ],
-      imageUrl: "/images/projects/maeschildcare.png",
-      demoUrl: "https://www.maeschildcare.com/",
-      repoUrl: "https://github.com/ervenderr/maeschildcare",
-      role: "Full Stack Developer",
     },
     // Project 9: Smart Entry Gate
     {

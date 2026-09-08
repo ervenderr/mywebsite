@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Erven Idjad | Software Engineer Portfolio",
   description:
-    "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS. Experienced in building enterprise applications and AI-powered solutions.",
+    "Software Engineer specializing in full-stack, cloud, mobile, technical SEO/AEO, and AI-assisted development with React, Next.js, TypeScript, and AWS.",
   keywords: [
     "Software Engineer",
     "Full Stack Developer",
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "AWS",
     "TypeScript",
     "JavaScript",
+    "Technical SEO",
+    "AEO",
+    "Claude Code",
+    "OpenAI Codex",
     "AI/ML",
     "Erven Idjad",
     "Portfolio",
