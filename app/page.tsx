@@ -617,7 +617,7 @@ export default function Home() {
                     </div>
                   </a>
                   <a
-                    href="https://ervenderr.vercel.app"
+                    href="https://mywebsite-rouge-one.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
@@ -628,7 +628,7 @@ export default function Home() {
                     <div>
                       <p className="text-xs text-muted-foreground">Portfolio</p>
                       <p className="text-sm font-medium">
-                        ervenderr.vercel.app
+                        mywebsite-rouge-one.vercel.app
                       </p>
                     </div>
                   </a>
@@ -681,7 +681,7 @@ export default function Home() {
               <span className="sr-only">Email</span>
             </Link>
             <Link
-              href="https://ervenderr.vercel.app"
+              href="https://mywebsite-rouge-one.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"

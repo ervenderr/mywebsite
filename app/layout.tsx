@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "Erven Idjad",
     "Portfolio",
   ],
-  authors: [{ name: "Erven Idjad", url: "https://ervenderr.vercel.app" }],
+  authors: [{ name: "Erven Idjad", url: "https://mywebsite-rouge-one.vercel.app" }],
   creator: "Erven Idjad",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ervenderr.vercel.app",
+    url: "https://mywebsite-rouge-one.vercel.app",
     title: "Erven Idjad | Software Engineer Portfolio",
     description:
       "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS.",

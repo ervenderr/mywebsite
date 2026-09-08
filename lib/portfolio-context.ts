@@ -26,7 +26,7 @@ PERSONAL INFORMATION:
 - Email: ervenidjad12@gmail.com
 - GitHub: github.com/ervenderr
 - LinkedIn: linkedin.com/in/erven-idjad
-- Portfolio Website: ervenderr.vercel.app
+- Portfolio Website: mywebsite-rouge-one.vercel.app
 
 EDUCATION:
 - Bachelor's in Computer Science
