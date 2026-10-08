@@ -7,7 +7,7 @@ export const profile = {
   phone: "+63 981 706 8891",
   github: "https://github.com/ervenderr",
   linkedin: "https://linkedin.com/in/erven-idjad",
-  site: "https://mywebsite-rouge-one.vercel.app",
+  site: "https://ervenderr.vercel.app",
   resumePdf: "/resume.pdf",
   headline: "I build AI products and automation that hold up in production.",
   summary:
