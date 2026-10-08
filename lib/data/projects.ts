@@ -1,0 +1,300 @@
+export interface Project {
+  readonly id: string;
+  readonly name: string;
+  readonly tagline: string;
+  readonly problem: string;
+  readonly built: readonly string[];
+  readonly stack: readonly string[];
+  readonly role: string;
+  readonly image?: string;
+  readonly imageAlt?: string;
+  readonly demo?: string;
+  readonly repo?: string;
+  readonly note?: string;
+  readonly featured: boolean;
+  readonly category: "AI" | "Web" | "Mobile" | "Automation" | "Research";
+}
+
+// Facts here come from each repository's README and the resume.
+export const projects: readonly Project[] = [
+  {
+    id: "guestpulse",
+    name: "GuestPulse",
+    tagline: "Ask your hotel data a question, get a chart and an answer.",
+    problem:
+      "Hotel staff could not query four separate datasets without an analyst writing SQL for them.",
+    built: [
+      "Natural-language-to-SQL assistant over 4 datasets with year-over-year comparison.",
+      "3-level deterministic router (domain, dataset, metric) so the same question always gets the same query.",
+      "LLM layer adds summaries, reasoning and follow-up suggestions, validated against the data.",
+    ],
+    stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Ollama", "OpenAI", "Recharts", "Vitest"],
+    role: "AI / Analytics Engineer",
+    image: "/images/projects/guestpulse.png",
+    imageAlt: "GuestPulse showing average daily rate by booking channel as a chart",
+    repo: "https://github.com/ervenderr/analytics-ai-assistant",
+    note: "Built during my GuestPuls contract.",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: "sentinel",
+    name: "Project Sentinel",
+    tagline: "An alarm board where the critical events are impossible to miss.",
+    problem:
+      "A security feed is mostly noise. Operators need the few real emergencies surfaced first, even when the LLM is slow or wrong.",
+    built: [
+      "Two-stage triage: instant rules first, then an LLM, with a rule-based fallback and circuit breaker.",
+      "Camera worker turns video into detection events that use the same intake path as sensor alarms.",
+      "Live operator dashboard over SSE with site-level escalation and bounded-queue backpressure.",
+    ],
+    stack: ["Python", "FastAPI", "SSE", "WebSocket", "React", "Vite", "pytest"],
+    role: "Full Stack and AI Engineer",
+    image: "/images/projects/sentinel.png",
+    imageAlt: "Project Sentinel operator dashboard under a live alarm feed",
+    repo: "https://github.com/ervenderr/monitex-sentinel",
+    note: "224 tests, 95% backend coverage. Built for a technical assessment.",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: "matchcraft",
+    name: "MatchCraft",
+    tagline: "Resume plus job post in, match score and tailored application out.",
+    problem:
+      "Tailoring a resume and cover letter to each posting is slow and easy to get wrong.",
+    built: [
+      "0-100 match score with strong matches and skill gaps, streamed live over SSE.",
+      "Tailored resume and cover letter exported as PDF.",
+      "Multi-model LLM fallback chain, SSRF-protected job scraping and rate limiting, shipped in Docker.",
+    ],
+    stack: ["Next.js 16", "React 19", "FastAPI", "OpenRouter", "PyMuPDF", "Docker"],
+    role: "Full Stack Developer",
+    image: "/images/projects/matchcraft.png",
+    imageAlt: "MatchCraft match score screen",
+    repo: "https://github.com/ervenderr/matchcraft",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: "halalchecker",
+    name: "HalalChecker AI",
+    tagline: "Scan a food label, get a halal ruling and the reason for it.",
+    problem:
+      "Ingredient lists are hard to read and rulings differ by school of thought.",
+    built: [
+      "OCR, barcode lookup and ingredient search, backed by 3,300+ seeded ingredients with vector search.",
+      "Deterministic confidence scoring: database matches 0.95, LLM-only answers capped at 0.60.",
+      "Post-validation strips any ingredient the LLM invented; known ingredients answer in about 100 ms.",
+    ],
+    stack: ["TypeScript", "Tesseract.js", "RAG", "LLM", "Open Food Facts"],
+    role: "Full Stack Developer",
+    image: "/images/projects/halalscan.png",
+    imageAlt: "HalalChecker AI mobile screen showing a classified ingredient list",
+    repo: "https://github.com/ervenderr/halalscan",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: "qc-id",
+    name: "QC Employee ID Verification",
+    tagline: "Government ID checks for 15,000+ Quezon City employees.",
+    problem:
+      "Paper IDs were easy to forge and slow to check at the point of use.",
+    built: [
+      "AES-encrypted QR codes with dual-parameter verification (employee ID plus signature).",
+      "Secure S3 proxy, rate limiting, SSRF protection, Helmet headers and timing-safe comparisons.",
+      "Mobile-first scanner with camera and upload modes, and auto-verification from URL parameters.",
+    ],
+    stack: ["Node.js", "Express", "React", "AWS S3", "GraphQL", "AES"],
+    role: "Full Stack Developer at SparkSoft",
+    image: "/images/projects/qc-id-verification.png",
+    imageAlt: "QC Employee ID verification page",
+    demo: "https://www.hrmd.quezoncity.gov.ph/verify-QC-employee-ID",
+    note: "Private government project. Source code is not public.",
+    featured: true,
+    category: "Web",
+  },
+  {
+    id: "spotme",
+    name: "SpotMe",
+    tagline: "Ask a stranger within 200 meters for a quick favor.",
+    problem:
+      "Small asks, like holding a spot in line, have no trusted way to reach someone nearby.",
+    built: [
+      "Proximity-filtered requests on a live map, with cash bounties from $1 to $100.",
+      "QR handshake proves both people are in the same place before a task completes.",
+      "Karma tiers, selfie verification and chat that destroys itself after 24 hours.",
+    ],
+    stack: ["Expo", "React Native", "TypeScript", "Supabase", "PostGIS", "Zustand"],
+    role: "Full Stack Developer",
+    image: "/images/projects/spotme.png",
+    imageAlt: "SpotMe map with nearby request pins",
+    repo: "https://github.com/ervenderr/spotme",
+    featured: true,
+    category: "Mobile",
+  },
+  {
+    id: "kitcha",
+    name: "Kitcha",
+    tagline: "Pantry, meal plan and budget in one place.",
+    problem: "Food gets wasted because pantry, meals and spending live in different places.",
+    built: [
+      "AI recipe suggestions and ingredient substitution with Gemini.",
+      "Expiry alerts, budget warnings and shopping-list generation.",
+    ],
+    stack: ["Next.js 16", "Express", "PostgreSQL", "Prisma", "Gemini"],
+    role: "Full Stack Developer",
+    image: "/images/projects/kitcha.png",
+    imageAlt: "Kitcha dashboard",
+    demo: "https://kitcha-ai.vercel.app",
+    repo: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
+    featured: false,
+    category: "AI",
+  },
+  {
+    id: "medichain",
+    name: "MediChain",
+    tagline: "A health wallet with time-limited QR sharing.",
+    problem: "Patients cannot easily share records safely with a new clinic.",
+    built: [
+      "Medications, allergies, labs and vaccinations with emergency access.",
+      "JWT auth, hCaptcha and rate limiting on an ASP.NET Core 8 API.",
+    ],
+    stack: ["Next.js 15", "ASP.NET Core 8", "PostgreSQL", "React Query"],
+    role: "Full Stack Developer",
+    image: "/images/projects/medi1.png",
+    imageAlt: "MediChain dashboard",
+    demo: "https://medichain-health.vercel.app",
+    repo: "https://github.com/ervenderr/MediChain",
+    featured: false,
+    category: "Web",
+  },
+  {
+    id: "taxsync",
+    name: "TaxSync PH",
+    tagline: "Tax and bookkeeping for Philippine sellers.",
+    problem: "Small sellers track sales across platforms and calculate tax by hand.",
+    built: [
+      "OCR receipt scanning, expense tracking and automated tax calculations.",
+      "Analytics dashboards across sales platforms.",
+    ],
+    stack: ["Next.js 16", "Supabase", "Tesseract.js", "Recharts"],
+    role: "Full Stack Developer",
+    image: "/images/projects/taxsync.png",
+    imageAlt: "TaxSync PH dashboard",
+    repo: "https://github.com/ervenderr/taxsync-ph",
+    featured: false,
+    category: "Web",
+  },
+  {
+    id: "ervenwallet",
+    name: "ErvenWallet",
+    tagline: "Offline-first iOS finance tracker with natural-language quick-add.",
+    problem: "Most finance apps want an account and a server. This one keeps all data on the device.",
+    built: [
+      "Type 'lunch 250' or 'uber 120 yesterday' and a rules-based parser files it.",
+      "Credit-card statement math, recurring rules, debts, goals and Swift Charts reports.",
+    ],
+    stack: ["Swift", "SwiftUI", "Swift Charts"],
+    role: "Solo developer",
+    repo: "https://github.com/ervenderr/ervenwallet",
+    featured: false,
+    category: "Mobile",
+  },
+  {
+    id: "habitos",
+    name: "HabitOS",
+    tagline: "Offline-first habit tracker you can install as a PWA.",
+    problem: "Habit apps break the streak when the connection drops.",
+    built: [
+      "IndexedDB offline storage, push reminders, heatmap calendar and discipline score.",
+    ],
+    stack: ["Next.js 16", "Prisma", "PostgreSQL", "NextAuth", "PWA"],
+    role: "Full Stack Developer",
+    demo: "https://habitos-five.vercel.app",
+    repo: "https://github.com/ervenderr/habitos",
+    featured: false,
+    category: "Web",
+  },
+  {
+    id: "nurse-quest",
+    name: "Nurse Quest",
+    tagline: "Study companion for SNLE, PNLE and NCLEX-RN.",
+    problem: "Exam prep mixes country tracks and leans on copied question banks.",
+    built: [
+      "Original question templates with controlled clinical contexts, kept separate per country track.",
+      "Static export with progress stored locally, degrading cleanly when storage is blocked.",
+    ],
+    stack: ["Next.js 16", "Static export", "localStorage"],
+    role: "Full Stack Developer",
+    demo: "https://snle-study-compass.vercel.app",
+    repo: "https://github.com/ervenderr/snle-study-compass",
+    featured: false,
+    category: "Web",
+  },
+  {
+    id: "linkedin-intel",
+    name: "LinkedIn Profile Intelligence",
+    tagline: "Turn a profile into a sales brief and messaging plan.",
+    problem: "Sales reps research each prospect by hand before reaching out.",
+    built: [
+      "Profile PDF ingestion, AI personality brief, talking points and email templates.",
+      "GPT-4 with Gemini as backup, plus an admin view of usage and API cost.",
+    ],
+    stack: ["Next.js 14", "FastAPI", "PostgreSQL", "OpenAI", "Gemini"],
+    role: "Full Stack Developer",
+    repo: "https://github.com/ervenderr/linkedIn-profile-intelligence-webapp",
+    featured: false,
+    category: "AI",
+  },
+  {
+    id: "maes",
+    name: "Mae's Childcare",
+    tagline: "A bilingual childcare site that search and answer engines can read.",
+    problem: "A local service site was hard for search engines to understand.",
+    built: [
+      "Canonical metadata, Open Graph, ChildCare schema, sitemap and robots routes.",
+      "Search Console verification and Vercel Analytics for measurement.",
+    ],
+    stack: ["Next.js", "JSON-LD", "Technical SEO"],
+    role: "Technical SEO and web developer",
+    image: "/images/projects/maeschildcare.png",
+    imageAlt: "Mae's Childcare homepage",
+    demo: "https://www.maeschildcare.com",
+    repo: "https://github.com/ervenderr/maeschildcare",
+    featured: false,
+    category: "Web",
+  },
+  {
+    id: "fraud-detection",
+    name: "Job Posting Fraud Detection",
+    tagline: "Classify fake job posts with NLP, 92% accurate.",
+    problem: "Fraudulent listings look like real ones.",
+    built: ["Feature extraction on posting text with a scikit-learn classifier."],
+    stack: ["Python", "scikit-learn", "nltk", "pandas", "Flask"],
+    role: "Machine Learning Engineer",
+    image: "/images/projects/fraud-detection.png",
+    imageAlt: "Fraud detection results",
+    repo: "https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning",
+    featured: false,
+    category: "Research",
+  },
+  {
+    id: "entry-gate",
+    name: "Smart Entry Gate (Thesis)",
+    tagline: "Face and license-plate recognition at a gate, 95% accurate.",
+    problem: "Manual gate logging is slow and unreliable.",
+    built: ["OpenCV, YOLOv8 and Tesseract OCR feeding an SQLite access log."],
+    stack: ["Python", "OpenCV", "YOLOv8", "Tesseract", "SQLite"],
+    role: "AI / ML Engineer",
+    image: "/images/projects/smart-entry.png",
+    imageAlt: "Smart entry gate recognition output",
+    repo: "https://github.com/ervenderr/Automated-Security-System-using-Face-and-License-Plate-Recognition",
+    featured: false,
+    category: "Research",
+  },
+];
+
+export const featuredProjects = projects.filter((p) => p.featured);
+export const archiveProjects = projects.filter((p) => !p.featured);

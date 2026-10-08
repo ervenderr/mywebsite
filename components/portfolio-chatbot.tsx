@@ -41,13 +41,13 @@ interface Message {
 const INITIAL_MESSAGE: Message = {
   role: "assistant",
   content:
-    "Hi! I'm Erven's AI assistant. I can tell you about:\n\n- **Professional experience** & current role\n- **Projects** like SpotMe, TaxSync PH, MediChain, and more\n- **Technical skills** & technologies\n- **Education** & background\n\nWhat would you like to know?",
+    "Hi, I can answer questions about Erven's experience, projects and skills. Try one of the prompts below, or ask your own.",
 };
 
 const QUICK_PROMPTS = [
-  "What projects has Erven built?",
-  "What's his tech stack?",
-  "Tell me about his experience",
+  "What is Erven working on now?",
+  "Which project best shows his AI work?",
+  "Is he a fit for a senior full-stack role?",
 ];
 
 function SourcesDisplay({ sources }: { sources: Source[] }) {
@@ -228,7 +228,7 @@ export default function PortfolioChatbot() {
                     Erven&apos;s AI Assistant
                   </DialogTitle>
                   <DialogDescription className="text-xs mt-0">
-                    Powered by RAG + DeepSeek
+                    Answers from this portfolio's content
                   </DialogDescription>
                 </div>
               </div>
