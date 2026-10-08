@@ -12,7 +12,7 @@ export default function Work() {
           Selected work, with the problem each one solved
         </h2>
         <p className="mt-4 max-w-[60ch] text-muted-foreground">
-          Six projects I would walk you through in an interview. Pick one to see what was built and
+          Seven projects I would walk you through in an interview. Pick one to see what was built and
           what it runs on.
         </p>
 
