@@ -1,157 +1,72 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("Portfolio Website Verification", () => {
+test.describe("Portfolio", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { waitUntil: "domcontentloaded" });
-    // Wait for client-side hydration
-    await page.waitForTimeout(2000);
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto("/", { waitUntil: "networkidle" });
   });
 
-  test("all main sections render on the page", async ({ page }) => {
-    // Hero section
-    await expect(page.getByText("Erven Idjad", { exact: true }).first()).toBeVisible();
-
-    // All section IDs exist
-    await expect(page.locator("#about")).toBeAttached();
-    await expect(page.locator("#skills")).toBeAttached();
-    await expect(page.locator("#experience")).toBeAttached();
-    await expect(page.locator("#projects")).toBeAttached();
-    await expect(page.locator("#contact")).toBeAttached();
-  });
-
-  test("header navigation links exist and are visible", async ({ page }) => {
-    const header = page.locator("header");
-    await expect(header).toBeVisible();
-
-    // Check nav links exist (desktop + mobile = 2 each, use .first())
-    await expect(page.locator('header a[href="#about"]').first()).toBeAttached();
-    await expect(page.locator('header a[href="#skills"]').first()).toBeAttached();
-    await expect(page.locator('header a[href="#experience"]').first()).toBeAttached();
-    await expect(page.locator('header a[href="#projects"]').first()).toBeAttached();
-    await expect(page.locator('header a[href="#contact"]').first()).toBeAttached();
-  });
-
-  test("resume button opens modal (not download)", async ({ page }) => {
-    // Ensure desktop viewport so the Resume button is visible
-    await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto("/", { waitUntil: "domcontentloaded" });
-    await page.waitForTimeout(3000);
-
-    // Listen for any downloads - there should be none
-    let downloadTriggered = false;
-    page.on("download", () => {
-      downloadTriggered = true;
-    });
-
-    // Click the Resume button in the header using role selector
-    const resumeBtn = page.locator("header").getByRole("button", { name: "Resume" });
-    await expect(resumeBtn).toBeVisible({ timeout: 5000 });
-    await resumeBtn.click({ force: true });
-
-    // Wait and check for dialog - Radix Dialog portal may use role="dialog" or data attributes
-    await page.waitForTimeout(2000);
-
-    // Try multiple selectors for the dialog
-    const dialog = page.locator('[role="dialog"], [data-state="open"][data-radix-dialog-content]').first();
-    await expect(dialog).toBeVisible({ timeout: 10000 });
-
-    // Modal should have resume-related content
-    await expect(dialog.getByText("Download")).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Open" })).toBeVisible();
-
-    // Verify no download was triggered
-    expect(downloadTriggered).toBe(false);
-  });
-
-  test("technical SEO project card appears in projects section", async ({
-    page,
-  }) => {
-    // Scroll to projects section to trigger animations
-    await page.locator("#projects").scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    const projects = page.locator("#projects");
-    await expect(
-      projects.getByText("Mae's Childcare", { exact: false })
-    ).toBeVisible({ timeout: 10000 });
-  });
-
-  test("skills section shows AI-assisted engineering tools", async ({ page }) => {
-    // Scroll to skills section to trigger animations
-    await page.locator("#skills").scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    const skills = page.locator("#skills");
-
-    // Check for AI/ML category skills - these are inside SkillBadge components
-    await expect(skills.getByText("Claude Code").first()).toBeVisible({ timeout: 10000 });
-    await expect(skills.getByText("OpenAI Codex").first()).toBeVisible();
-  });
-
-  test("experience section shows recent remote roles", async ({
-    page,
-  }) => {
-    // Scroll to experience section
-    await page.locator("#experience").scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    const experience = page.locator("#experience");
-
-    // SparkSoft merged role
-    await expect(
-      experience.getByText("SparkSoft", { exact: false })
-    ).toBeVisible({ timeout: 10000 });
-    await expect(
-      experience.getByText("Jun 2024", { exact: false })
-    ).toBeVisible();
-
-    // Recent remote roles
-    await expect(
-      experience.getByText("SignalAEO", { exact: false })
-    ).toBeVisible();
-    await expect(
-      experience.getByText("Center Court Capital", { exact: false })
-    ).toBeVisible();
-  });
-
-  test("hero section displays name and role correctly", async ({ page }) => {
-    await expect(page.getByText("Erven Idjad", { exact: true }).first()).toBeVisible();
-    await expect(page.getByText("Software Engineer").first()).toBeVisible();
-    await expect(page.getByText("Get in touch").first()).toBeVisible();
-    await expect(page.getByText("View my work").first()).toBeVisible();
-  });
-
-  test("projects section shows See More and can expand", async ({ page }) => {
-    await page.locator("#projects").scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1000);
-
-    const projects = page.locator("#projects");
-    const seeMore = projects.getByText("See More Projects");
-    await expect(seeMore).toBeVisible({ timeout: 10000 });
-
-    // Click to expand
-    await seeMore.click();
-    await page.waitForTimeout(500);
-
-    // Should now show "Show Less"
-    await expect(projects.getByText("Show Less")).toBeVisible();
-  });
-
-  test("full page screenshot for visual review", async ({ page }) => {
-    // Scroll slowly through the page to trigger all animations
-    const sections = ["#about", "#skills", "#experience", "#projects", "#contact"];
-    for (const section of sections) {
-      await page.locator(section).scrollIntoViewIfNeeded();
-      await page.waitForTimeout(800);
+  test("renders every section a recruiter needs", async ({ page }) => {
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("AI products");
+    for (const id of ["brief", "experience", "work", "skills", "contact"]) {
+      await expect(page.locator(`#${id}`)).toBeAttached();
     }
+  });
 
-    // Scroll back to top
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(500);
+  test("resume download points at the PDF", async ({ page }) => {
+    const link = page.getByRole("link", { name: "Download resume" }).first();
+    await expect(link).toHaveAttribute("href", "/resume.pdf");
+    const response = await page.request.get("/resume.pdf");
+    expect(response.ok()).toBe(true);
+  });
 
-    await page.screenshot({
-      path: "tests/e2e/artifacts/full-page.png",
-      fullPage: true,
+  test("experience lists all five roles from the resume", async ({ page }) => {
+    const roles = page.locator("#experience details");
+    await expect(roles).toHaveCount(5);
+    await expect(roles.first()).toHaveAttribute("open", "");
+    await expect(page.locator("#experience")).toContainText("Appstango");
+    await expect(page.locator("#experience")).toContainText("MindScript Technologies LLC");
+  });
+
+  test("project showcase switches the selected project", async ({ page }) => {
+    await page.getByRole("button", { name: /Project Sentinel/ }).click();
+    await expect(page.locator("#work article h3")).toHaveText("Project Sentinel");
+  });
+
+  test("archive filter narrows the list", async ({ page }) => {
+    const before = await page.locator("#work h4").count();
+    await page.getByRole("button", { name: "Research", exact: true }).click();
+    const after = await page.locator("#work h4").count();
+    expect(after).toBeGreaterThan(0);
+    expect(after).toBeLessThan(before);
+  });
+
+  test("header resume button opens the viewer dialog", async ({ page }) => {
+    await page.locator("header").getByRole("button", { name: "Resume" }).click();
+    await expect(page.locator('[role="dialog"]')).toBeVisible();
+  });
+
+  test("chat API validates input", async ({ request }) => {
+    const response = await request.post("/api/chat", { data: { message: "" } });
+    expect(response.status()).toBe(400);
+  });
+
+  test("chat API answers even when the model is unavailable", async ({ request }) => {
+    const response = await request.post("/api/chat", {
+      data: { message: "What is Erven working on now?" },
     });
+    expect(response.ok()).toBe(true);
+    const body = await response.json();
+    expect(body.success).toBe(true);
+    expect(body.response).toContain("Appstango");
+  });
+
+  test("mobile layout has no horizontal overflow", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/", { waitUntil: "networkidle" });
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - window.innerWidth
+    );
+    expect(overflow).toBe(0);
   });
 });

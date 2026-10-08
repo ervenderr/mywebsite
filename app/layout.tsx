@@ -1,65 +1,60 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
+import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/smooth-scroll";
+import { profile } from "@/lib/data/profile";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+
+const TITLE = `${profile.name} | Software and AI Engineer`;
+const DESCRIPTION =
+  "Software and AI engineer in the Philippines. Built an attendance platform for 15,000+ employees, LLM analytics assistants and Android automation. React, Next.js, TypeScript, Python.";
 
 export const metadata: Metadata = {
-  title: "Erven Idjad | Software Engineer Portfolio",
-  description:
-    "Software Engineer specializing in full-stack, cloud, mobile, technical SEO/AEO, and AI-assisted development with React, Next.js, TypeScript, and AWS.",
+  metadataBase: new URL(profile.site),
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     "Software Engineer",
+    "AI Engineer",
     "Full Stack Developer",
-    "React.js",
+    "LLM",
     "Next.js",
-    "AWS",
     "TypeScript",
-    "JavaScript",
-    "Technical SEO",
-    "AEO",
-    "Claude Code",
-    "OpenAI Codex",
-    "AI/ML",
+    "Python",
+    "FastAPI",
+    "Android automation",
     "Erven Idjad",
-    "Portfolio",
   ],
-  authors: [{ name: "Erven Idjad", url: "https://mywebsite-rouge-one.vercel.app" }],
-  creator: "Erven Idjad",
+  authors: [{ name: profile.name, url: profile.site }],
+  creator: profile.name,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mywebsite-rouge-one.vercel.app",
-    title: "Erven Idjad | Software Engineer Portfolio",
-    description:
-      "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS.",
-    siteName: "Erven Idjad Portfolio",
+    url: profile.site,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: `${profile.name} Portfolio`,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Erven Idjad | Software Engineer Portfolio",
-    description:
-      "Software Engineer specializing in full-stack development with React.js, Next.js, TypeScript, and AWS.",
-    creator: "@ervenderr",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification code
-  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  robots: { index: true, follow: true },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.role,
+  url: profile.site,
+  email: profile.email,
+  address: { "@type": "PostalAddress", addressLocality: "Zamboanga City", addressCountry: "PH" },
+  alumniOf: "Western Mindanao State University",
+  sameAs: [profile.github, profile.linkedin],
 };
 
 export default function RootLayout({
@@ -69,13 +64,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
+      <body className={`${geist.variable} font-sans`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <Toaster />
           <Sonner />
@@ -85,4 +79,3 @@ export default function RootLayout({
     </html>
   );
 }
-import "./globals.css";

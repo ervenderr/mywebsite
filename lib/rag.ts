@@ -4,7 +4,7 @@ export interface ChunkData {
   category: "personal" | "education" | "experience" | "skills" | "project" | "expertise";
   title: string;
   content: string;
-  embedding: number[];
+  embedding?: number[];
 }
 
 export interface RetrievedChunk extends ChunkData {
@@ -31,6 +31,7 @@ const STOPWORDS = new Set([
   "he", "she", "his", "her", "they", "them", "their", "we", "us", "our",
   "you", "your", "me", "my", "i", "about", "tell", "know", "like",
   "get", "got", "make", "made", "also", "well", "much", "many",
+  "erven", "idjad", "ervens",
 ]);
 
 /**
