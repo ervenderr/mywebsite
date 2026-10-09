@@ -22,7 +22,7 @@ PERSONAL INFORMATION:
 - Name: Erven Idjad
 - Role: Software Engineer
 - Recent Work: Software Engineer at SignalAEO (May 2026 - Present)
-- Location: Zamboanga City, Philippines
+- Location: Metro Manila, Philippines
 - Email: ervenidjad12@gmail.com
 - GitHub: github.com/ervenderr
 - LinkedIn: linkedin.com/in/erven-idjad
