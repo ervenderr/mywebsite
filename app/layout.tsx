@@ -52,7 +52,7 @@ const personJsonLd = {
   jobTitle: profile.role,
   url: profile.site,
   email: profile.email,
-  address: { "@type": "PostalAddress", addressLocality: "Zamboanga City", addressCountry: "PH" },
+  address: { "@type": "PostalAddress", addressLocality: "Metro Manila", addressCountry: "PH" },
   alumniOf: "Western Mindanao State University",
   sameAs: [profile.github, profile.linkedin],
 };

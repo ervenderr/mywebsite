@@ -1,7 +1,7 @@
 export const profile = {
   name: "Erven Idjad",
   role: "Software & AI Engineer",
-  location: "Zamboanga City, Philippines",
+  location: "Metro Manila, Philippines",
   workMode: "Remote, contract or full-time",
   email: "ervenidjad12@gmail.com",
   phone: "+63 981 706 8891",
