@@ -110,7 +110,7 @@ export const projects: readonly Project[] = [
     stack: ["Next.js 16", "TypeScript", "Express", "PostgreSQL", "Prisma", "Gemini", "Zustand"],
     role: "Full Stack Developer",
     image: "/images/projects/kitcha.png",
-    imageAlt: "Kitcha dashboard showing pantry, meal plan and budget",
+    imageAlt: "Kitcha on a phone: landing page, dashboard with budget status, and pantry",
     demo: "https://kitcha-ai.vercel.app",
     repo: "https://github.com/ervenderr/Smart-Grocery-Meal-Planner",
     featured: true,
