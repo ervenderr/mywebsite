@@ -1,5 +1,5 @@
 const DAHL_ENDPOINT = "https://inference.dahl.global/v1/chat/completions";
-const DAHL_MODEL = "MiniMaxAI/MiniMax-M2.7";
+const DAHL_MODEL = "deepseek-ai/DeepSeek-V4-Flash-0731";
 const REQUEST_TIMEOUT_MS = 55_000;
 
 export interface ChatTurn {
@@ -21,7 +21,7 @@ export class DahlError extends Error {
   }
 }
 
-// MiniMax is a reasoning model and may prefix its answer with <think>...</think>.
+// Some Dahl models (e.g. MiniMax) are reasoning models and may prefix its answer with <think>...</think>.
 export function stripReasoning(text: string): string {
   return text
     .replace(/<think>[\s\S]*?<\/think>/gi, "")
