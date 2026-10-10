@@ -1,6 +1,6 @@
 const DAHL_ENDPOINT = "https://inference.dahl.global/v1/chat/completions";
 const DAHL_MODEL = "MiniMaxAI/MiniMax-M2.7";
-const REQUEST_TIMEOUT_MS = 30_000;
+const REQUEST_TIMEOUT_MS = 55_000;
 
 export interface ChatTurn {
   readonly role: "system" | "user" | "assistant";
@@ -44,7 +44,7 @@ export async function completeWithDahl(messages: readonly ChatTurn[]): Promise<s
     body: JSON.stringify({
       model: DAHL_MODEL,
       messages,
-      temperature: 0.4,
+      temperature: 0.2,
       max_tokens: 1500,
     }),
     signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),

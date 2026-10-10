@@ -76,6 +76,6 @@ export const careerOverview: string = [
   `${profile.name}, ${profile.role}. ${profile.summary}`,
   `Highlights: ${proofPoints.map((p) => `${p.value} ${p.label}`).join("; ")}.`,
   "Career, newest first:",
-  ...experience.map((r) => `- ${r.title} at ${r.company} (${r.period}, ${r.kind})`),
+  ...experience.map((r) => `- ${r.title} at ${r.company} (${r.period}, ${r.kind}): ${r.summary}`),
   `Featured projects: ${projects.filter((p) => p.featured).map((p) => p.name).join(", ")}.`,
 ].join("\n");
