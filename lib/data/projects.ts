@@ -117,6 +117,26 @@ export const projects: readonly Project[] = [
     category: "AI",
   },
   {
+    id: "clipper",
+    name: "Clipper",
+    tagline: "Paste a YouTube link, get ranked, captioned Shorts ready to review and schedule.",
+    problem:
+      "Turning one long video into Shorts means hours of scrubbing, cropping to 9:16 and captioning by hand.",
+    built: [
+      "Pipeline that downloads the video, transcribes it with Whisper on Apple Silicon and has an LLM pick and rank the best moments.",
+      "Renders 1080x1920 clips with a face-centered crop and per-word highlighted captions.",
+      "Local review app where each clip's title and description can be edited before anything is posted.",
+      "Scheduled private uploads through the YouTube Data API, with a daily quota budget and a rule that nothing uploads until you approve it.",
+    ],
+    stack: ["Python", "FastAPI", "Whisper (MLX)", "OpenCV", "ffmpeg", "yt-dlp", "YouTube Data API"],
+    role: "Solo developer",
+    image: "/images/projects/clipper.png",
+    imageAlt: "Clipper review screen with ranked vertical clips, each with a title, score and Post button",
+    repo: "https://github.com/ervenderr/clipper",
+    featured: true,
+    category: "AI",
+  },
+  {
     id: "qc-id",
     name: "QC Employee ID Verification",
     tagline: "Government ID checks for 15,000+ Quezon City employees.",
