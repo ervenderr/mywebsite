@@ -55,6 +55,7 @@ export default function WorkShowcase({ items }: WorkShowcaseProps) {
               src={active.image}
               alt={active.imageAlt ?? `${active.name} screenshot`}
               fill
+              unoptimized={active.image.endsWith(".gif")}
               sizes="(min-width: 1024px) 70vw, 100vw"
               className={cn(
                 "bg-card",
