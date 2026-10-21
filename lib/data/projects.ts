@@ -18,6 +18,26 @@ export interface Project {
 // Facts here come from each repository's README and the resume.
 export const projects: readonly Project[] = [
   {
+    id: "roofdeskai",
+    name: "RoofDesk AI",
+    tagline: "An AI agent that answers roofing enquiries, qualifies leads and books inspections, with evals to prove it works.",
+    problem:
+      "Small roofing companies lose jobs when enquiries sit unanswered while the crew is on a roof, and a chatbot that can book a bad slot is worse than none.",
+    built: [
+      "Chat agent that qualifies leads, checks a calendar, books roof inspections, updates the CRM and hands off to a human. The model proposes; plain code validates and is the only thing allowed to book.",
+      "80-scenario eval suite run on a local 8B model: 80/80 passed, 100% booking validity, 100% escalation precision and recall. Self-written regression suite, with the failures and fixes documented.",
+      "Outbound prospecting engine: Google Maps scraper to scored prospects to AI-drafted emails, with approval, daily caps, send windows, opt-out and a suppression list enforced in code.",
+      "Five n8n workflows for the lead flow, follow-ups, escalation alerts and reports, plus a Next.js dashboard and a provider fallback chain across local and hosted models.",
+    ],
+    stack: ["FastAPI", "Python", "PostgreSQL", "pgvector", "n8n", "Next.js", "Ollama"],
+    role: "Full Stack and AI Engineer",
+    image: "/images/projects/roofdeskai.png",
+    imageAlt: "RoofDesk AI landing page with a live demo chat for a sample roofing company",
+    demo: "https://roofdeskai.com",
+    featured: true,
+    category: "AI",
+  },
+  {
     id: "guestpulse",
     name: "GuestPulse",
     tagline: "Ask your hotel data a question, get a chart and an answer.",
