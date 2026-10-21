@@ -158,7 +158,7 @@ FEATURED PROJECTS:
    - Demo: https://medichain-health.vercel.app/
    - GitHub: https://github.com/ervenderr/MediChain
 
-6. Kitcha - Smart Grocery & Meal Planner
+6. Kumaun - Smart Grocery & Meal Planner
    - Role: Full Stack Developer
    - Description: A full-stack, AI-powered grocery and meal planning application that helps users manage pantry inventory, plan meals, track budgets, and reduce food waste. Features AI-powered recipe suggestions using Google Gemini AI, automated meal planning, smart notifications for expiring items and budget warnings, shopping list generation, and comprehensive analytics dashboard. The application uses Next.js 16 for the frontend and Node.js with Express for the backend, with PostgreSQL database managed through Prisma ORM. Includes advanced features like expiration monitoring, budget tracking with real-time alerts, AI-powered ingredient substitution, and dietary preference learning.
    - Technologies: TypeScript, Next.js 16, Node.js 20.x, Express, PostgreSQL, Prisma, Google Gemini AI, React Hook Form, Zod, Zustand, Tailwind CSS, JWT Authentication, bcrypt
