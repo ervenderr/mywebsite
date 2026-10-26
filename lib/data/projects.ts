@@ -18,6 +18,26 @@ export interface Project {
 // Facts here come from each repository's README and the resume.
 export const projects: readonly Project[] = [
   {
+    id: "built-by-agents",
+    name: "Built by Agents",
+    tagline: "A terminal factory that turns a topic into a fact-checked, narrated, animated YouTube video.",
+    problem:
+      "A faceless explainer channel needs a steady stream of videos, and each one means research, a script, a voice, animation and fact-checking.",
+    built: [
+      "Pipeline of Claude Code agents run from one terminal command: a planner picks the topic, then script, facts, voice, build, verify and metadata stages each get their own prompt.",
+      "A second, independent agent tries to break every claim, and each video is checked against its sources before it can be approved.",
+      "Animations written as code with HyperFrames and narrated by a local synthetic voice, for Shorts and 4 to 10 minute long-form videos.",
+      "Nothing uploads without approval: the review step plays each video, then uploads it private and scheduled through the YouTube API.",
+    ],
+    stack: ["Python", "Claude Code agents", "HyperFrames", "Local TTS voice", "YouTube Data API"],
+    role: "Solo developer",
+    image: "/images/projects/built-by-agents.gif",
+    imageAlt: "Built by Agents factory: one command, planner, script, fact-check and finished video",
+    repo: "https://github.com/ervenderr/built-by-agents",
+    featured: true,
+    category: "Automation",
+  },
+  {
     id: "roofdeskai",
     name: "RoofDesk AI",
     tagline: "An AI agent that answers roofing enquiries, qualifies leads and books inspections, with evals to prove it works.",
@@ -176,6 +196,46 @@ export const projects: readonly Project[] = [
     repo: "https://github.com/ervenderr/clipper",
     featured: true,
     category: "AI",
+  },
+  {
+    id: "ai-agent-kit",
+    name: "AI Agent Kit",
+    tagline: "A GitHub template for a small, production-shaped AI agent with evals and guardrails built in.",
+    problem:
+      "Most agent demos skip what makes an agent safe to run: limits, tool permissions, evals and a way to stop it.",
+    built: [
+      "Bounded agent loop with caps on steps, tools, time, tokens and cost, parallel tool calls, and a Stop button that cancels the in-flight LLM call.",
+      "Tool registry that checks authorization, validates arguments, runs the tool and truncates the result, using the plain Anthropic SDK with no agent framework.",
+      "Golden, adversarial and replayed evals that run without an API key, plus CI for lint, types, tests, gitleaks and dependency audits.",
+      "Claude Code setup included: skills for new tools, evals and security review, and hooks that block destructive shell commands and key-shaped content.",
+    ],
+    stack: ["FastAPI", "Python", "PostgreSQL", "Next.js", "Anthropic SDK", "Docker"],
+    role: "Solo developer",
+    image: "/images/projects/ai-agent-kit.png",
+    imageAlt: "AI Agent Kit loop: caps check, LLM call, tool registry and final answer",
+    repo: "https://github.com/ervenderr/ai-agent-kit",
+    featured: true,
+    category: "AI",
+  },
+  {
+    id: "dev-guard",
+    name: "dev-guard",
+    tagline: "A read-only scanner for the config files npm and PyPI supply-chain worms hide in.",
+    problem:
+      "Supply-chain worms persist in dev config such as Claude hooks, editor tasks and CI workflows, often before any advisory or CVE exists.",
+    built: [
+      "Five checks: suspicious Claude hooks, VS Code auto-run tasks, malicious npm install scripts, risky GitHub Actions steps and known IOC strings.",
+      "Read-only by design: it only parses text, never executes scanned content, makes no network calls itself and never prints secret values.",
+      "Exit codes and JSON output for scripting, plus an optional n8n and Telegram alert that fires only for new high findings.",
+      "Documents its own limits: it is a pattern scanner, so obfuscation can evade it and the IOC list needs updating.",
+    ],
+    stack: ["Python", "n8n", "Telegram", "Shell"],
+    role: "Solo developer",
+    image: "/images/projects/dev-guard.png",
+    imageAlt: "dev-guard terminal output listing high and medium findings in a malicious Claude hooks fixture",
+    repo: "https://github.com/ervenderr/dev-guard",
+    featured: true,
+    category: "Automation",
   },
   {
     id: "qc-id",
