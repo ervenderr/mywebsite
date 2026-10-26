@@ -33,12 +33,28 @@ test.describe("Portfolio", () => {
     await expect(page.locator("#work article h3")).toHaveText("Project Sentinel");
   });
 
-  test("archive filter narrows the list", async ({ page }) => {
+  test("type filter narrows the project list", async ({ page }) => {
     const before = await page.locator("#work h4").count();
-    await page.getByRole("button", { name: "Research", exact: true }).click();
+    await page.getByRole("button", { name: /^Research \d/ }).click();
     const after = await page.locator("#work h4").count();
     expect(after).toBeGreaterThan(0);
     expect(after).toBeLessThan(before);
+    await expect(page.getByText(/^Showing \d+ of \d+ projects$/)).toBeVisible();
+  });
+
+  test("tool filter finds projects built with Swift and can be cleared", async ({ page }) => {
+    await page.getByRole("button", { name: /^Swift \d/ }).click();
+    await expect(page.locator("#work article h3")).toHaveText("Hinang");
+    await expect(page.locator("#work h4")).toContainText(["ErvenWallet"]);
+    await expect(page.locator("#work")).not.toContainText("GuestPulse");
+    await page.getByRole("button", { name: "Clear filters" }).click();
+    await expect(page.locator("#work")).toContainText("GuestPulse");
+  });
+
+  test("conflicting filters show an empty state", async ({ page }) => {
+    await page.getByRole("button", { name: /^Research \d/ }).click();
+    await page.getByRole("button", { name: /^Swift \d/ }).click();
+    await expect(page.getByText("No project matches both filters")).toBeVisible();
   });
 
   test("header resume button opens the viewer dialog", async ({ page }) => {

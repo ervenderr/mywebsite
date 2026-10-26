@@ -1,8 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { archiveProjects, featuredProjects } from "@/lib/data/projects";
 import { profile } from "@/lib/data/profile";
-import WorkShowcase from "./work-showcase";
-import ArchiveGrid from "./archive-grid";
+import WorkExplorer from "./work-explorer";
 
 export default function Work() {
   return (
@@ -16,8 +15,7 @@ export default function Work() {
           what it runs on.
         </p>
 
-        <WorkShowcase items={featuredProjects} />
-        <ArchiveGrid items={archiveProjects} />
+        <WorkExplorer featured={featuredProjects} archive={archiveProjects} />
 
         <a
           href={profile.github}
