@@ -18,6 +18,25 @@ export interface Project {
 // Facts here come from each repository's README and the resume.
 export const projects: readonly Project[] = [
   {
+    id: "ai-visibility-fleet",
+    name: "AI Visibility Phone Fleet",
+    tagline: "Real Android phones that ask ChatGPT, Gemini and Copilot local-search questions every night, then record where each business ranks.",
+    problem:
+      "Businesses want to know whether AI assistants recommend them, and an answer only counts if it comes from a real phone in the customer's own city, with proof.",
+    built: [
+      "Daily system running about 1,750 to 1,860 sessions a night across 230+ campaigns on 11 phones, typed and spoken, with 98 to 99.6% of planned sessions recorded. Three automatic retry passes, then import and verification against the database.",
+      "Ranking system on a rolling 14-day cycle across 390+ campaigns and 28 phones. It reads each answer's rank, checks it against the screenshot with OCR, and imports only rows that pass preflight rules. About 10,400 rankings a month, around 96% with a stored screenshot.",
+      "Kotlin AccessibilityService app on each phone, a Python scheduler and runner, per-city proxies and GPS, and a voice pipeline that speaks the prompt into the phone microphone and exact-matches the transcript.",
+      "Read-only Control Room dashboard for both systems, plus a headless Claude agent that checks every run before, during and after, and pings Discord only when a person is needed.",
+    ],
+    stack: ["Kotlin", "Python", "Android / ADB", "PostgreSQL", "Node.js", "AWS", "Claude Code"],
+    role: "Software / AI Engineer at Appstango",
+    image: "/images/projects/ai-visibility-fleet.gif",
+    imageAlt: "Control Room dashboards for the daily and ranking systems: phone fleet, progress, proxy gauges and an AI agent report",
+    featured: true,
+    category: "Automation",
+  },
+  {
     id: "n8n-support-triage",
     name: "Support Triage",
     tagline: "An n8n workflow that classifies support messages, drafts a reply and alerts a human when it should.",
