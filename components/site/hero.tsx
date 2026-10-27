@@ -54,14 +54,14 @@ export default function Hero() {
       </div>
 
       <div className="rise rise-3 lg:col-span-5">
-        <div className="shadow-tint relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-lg border bg-card lg:max-w-none">
+        <div className="shadow-tint relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-b-lg rounded-t-[999px] border bg-primary/10 lg:max-w-none">
           <Image
             src="/images/profile-new.png"
             alt="Portrait of Erven Idjad"
             fill
             priority
             sizes="(min-width: 1024px) 40vw, 90vw"
-            className="object-cover"
+            className="object-cover object-bottom"
           />
         </div>
       </div>
