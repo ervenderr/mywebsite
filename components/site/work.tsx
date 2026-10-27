@@ -2,18 +2,16 @@ import { ExternalLink } from "lucide-react";
 import { archiveProjects, featuredProjects } from "@/lib/data/projects";
 import { profile } from "@/lib/data/profile";
 import WorkExplorer from "./work-explorer";
+import SectionHead from "./section-head";
 
 export default function Work() {
   return (
     <section id="work" className="border-y bg-card/50">
       <div className="wrap py-20 md:py-28">
-        <h2 className="max-w-[22ch] text-3xl font-semibold sm:text-4xl">
-          Selected work, with the problem each one solved
-        </h2>
-        <p className="mt-4 max-w-[60ch] text-muted-foreground">
+        <SectionHead title="Selected work, with the problem each one solved">
           Fifteen projects I would walk you through in an interview. Pick one to see what was built and
           what it runs on.
-        </p>
+        </SectionHead>
 
         <WorkExplorer featured={featuredProjects} archive={archiveProjects} />
 

@@ -28,7 +28,7 @@ export const proofPoints: readonly ProofPoint[] = [
 
 // Shown under the hero buttons; figures come from the resume and the Appstango project write-ups.
 export const heroStats: readonly ProofPoint[] = [
-  { value: "15,000+", label: "employees on the attendance system" },
+  { value: "98-99.6%", label: "of planned nightly sessions recorded" },
   { value: "1,750+", label: "AI sessions a night, run unattended" },
   { value: "28", label: "Android phones in one ranking fleet" },
 ];

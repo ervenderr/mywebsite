@@ -1,9 +1,8 @@
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Phone } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { education, profile } from "@/lib/data/profile";
 
 const LINKS = [
-  { href: `mailto:${profile.email}`, label: profile.email, Icon: Mail },
   { href: `tel:${profile.phone.replace(/\s/g, "")}`, label: profile.phone, Icon: Phone },
   { href: profile.linkedin, label: "linkedin.com/in/erven-idjad", Icon: Linkedin },
   { href: profile.github, label: "github.com/ervenderr", Icon: Github },
@@ -14,12 +13,18 @@ export default function Contact() {
     <section id="contact" className="border-t bg-card/50">
       <div className="wrap grid gap-14 py-20 md:py-28 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
-          <h2 className="max-w-[16ch] text-3xl font-semibold sm:text-4xl">
+          <h2 className="max-w-[14ch] text-4xl font-semibold leading-[1.04] sm:text-5xl">
             Hiring for an AI or full-stack role?
           </h2>
-          <p className="mt-4 max-w-[44ch] text-muted-foreground">
+          <p className="mt-5 max-w-[44ch] text-muted-foreground">
             Email is the fastest way to reach me, or send a note with the form.
           </p>
+          <a
+            href={`mailto:${profile.email}`}
+            className="mt-6 block break-all font-display text-xl font-semibold tracking-tight underline decoration-primary/40 decoration-2 underline-offset-8 transition-colors hover:decoration-primary sm:text-2xl"
+          >
+            {profile.email}
+          </a>
 
           <ul className="mt-8 space-y-1">
             {LINKS.map(({ href, label, Icon }) => (

@@ -47,7 +47,7 @@ export default function Hero() {
           {heroStats.map((stat) => (
             <div key={stat.label} className="flex flex-col-reverse">
               <dt className="mt-1 text-xs leading-snug text-muted-foreground sm:text-sm">{stat.label}</dt>
-              <dd className="text-2xl font-semibold tracking-tight sm:text-3xl">{stat.value}</dd>
+              <dd className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">{stat.value}</dd>
             </div>
           ))}
         </dl>

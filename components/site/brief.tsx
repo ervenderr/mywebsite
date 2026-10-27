@@ -19,7 +19,7 @@ export default function Brief() {
     <section id="brief" className="bg-foreground text-background">
       <div className="wrap grid gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-6">
-          <h2 className="text-3xl font-semibold sm:text-4xl">The 30-second version</h2>
+          <h2 className="text-4xl font-semibold sm:text-5xl">The 30-second version</h2>
           <dl className="mt-8 divide-y divide-background/15 border-y border-background/15">
             {FACTS.map(([term, detail]) => (
               <div key={term} className="grid grid-cols-[6.5rem_1fr] gap-4 py-3.5 sm:grid-cols-[8rem_1fr]">
@@ -39,7 +39,7 @@ export default function Brief() {
         <ul className="grid grid-cols-2 gap-x-6 gap-y-10 lg:col-span-6 lg:content-center">
           {proofPoints.map((point) => (
             <li key={point.label}>
-              <p className="text-5xl font-semibold tabular-nums tracking-tight sm:text-6xl">
+              <p className="font-display text-5xl font-semibold tabular-nums tracking-tight sm:text-6xl">
                 {point.value}
               </p>
               <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-background/70">
