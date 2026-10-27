@@ -36,9 +36,9 @@ test.describe("Portfolio", () => {
   test("type filter narrows the project list", async ({ page }) => {
     const before = await page.locator("#work h4").count();
     await page.getByRole("button", { name: /^Research \d/ }).click();
-    const after = await page.locator("#work h4").count();
-    expect(after).toBeGreaterThan(0);
-    expect(after).toBeLessThan(before);
+    const count = () => page.locator("#work h4").count();
+    await expect.poll(count).toBeLessThan(before);
+    expect(await count()).toBeGreaterThan(0);
     await expect(page.getByText(/^Showing \d+ of \d+ projects$/)).toBeVisible();
   });
 
