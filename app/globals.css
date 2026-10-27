@@ -130,6 +130,21 @@ html {
   animation-delay: 0.45s;
 }
 
+/* Project switch: the new card fades in so the change is visible */
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.swap {
+  animation: swap 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* Native <details> role rows: rotate the chevron when open */
 details[open] > summary .chevron {
   transform: rotate(180deg);
@@ -147,6 +162,9 @@ details > summary::-webkit-details-marker {
   }
   .rise {
     opacity: 1;
+    animation: none;
+  }
+  .swap {
     animation: none;
   }
   *,
