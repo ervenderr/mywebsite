@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FileText, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import Logo from "@/components/site/logo";
 import ResumeModal from "@/components/resume-modal";
 import { profile } from "@/lib/data/profile";
 
@@ -23,7 +24,8 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="wrap flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="text-base font-semibold tracking-tight" onClick={close}>
+        <Link href="/" className="flex items-center gap-2.5 text-base font-semibold tracking-tight" onClick={close}>
+          <Logo className="h-8 w-8" />
           {profile.name}
         </Link>
 
@@ -32,7 +34,7 @@ export default function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>

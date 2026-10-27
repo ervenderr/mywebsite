@@ -20,13 +20,13 @@ export default function ArchiveGrid({ items }: ArchiveGridProps) {
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
               {item.stack.slice(0, 4).join(", ")}
             </p>
-            <div className="mt-auto flex gap-4 pt-5 text-sm">
+            <div className="mt-auto flex gap-4 pt-3 text-sm">
               {item.demo && (
                 <a
                   href={item.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-primary hover:underline"
+                  className="inline-flex min-h-10 items-center gap-1.5 text-primary hover:underline"
                 >
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                   Demo
@@ -37,7 +37,7 @@ export default function ArchiveGrid({ items }: ArchiveGridProps) {
                   href={item.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
+                  className="inline-flex min-h-10 items-center gap-1.5 text-muted-foreground hover:text-foreground"
                 >
                   <Github className="h-3.5 w-3.5" aria-hidden />
                   Source

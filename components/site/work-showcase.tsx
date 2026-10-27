@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,37 @@ import type { Project } from "@/lib/data/projects";
 
 interface WorkShowcaseProps {
   readonly items: readonly Project[];
+}
+
+// Looping muted clip in place of a heavy GIF; starts when scrolled into view.
+function ProjectVideo({ src, label }: { readonly src: string; readonly label: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  // Plays only while on screen, and not at all for visitors who prefer reduced motion.
+  useEffect(() => {
+    const video = ref.current;
+    if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) void video.play().catch(() => undefined);
+      else video.pause();
+    });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={src.replace(/\.mp4$/, ".jpg")}
+      aria-label={label}
+      className="absolute inset-0 h-full w-full bg-card object-cover"
+      muted
+      loop
+      playsInline
+      preload="none"
+    />
+  );
 }
 
 export default function WorkShowcase({ items }: WorkShowcaseProps) {
@@ -50,20 +81,27 @@ export default function WorkShowcase({ items }: WorkShowcaseProps) {
       <article className="lg:col-span-9" aria-live="polite">
         {active.image && (
           <div className="shadow-tint relative aspect-[16/10] overflow-hidden rounded-lg border bg-card">
-            <Image
-              key={active.id}
-              src={active.image}
-              alt={active.imageAlt ?? `${active.name} screenshot`}
-              fill
-              unoptimized={active.image.endsWith(".gif")}
-              sizes="(min-width: 1024px) 70vw, 100vw"
-              className={cn(
-                "bg-card",
-                active.category === "Mobile" || active.id === "halalchecker"
-                  ? "object-contain py-3"
-                  : "object-cover object-top"
-              )}
-            />
+            {active.image.endsWith(".mp4") ? (
+              <ProjectVideo
+                key={active.id}
+                src={active.image}
+                label={active.imageAlt ?? `${active.name} demo`}
+              />
+            ) : (
+              <Image
+                key={active.id}
+                src={active.image}
+                alt={active.imageAlt ?? `${active.name} screenshot`}
+                fill
+                sizes="(min-width: 1024px) 70vw, 100vw"
+                className={cn(
+                  "bg-card",
+                  active.category === "Mobile" || active.id === "halalchecker"
+                    ? "object-contain py-3"
+                    : "object-cover object-top"
+                )}
+              />
+            )}
           </div>
         )}
 
