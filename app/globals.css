@@ -62,7 +62,9 @@
     font-feature-settings: "ss01" 1, "cv11" 1;
   }
   h1,
-  h2,
+  h2 {
+    @apply font-display text-balance tracking-tight;
+  }
   h3 {
     @apply tracking-tight;
   }
