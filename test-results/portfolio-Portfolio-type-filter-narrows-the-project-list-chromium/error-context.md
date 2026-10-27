@@ -1,7 +1,7 @@
 # Page snapshot
 
 ```yaml
-- generic [active] [ref=e1]:
+- generic [ref=e1]:
   - generic [ref=e2]:
     - banner [ref=e3]:
       - generic [ref=e4]:
@@ -22,7 +22,6 @@
             - /url: "#contact"
         - generic [ref=e16]:
           - button "Toggle theme" [ref=e17] [cursor=pointer]:
-            - img
             - generic [ref=e18]: Toggle theme
           - button "Resume" [ref=e20] [cursor=pointer]:
             - img
@@ -168,7 +167,7 @@
               - button "AI 9" [ref=e169] [cursor=pointer]
               - button "Mobile 3" [ref=e170] [cursor=pointer]
               - button "Web 6" [ref=e171] [cursor=pointer]
-              - button "Research 2" [ref=e172] [cursor=pointer]
+              - button "Research 2" [active] [ref=e172] [cursor=pointer]
           - generic [ref=e173]:
             - generic [ref=e174]: Language
             - group "Filter by language" [ref=e175]:
@@ -467,7 +466,4 @@
   - region "Notifications (F8)":
     - list
   - region "Notifications alt+T"
-  - button "Open Next.js Dev Tools" [ref=e494] [cursor=pointer]:
-    - img [ref=e495]
-  - alert [ref=e498]
 ```
