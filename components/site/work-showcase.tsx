@@ -41,6 +41,12 @@ function ProjectVideo({ src, label }: { readonly src: string; readonly label: st
   );
 }
 
+// What the address bar shows: the live site, else the repository, else the role.
+function whereItLives(project: Project): string {
+  if (project.demo) return new URL(project.demo).host;
+  return project.repo ? project.repo.replace("https://", "") : project.role;
+}
+
 export default function WorkShowcase({ items }: WorkShowcaseProps) {
   const [activeId, setActiveId] = useState(items[0]?.id);
   const active = items.find((item) => item.id === activeId) ?? items[0];
@@ -81,29 +87,41 @@ export default function WorkShowcase({ items }: WorkShowcaseProps) {
       <article className="lg:col-span-9" aria-live="polite">
         <div key={active.id} className="swap">
           {active.image && (
-            <div className="shadow-tint relative aspect-[16/10] overflow-hidden rounded-lg border bg-card">
-              {active.image.endsWith(".mp4") ? (
-                <ProjectVideo
-                  key={active.id}
-                  src={active.image}
-                  label={active.imageAlt ?? `${active.name} demo`}
-                />
-              ) : (
-                <Image
-                  key={active.id}
-                  src={active.image}
-                  alt={active.imageAlt ?? `${active.name} screenshot`}
-                  fill
-                  sizes="(min-width: 1024px) 70vw, 100vw"
-                  className={cn(
-                    "bg-card",
-                    active.category === "Mobile" || active.id === "halalchecker"
-                      ? "object-contain py-3"
-                      : "object-cover object-top"
-                  )}
-                />
-              )}
-            </div>
+            <figure className="shadow-tint overflow-hidden rounded-xl border bg-card">
+              <div className="flex items-center gap-3 border-b bg-muted/60 px-4 py-2.5">
+                <span aria-hidden className="flex gap-1.5">
+                  <i className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+                  <i className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+                  <i className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+                </span>
+                <span className="truncate font-mono text-xs text-muted-foreground">
+                  {whereItLives(active)}
+                </span>
+              </div>
+              <div className="relative aspect-[16/10]">
+                {active.image.endsWith(".mp4") ? (
+                  <ProjectVideo
+                    key={active.id}
+                    src={active.image}
+                    label={active.imageAlt ?? `${active.name} demo`}
+                  />
+                ) : (
+                  <Image
+                    key={active.id}
+                    src={active.image}
+                    alt={active.imageAlt ?? `${active.name} screenshot`}
+                    fill
+                    sizes="(min-width: 1024px) 70vw, 100vw"
+                    className={cn(
+                      "bg-card",
+                      active.category === "Mobile" || active.id === "halalchecker"
+                        ? "object-contain py-3"
+                        : "object-cover object-top"
+                    )}
+                  />
+                )}
+              </div>
+            </figure>
           )}
 
           <div className="mt-8 grid gap-8 md:grid-cols-12">

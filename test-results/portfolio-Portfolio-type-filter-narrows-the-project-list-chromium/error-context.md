@@ -1,0 +1,469 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Erven Idjad" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+          - text: Erven Idjad
+        - navigation "Primary" [ref=e10]:
+          - link "Brief" [ref=e11] [cursor=pointer]:
+            - /url: "#brief"
+          - link "Experience" [ref=e12] [cursor=pointer]:
+            - /url: "#experience"
+          - link "Work" [ref=e13] [cursor=pointer]:
+            - /url: "#work"
+          - link "Skills" [ref=e14] [cursor=pointer]:
+            - /url: "#skills"
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e16]:
+          - button "Toggle theme" [ref=e17] [cursor=pointer]:
+            - generic [ref=e18]: Toggle theme
+          - button "Resume" [ref=e20] [cursor=pointer]:
+            - img
+            - text: Resume
+    - main [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: Erven Idjad, Software & AI Engineer, Metro Manila
+          - heading "AI products that hold up in production." [level=1] [ref=e25]
+          - paragraph [ref=e26]: "I build automation and LLM tools: attendance for 15,000+ employees, natural-language analytics, and an Android fleet that runs search jobs unattended."
+          - generic [ref=e27]:
+            - link "Download resume" [ref=e28] [cursor=pointer]:
+              - /url: /resume.pdf
+              - img
+              - text: Download resume
+            - link "Email me" [ref=e29] [cursor=pointer]:
+              - /url: mailto:ervenidjad12@gmail.com
+              - img
+              - text: Email me
+          - link "See selected work" [ref=e30] [cursor=pointer]:
+            - /url: "#work"
+            - text: See selected work
+            - img [ref=e31]
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - term [ref=e36]: of planned nightly sessions recorded
+              - definition [ref=e37]: 98-99.6%
+            - generic [ref=e38]:
+              - term [ref=e39]: AI sessions a night, run unattended
+              - definition [ref=e40]: 1,750+
+            - generic [ref=e41]:
+              - term [ref=e42]: Android phones in one ranking fleet
+              - definition [ref=e43]: "28"
+        - img "Portrait of Erven Idjad" [ref=e46]
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - heading "The 30-second version" [level=2] [ref=e50]
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - term [ref=e53]: Role
+              - definition [ref=e54]: Software & AI Engineer
+            - generic [ref=e55]:
+              - term [ref=e56]: Now
+              - definition [ref=e57]: Software / AI Engineer at Appstango
+            - generic [ref=e58]:
+              - term [ref=e59]: Location
+              - definition [ref=e60]: Metro Manila, Philippines
+            - generic [ref=e61]:
+              - term [ref=e62]: Working
+              - definition [ref=e63]: Remote, contract or full-time
+            - generic [ref=e64]:
+              - term [ref=e65]: Core stack
+              - definition [ref=e66]: TypeScript, React, Next.js, Python, FastAPI, PostgreSQL
+            - generic [ref=e67]:
+              - term [ref=e68]: AI work
+              - definition [ref=e69]: LLM products, RAG, natural-language analytics, device automation
+          - link "Download resume (PDF)" [ref=e70] [cursor=pointer]:
+            - /url: /resume.pdf
+            - img
+            - text: Download resume (PDF)
+        - list [ref=e71]:
+          - listitem [ref=e72]:
+            - paragraph [ref=e73]: 15,000+
+            - paragraph [ref=e74]: employees on the attendance system I architected
+          - listitem [ref=e75]:
+            - paragraph [ref=e76]: 75%
+            - paragraph [ref=e77]: less HR processing time after the export pipelines shipped
+          - listitem [ref=e78]:
+            - paragraph [ref=e79]: 100+
+            - paragraph [ref=e80]: healthcare consultants guided by one LLM flow
+          - listitem [ref=e81]:
+            - paragraph [ref=e82]: "4"
+            - paragraph [ref=e83]: remote AI and full-stack contracts since September 2025
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - heading "Five roles since 2024, newest first" [level=2] [ref=e86]
+          - paragraph [ref=e87]: Each row opens to the specifics. The current role is already open.
+        - generic [ref=e88]:
+          - group [ref=e89]:
+            - generic "April 2026 - Present Software / AI Engineer, Appstango Search-visibility monitoring and Android device automation, built to run unattended." [ref=e90] [cursor=pointer]:
+              - generic [ref=e91]: April 2026 - Present
+              - generic [ref=e92]:
+                - generic [ref=e93]: Software / AI Engineer, Appstango
+                - generic [ref=e94]: Search-visibility monitoring and Android device automation, built to run unattended.
+              - img [ref=e96]
+            - generic [ref=e98]:
+              - paragraph [ref=e100]: Contract, remote
+              - generic [ref=e101]:
+                - list [ref=e102]:
+                  - listitem [ref=e103]:
+                    - generic [ref=e105]: Built AEO visibility monitoring and reporting across ChatGPT, Gemini, Microsoft Copilot and Google, with rank-quality controls and evidence capture.
+                  - listitem [ref=e106]:
+                    - generic [ref=e108]: "Engineered geo-targeted mobile proxy and VPN workflows: residential proxy routing, GOST/SocksDroid tunnelling, session rotation, exit-IP validation and location alignment."
+                  - listitem [ref=e109]:
+                    - generic [ref=e111]: "Built and operated an Android device fleet: ADB/mDNS provisioning, self-healing watchdogs, remote recovery, health monitoring and scalable job dispatch."
+                  - listitem [ref=e112]:
+                    - generic [ref=e114]: "Customised scrcpy-based audio capture for voice-search automation: virtual-microphone routing, deterministic speech injection, transcript validation and CAPTCHA-aware result handling."
+                - list [ref=e115]:
+                  - listitem [ref=e116]: TypeScript
+                  - listitem [ref=e117]: Android / ADB
+                  - listitem [ref=e118]: scrcpy
+                  - listitem [ref=e119]: GOST
+                  - listitem [ref=e120]: Residential proxies
+                  - listitem [ref=e121]: Playwright
+          - group [ref=e122]:
+            - generic "May 2026 - September 2026 Full Stack Developer, Center Court Capital Ticket-market monitoring and secondary-listing matching for internal operations." [ref=e123] [cursor=pointer]:
+              - generic [ref=e124]: May 2026 - September 2026
+              - generic [ref=e125]:
+                - generic [ref=e126]: Full Stack Developer, Center Court Capital
+                - generic [ref=e127]: Ticket-market monitoring and secondary-listing matching for internal operations.
+              - img [ref=e129]
+          - group [ref=e131]:
+            - generic "June 2024 - April 2026 Software Engineer, SparkSoft Solution, Inc. Enterprise workforce systems for government and large employers, from biometrics to analytics." [ref=e132] [cursor=pointer]:
+              - generic [ref=e133]: June 2024 - April 2026
+              - generic [ref=e134]:
+                - generic [ref=e135]: Software Engineer, SparkSoft Solution, Inc.
+                - generic [ref=e136]: Enterprise workforce systems for government and large employers, from biometrics to analytics.
+              - img [ref=e138]
+          - group [ref=e140]:
+            - generic "December 2025 - February 2026 AI / Analytics Engineer, GuestPuls A natural-language analytics assistant that lets non-technical hotel staff query their own data." [ref=e141] [cursor=pointer]:
+              - generic [ref=e142]: December 2025 - February 2026
+              - generic [ref=e143]:
+                - generic [ref=e144]: AI / Analytics Engineer, GuestPuls
+                - generic [ref=e145]: A natural-language analytics assistant that lets non-technical hotel staff query their own data.
+              - img [ref=e147]
+          - group [ref=e149]:
+            - generic "September 2025 - November 2025 Full Stack Developer, MindScript Technologies LLC A medical consultation platform where Claude is constrained by deterministic logic." [ref=e150] [cursor=pointer]:
+              - generic [ref=e151]: September 2025 - November 2025
+              - generic [ref=e152]:
+                - generic [ref=e153]: Full Stack Developer, MindScript Technologies LLC
+                - generic [ref=e154]: A medical consultation platform where Claude is constrained by deterministic logic.
+              - img [ref=e156]
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - heading "Selected work, with the problem each one solved" [level=2] [ref=e161]
+          - paragraph [ref=e162]: Fifteen projects I would walk you through in an interview. Pick one to see what was built and what it runs on.
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]: Type
+            - group "Filter by type" [ref=e166]:
+              - button "All 24" [pressed] [ref=e167] [cursor=pointer]
+              - button "Automation 4" [ref=e168] [cursor=pointer]
+              - button "AI 9" [ref=e169] [cursor=pointer]
+              - button "Mobile 3" [ref=e170] [cursor=pointer]
+              - button "Web 6" [ref=e171] [cursor=pointer]
+              - button "Research 2" [active] [ref=e172] [cursor=pointer]
+          - generic [ref=e173]:
+            - generic [ref=e174]: Language
+            - group "Filter by language" [ref=e175]:
+              - button "Python 10" [ref=e176] [cursor=pointer]
+              - button "TypeScript 4" [ref=e177] [cursor=pointer]
+              - button "Swift 2" [ref=e178] [cursor=pointer]
+          - generic [ref=e179]:
+            - generic [ref=e180]: Tools
+            - group "Filter by tool" [ref=e181]:
+              - button "Next.js 11" [ref=e182] [cursor=pointer]
+              - button "PostgreSQL 9" [ref=e183] [cursor=pointer]
+              - button "FastAPI 6" [ref=e184] [cursor=pointer]
+              - button "Docker 3" [ref=e185] [cursor=pointer]
+              - button "n8n 3" [ref=e186] [cursor=pointer]
+              - button "React 3" [ref=e187] [cursor=pointer]
+              - button "Tesseract 3" [ref=e188] [cursor=pointer]
+              - button "Express 2" [ref=e189] [cursor=pointer]
+              - button "LLM 2" [ref=e190] [cursor=pointer]
+              - button "Node.js 2" [ref=e191] [cursor=pointer]
+              - button "Ollama 2" [ref=e192] [cursor=pointer]
+              - button "OpenAI 2" [ref=e193] [cursor=pointer]
+          - paragraph [ref=e195]: Showing 24 of 24 projects
+        - generic [ref=e196]:
+          - group "Featured projects" [ref=e197]:
+            - button "AI Visibility Phone Fleet Software / AI Engineer at Appstango" [pressed] [ref=e198] [cursor=pointer]:
+              - generic [ref=e199]: AI Visibility Phone Fleet
+              - generic [ref=e200]: Software / AI Engineer at Appstango
+            - button "RoofDesk AI Full Stack and AI Engineer" [ref=e201] [cursor=pointer]:
+              - generic [ref=e202]: RoofDesk AI
+              - generic [ref=e203]: Full Stack and AI Engineer
+            - button "AI Agent Kit Solo developer" [ref=e204] [cursor=pointer]:
+              - generic [ref=e205]: AI Agent Kit
+              - generic [ref=e206]: Solo developer
+            - button "Built by Agents Solo developer" [ref=e207] [cursor=pointer]:
+              - generic [ref=e208]: Built by Agents
+              - generic [ref=e209]: Solo developer
+            - button "Support Triage Solo developer" [ref=e210] [cursor=pointer]:
+              - generic [ref=e211]: Support Triage
+              - generic [ref=e212]: Solo developer
+            - button "Kumaun Full Stack Developer" [ref=e213] [cursor=pointer]:
+              - generic [ref=e214]: Kumaun
+              - generic [ref=e215]: Full Stack Developer
+            - button "Hinang Solo developer" [ref=e216] [cursor=pointer]:
+              - generic [ref=e217]: Hinang
+              - generic [ref=e218]: Solo developer
+            - button "Clipper Solo developer" [ref=e219] [cursor=pointer]:
+              - generic [ref=e220]: Clipper
+              - generic [ref=e221]: Solo developer
+            - button "dev-guard Solo developer" [ref=e222] [cursor=pointer]:
+              - generic [ref=e223]: dev-guard
+              - generic [ref=e224]: Solo developer
+            - button "QC Employee ID Verification Full Stack Developer at SparkSoft" [ref=e225] [cursor=pointer]:
+              - generic [ref=e226]: QC Employee ID Verification
+              - generic [ref=e227]: Full Stack Developer at SparkSoft
+            - button "SpotMe Full Stack Developer" [ref=e228] [cursor=pointer]:
+              - generic [ref=e229]: SpotMe
+              - generic [ref=e230]: Full Stack Developer
+            - button "GuestPulse AI / Analytics Engineer" [ref=e231] [cursor=pointer]:
+              - generic [ref=e232]: GuestPulse
+              - generic [ref=e233]: AI / Analytics Engineer
+            - button "Project Sentinel Full Stack and AI Engineer" [ref=e234] [cursor=pointer]:
+              - generic [ref=e235]: Project Sentinel
+              - generic [ref=e236]: Full Stack and AI Engineer
+            - button "MatchCraft Full Stack Developer" [ref=e237] [cursor=pointer]:
+              - generic [ref=e238]: MatchCraft
+              - generic [ref=e239]: Full Stack Developer
+            - button "HalalChecker AI Full Stack Developer" [ref=e240] [cursor=pointer]:
+              - generic [ref=e241]: HalalChecker AI
+              - generic [ref=e242]: Full Stack Developer
+          - article [ref=e243]:
+            - generic [ref=e244]:
+              - figure [ref=e245]:
+                - generic [ref=e251]: Software / AI Engineer at Appstango
+                - 'generic "Control Room dashboards for the daily and ranking systems: phone fleet, progress, proxy gauges and an AI agent report" [ref=e253]'
+              - generic [ref=e254]:
+                - generic [ref=e255]:
+                  - heading "AI Visibility Phone Fleet" [level=3] [ref=e256]
+                  - paragraph [ref=e257]: Real Android phones that ask ChatGPT, Gemini and Copilot local-search questions every night, then record where each business ranks.
+                  - paragraph [ref=e258]: The problem. Businesses want to know whether AI assistants recommend them, and an answer only counts if it comes from a real phone in the customer's own city, with proof.
+                  - list [ref=e259]:
+                    - listitem [ref=e260]:
+                      - generic [ref=e262]: Daily system running about 1,750 to 1,860 sessions a night across 230+ campaigns on 11 phones, typed and spoken, with 98 to 99.6% of planned sessions recorded. Three automatic retry passes, then import and verification against the database.
+                    - listitem [ref=e263]:
+                      - generic [ref=e265]: Ranking system on a rolling 14-day cycle across 390+ campaigns and 28 phones. It reads each answer's rank, checks it against the screenshot with OCR, and imports only rows that pass preflight rules. About 10,400 rankings a month, around 96% with a stored screenshot.
+                    - listitem [ref=e266]:
+                      - generic [ref=e268]: Kotlin AccessibilityService app on each phone, a Python scheduler and runner, per-city proxies and GPS, and a voice pipeline that speaks the prompt into the phone microphone and exact-matches the transcript.
+                    - listitem [ref=e269]:
+                      - generic [ref=e271]: Read-only Control Room dashboard for both systems, plus a headless Claude agent that checks every run before, during and after, and pings Discord only when a person is needed.
+                - generic [ref=e272]:
+                  - paragraph [ref=e273]: Stack
+                  - list [ref=e274]:
+                    - listitem [ref=e275]: Kotlin
+                    - listitem [ref=e276]: Python
+                    - listitem [ref=e277]: Android / ADB
+                    - listitem [ref=e278]: PostgreSQL
+                    - listitem [ref=e279]: Node.js
+                    - listitem [ref=e280]: AWS
+                    - listitem [ref=e281]: Claude Code
+        - generic [ref=e282]:
+          - heading "More projects" [level=3] [ref=e283]
+          - list [ref=e284]:
+            - listitem [ref=e285]:
+              - heading "MediChain" [level=4] [ref=e286]
+              - paragraph [ref=e287]: A health wallet with time-limited QR sharing.
+              - paragraph [ref=e288]: Next.js 15, ASP.NET Core 8, PostgreSQL, React Query
+              - generic [ref=e289]:
+                - link "Demo" [ref=e290] [cursor=pointer]:
+                  - /url: https://medichain-health.vercel.app
+                  - img [ref=e291]
+                  - text: Demo
+                - link "Source" [ref=e295] [cursor=pointer]:
+                  - /url: https://github.com/ervenderr/MediChain
+                  - img [ref=e296]
+                  - text: Source
+            - listitem [ref=e299]:
+              - heading "TaxSync PH" [level=4] [ref=e300]
+              - paragraph [ref=e301]: Tax and bookkeeping for Philippine sellers.
+              - paragraph [ref=e302]: Next.js 16, Supabase, Tesseract.js, Recharts
+              - link "Source" [ref=e304] [cursor=pointer]:
+                - /url: https://github.com/ervenderr/taxsync-ph
+                - img [ref=e305]
+                - text: Source
+            - listitem [ref=e308]:
+              - heading "ErvenWallet" [level=4] [ref=e309]
+              - paragraph [ref=e310]: Offline-first iOS finance tracker with natural-language quick-add.
+              - paragraph [ref=e311]: Swift, SwiftUI, Swift Charts
+              - link "Source" [ref=e313] [cursor=pointer]:
+                - /url: https://github.com/ervenderr/ervenwallet
+                - img [ref=e314]
+                - text: Source
+            - listitem [ref=e317]:
+              - heading "HabitOS" [level=4] [ref=e318]
+              - paragraph [ref=e319]: Offline-first habit tracker you can install as a PWA.
+              - paragraph [ref=e320]: Next.js 16, Prisma, PostgreSQL, NextAuth
+              - generic [ref=e321]:
+                - link "Demo" [ref=e322] [cursor=pointer]:
+                  - /url: https://habitos-five.vercel.app
+                  - img [ref=e323]
+                  - text: Demo
+                - link "Source" [ref=e327] [cursor=pointer]:
+                  - /url: https://github.com/ervenderr/habitos
+                  - img [ref=e328]
+                  - text: Source
+            - listitem [ref=e331]:
+              - heading "Nurse Quest" [level=4] [ref=e332]
+              - paragraph [ref=e333]: Study companion for SNLE, PNLE and NCLEX-RN.
+              - paragraph [ref=e334]: Next.js 16, Static export, localStorage
+              - generic [ref=e335]:
+                - link "Demo" [ref=e336] [cursor=pointer]:
+                  - /url: https://snle-study-compass.vercel.app
+                  - img [ref=e337]
+                  - text: Demo
+                - link "Source" [ref=e341] [cursor=pointer]:
+                  - /url: https://github.com/ervenderr/snle-study-compass
+                  - img [ref=e342]
+                  - text: Source
+            - listitem [ref=e345]:
+              - heading "LinkedIn Profile Intelligence" [level=4] [ref=e346]
+              - paragraph [ref=e347]: Turn a profile into a sales brief and messaging plan.
+              - paragraph [ref=e348]: Next.js 14, FastAPI, PostgreSQL, OpenAI
+              - link "Source" [ref=e350] [cursor=pointer]:
+                - /url: https://github.com/ervenderr/linkedIn-profile-intelligence-webapp
+                - img [ref=e351]
+                - text: Source
+            - listitem [ref=e354]:
+              - heading "Mae's Childcare" [level=4] [ref=e355]
+              - paragraph [ref=e356]: A bilingual childcare site that search and answer engines can read.
+              - paragraph [ref=e357]: Next.js, JSON-LD, Technical SEO
+              - generic [ref=e358]:
+                - link "Demo" [ref=e359] [cursor=pointer]:
+                  - /url: https://www.maeschildcare.com
+                  - img [ref=e360]
+                  - text: Demo
+                - link "Source" [ref=e364] [cursor=pointer]:
+                  - /url: https://github.com/ervenderr/maeschildcare
+                  - img [ref=e365]
+                  - text: Source
+            - listitem [ref=e368]:
+              - heading "Job Posting Fraud Detection" [level=4] [ref=e369]
+              - paragraph [ref=e370]: Classify fake job posts with NLP, 92% accurate.
+              - paragraph [ref=e371]: Python, scikit-learn, nltk, pandas
+              - link "Source" [ref=e373] [cursor=pointer]:
+                - /url: https://github.com/ervenderr/Fraud-Detection-in-Job-Postings-using-NLP-and-Machine-Learning
+                - img [ref=e374]
+                - text: Source
+            - listitem [ref=e377]:
+              - heading "Smart Entry Gate (Thesis)" [level=4] [ref=e378]
+              - paragraph [ref=e379]: Face and license-plate recognition at a gate, 95% accurate.
+              - paragraph [ref=e380]: Python, OpenCV, YOLOv8, Tesseract
+              - link "Source" [ref=e382] [cursor=pointer]:
+                - /url: https://github.com/ervenderr/Automated-Security-System-using-Face-and-License-Plate-Recognition
+                - img [ref=e383]
+                - text: Source
+        - link "All repositories on GitHub" [ref=e386] [cursor=pointer]:
+          - /url: https://github.com/ervenderr
+          - text: All repositories on GitHub
+          - img [ref=e387]
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - heading "What I work with" [level=2] [ref=e393]
+          - paragraph [ref=e394]: The tools I reach for, grouped by the kind of problem they solve.
+        - generic [ref=e395]:
+          - generic [ref=e396]:
+            - term [ref=e397]:
+              - generic [ref=e398]: AI and LLM
+              - generic [ref=e399]: Used in production work and shipped projects
+            - definition [ref=e400]: OpenAI API, Claude, Ollama, LLM integration, RAG, NLP, HuggingFace, OpenCV, YOLOv8, Tesseract OCR
+          - generic [ref=e401]:
+            - term [ref=e402]:
+              - generic [ref=e403]: Web and backend
+              - generic [ref=e404]: My daily stack
+            - definition [ref=e405]: TypeScript, React, Next.js, Node.js, FastAPI, REST APIs, GraphQL, Python, PHP, Tailwind CSS
+          - generic [ref=e406]:
+            - term [ref=e407]:
+              - generic [ref=e408]: Data and cloud
+              - generic [ref=e409]: Storage, hosting and delivery
+            - definition [ref=e410]: PostgreSQL, DynamoDB, Supabase, Prisma, AWS Amplify, AWS S3, Vercel, Docker
+          - generic [ref=e411]:
+            - term [ref=e412]:
+              - generic [ref=e413]: Automation and devices
+              - generic [ref=e414]: The less common part of my profile
+            - definition [ref=e415]: Android automation, ADB, scrcpy, Playwright, Chrome DevTools Protocol, Residential proxies, GOST / SocksDroid, Network diagnostics
+          - generic [ref=e416]:
+            - term [ref=e417]:
+              - generic [ref=e418]: Quality and tooling
+              - generic [ref=e419]: How I keep changes safe
+            - definition [ref=e420]: Vitest, Playwright tests, Git, Claude Code, OpenAI Codex, Cursor
+          - generic [ref=e421]:
+            - term [ref=e422]:
+              - generic [ref=e423]: Languages
+              - generic [ref=e424]: Beyond the above
+            - definition [ref=e425]: JavaScript, TypeScript, Python, C++, PHP, HTML / CSS
+      - generic [ref=e427]:
+        - generic [ref=e428]:
+          - heading "Hiring for an AI or full-stack role?" [level=2] [ref=e429]
+          - paragraph [ref=e430]: Email is the fastest way to reach me, or send a note with the form.
+          - link "ervenidjad12@gmail.com" [ref=e431] [cursor=pointer]:
+            - /url: mailto:ervenidjad12@gmail.com
+          - list [ref=e432]:
+            - listitem [ref=e433]:
+              - link "+63 981 706 8891" [ref=e434] [cursor=pointer]:
+                - /url: tel:+639817068891
+                - img [ref=e435]
+                - generic [ref=e437]: +63 981 706 8891
+            - listitem [ref=e438]:
+              - link "linkedin.com/in/erven-idjad" [ref=e439] [cursor=pointer]:
+                - /url: https://linkedin.com/in/erven-idjad
+                - img [ref=e440]
+                - generic [ref=e444]: linkedin.com/in/erven-idjad
+            - listitem [ref=e445]:
+              - link "github.com/ervenderr" [ref=e446] [cursor=pointer]:
+                - /url: https://github.com/ervenderr
+                - img [ref=e447]
+                - generic [ref=e450]: github.com/ervenderr
+          - generic [ref=e451]:
+            - heading "Education" [level=3] [ref=e452]
+            - paragraph [ref=e453]: Bachelor's in Computer Science, Western Mindanao State University
+            - paragraph [ref=e454]: "August 2020 - May 2024. Academic award: Best in Portfolio."
+            - paragraph [ref=e455]: Object-Oriented Programming, Data Structures & Algorithms, Software Engineering, Database Systems, Computer Networks, Artificial Intelligence, Machine Learning.
+        - generic [ref=e458]:
+          - generic [ref=e459]:
+            - generic [ref=e460]: Name *
+            - textbox "Name *" [ref=e461]:
+              - /placeholder: John Doe
+          - generic [ref=e462]:
+            - generic [ref=e463]: Email *
+            - textbox "Email *" [ref=e464]:
+              - /placeholder: john@example.com
+          - generic [ref=e465]:
+            - generic [ref=e466]: Subject *
+            - textbox "Subject *" [ref=e467]:
+              - /placeholder: Project inquiry
+          - generic [ref=e468]:
+            - generic [ref=e469]: Message *
+            - textbox "Message *" [ref=e470]:
+              - /placeholder: Tell me about your project or inquiry...
+          - button "Send Message" [ref=e471] [cursor=pointer]
+          - paragraph [ref=e472]: Your information is secure and will only be used to respond to your inquiry.
+    - contentinfo [ref=e473]:
+      - generic [ref=e474]:
+        - generic [ref=e475]:
+          - img [ref=e476]
+          - paragraph [ref=e480]: Erven Idjad, Metro Manila, Philippines
+        - navigation "Footer" [ref=e481]:
+          - link "GitHub" [ref=e482] [cursor=pointer]:
+            - /url: https://github.com/ervenderr
+          - link "LinkedIn" [ref=e483] [cursor=pointer]:
+            - /url: https://linkedin.com/in/erven-idjad
+          - link "Email" [ref=e484] [cursor=pointer]:
+            - /url: mailto:ervenidjad12@gmail.com
+          - link "Back to top" [ref=e485] [cursor=pointer]:
+            - /url: "#top"
+    - button "Ask about Erven" [ref=e486] [cursor=pointer]:
+      - img [ref=e487]
+      - text: Ask about Erven
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+```
