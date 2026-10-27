@@ -21,7 +21,7 @@ export default function Work() {
           href={profile.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+          className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary hover:underline"
         >
           All repositories on GitHub
           <ExternalLink className="h-3.5 w-3.5" aria-hidden />

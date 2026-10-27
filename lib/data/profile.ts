@@ -26,6 +26,13 @@ export const proofPoints: readonly ProofPoint[] = [
   { value: "4", label: "remote AI and full-stack contracts since September 2025" },
 ];
 
+// Shown under the hero buttons; figures come from the resume and the Appstango project write-ups.
+export const heroStats: readonly ProofPoint[] = [
+  { value: "15,000+", label: "employees on the attendance system" },
+  { value: "1,750+", label: "AI sessions a night, run unattended" },
+  { value: "28", label: "Android phones in one ranking fleet" },
+];
+
 export const education = {
   degree: "Bachelor's in Computer Science",
   school: "Western Mindanao State University",

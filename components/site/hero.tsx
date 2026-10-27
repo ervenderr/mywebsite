@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowDownRight, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { profile } from "@/lib/data/profile";
+import { heroStats, profile } from "@/lib/data/profile";
 
 export default function Hero() {
   return (
@@ -37,11 +37,20 @@ export default function Hero() {
 
         <a
           href="#work"
-          className="rise rise-5 mt-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="rise rise-5 mt-8 inline-flex min-h-11 items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           See selected work
           <ArrowDownRight className="h-4 w-4" aria-hidden />
         </a>
+
+        <dl className="rise rise-5 mt-10 grid max-w-xl grid-cols-3 gap-6 border-t pt-6">
+          {heroStats.map((stat) => (
+            <div key={stat.label} className="flex flex-col-reverse">
+              <dt className="mt-1 text-xs leading-snug text-muted-foreground sm:text-sm">{stat.label}</dt>
+              <dd className="text-2xl font-semibold tracking-tight sm:text-3xl">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
       <div className="rise rise-3 lg:col-span-5">
