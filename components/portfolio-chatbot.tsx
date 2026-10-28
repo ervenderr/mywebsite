@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowUp, MessageCircle, RotateCcw } from "lucide-react";
+import { ArrowUp, MessageCircle, RotateCcw, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -30,6 +30,9 @@ const QUICK_PROMPTS = [
   "Is he a fit for a senior full-stack role?",
 ] as const;
 
+const TEASER_KEY = "chat-teaser-seen";
+const TEASER_DELAY_MS = 4000;
+
 const GENERIC_ERROR = "That did not go through. Try again, or email ervenidjad12@gmail.com.";
 
 export default function PortfolioChatbot() {
@@ -39,6 +42,27 @@ export default function PortfolioChatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [teaser, setTeaser] = useState(false);
+
+  // Once per browser session, nudge the visitor that the assistant exists. Storage can be blocked, so fail quiet.
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem(TEASER_KEY)) return;
+    } catch {
+      return;
+    }
+    const id = window.setTimeout(() => setTeaser(true), TEASER_DELAY_MS);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  const dismissTeaser = () => {
+    setTeaser(false);
+    try {
+      sessionStorage.setItem(TEASER_KEY, "1");
+    } catch {
+      // Storage blocked: the bubble may return on reload, which is acceptable.
+    }
+  };
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: "end" });
@@ -86,9 +110,38 @@ export default function PortfolioChatbot() {
 
   return (
     <>
+      {teaser && !isOpen && (
+        <div
+          role="status"
+          className="swap shadow-tint fixed bottom-20 right-4 z-30 flex max-w-[min(18rem,calc(100vw-2rem))] items-start gap-2 rounded-lg border bg-card p-3 pr-2 text-sm sm:bottom-24 sm:right-6"
+        >
+          <button
+            type="button"
+            onClick={() => {
+              dismissTeaser();
+              setIsOpen(true);
+            }}
+            className="text-left leading-snug"
+          >
+            Hi, I&apos;m Erven&apos;s assistant. Ask me about his work, projects or whether he fits your role.
+          </button>
+          <button
+            type="button"
+            onClick={dismissTeaser}
+            aria-label="Dismiss"
+            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground"
+          >
+            <X className="h-4 w-4" aria-hidden />
+          </button>
+        </div>
+      )}
+
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          dismissTeaser();
+          setIsOpen(true);
+        }}
         aria-label="Ask about Erven"
         className="shadow-tint fixed bottom-4 right-4 z-30 inline-flex h-12 items-center gap-2 rounded-lg bg-foreground px-4 text-sm font-medium text-background transition-transform hover:-translate-y-0.5 active:scale-[0.98] sm:bottom-6 sm:right-6"
       >
