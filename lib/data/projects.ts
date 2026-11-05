@@ -57,6 +57,26 @@ export const projects: readonly Project[] = [
     category: "AI",
   },
   {
+    id: "mapcited",
+    name: "Mapcited",
+    tagline: "A marketing site for a local SEO and AI-search service, with a free-trial signup that emails the owner and the applicant.",
+    problem:
+      "A service that sells Google Maps and AI-answer visibility has to show it honestly: sample data labelled as sample, no promised rankings, and a signup that actually reaches the owner.",
+    built: [
+      "Next.js 14 site on Cloudflare Workers through OpenNext, with a geo-grid ranking heatmap, an AI-answer demo and an animated fleet of phones, one AI agent per phone, all built in code and labelled as sample data.",
+      "Free-trial and demo forms that validate input, rate-limit by IP, use a honeypot, log each lead to a Google Sheet tagged Demo or Free trial, and send two emails through Resend: one to the owner, one confirming to the applicant.",
+      "SEO and AEO groundwork: keyword titles, canonical tags, JSON-LD (Organization, Service, Article, FAQ, Breadcrumb), sitemap, llms.txt, and an http and www redirect to one canonical host.",
+      "Speed work that cut mobile LCP from 4.2 s to 1.7 s under throttling, with a static map image painting first and the live Google Map loading after.",
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind", "Cloudflare Workers", "Resend", "Google Apps Script"],
+    role: "Solo developer",
+    image: "/images/projects/mapcited.mp4",
+    imageAlt: "Mapcited home page, then the free-trial form being filled in and a confirmation appearing",
+    demo: "https://mapcited.com",
+    featured: true,
+    category: "Web",
+  },
+  {
     id: "ai-agent-kit",
     name: "AI Agent Kit",
     tagline: "A GitHub template for a small, production-shaped AI agent with evals and guardrails built in.",
