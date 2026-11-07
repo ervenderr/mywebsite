@@ -10,10 +10,8 @@ import ResumeModal from "@/components/resume-modal";
 import { profile } from "@/lib/data/profile";
 
 const NAV_LINKS = [
-  { href: "#brief", label: "Brief" },
-  { href: "#experience", label: "Experience" },
   { href: "#work", label: "Work" },
-  { href: "#skills", label: "Skills" },
+  { href: "#background", label: "Background" },
   { href: "#contact", label: "Contact" },
 ] as const;
 

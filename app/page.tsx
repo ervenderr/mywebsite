@@ -1,9 +1,8 @@
 import SiteHeader from "@/components/site/header";
 import Hero from "@/components/site/hero";
 import Brief from "@/components/site/brief";
-import Experience from "@/components/site/experience";
+import Background from "@/components/site/background";
 import Work from "@/components/site/work";
-import Skills from "@/components/site/skills";
 import Contact from "@/components/site/contact";
 import Footer from "@/components/site/footer";
 import PortfolioChatbot from "@/components/portfolio-chatbot";
@@ -15,9 +14,8 @@ export default function Home() {
       <main>
         <Hero />
         <Brief />
-        <Experience />
         <Work />
-        <Skills />
+        <Background />
         <Contact />
       </main>
       <Footer />

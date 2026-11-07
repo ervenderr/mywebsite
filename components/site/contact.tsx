@@ -1,6 +1,6 @@
 import { Github, Linkedin, Phone } from "lucide-react";
 import ContactForm from "@/components/contact-form";
-import { education, profile } from "@/lib/data/profile";
+import { profile } from "@/lib/data/profile";
 
 const LINKS = [
   { href: `tel:${profile.phone.replace(/\s/g, "")}`, label: profile.phone, Icon: Phone },
@@ -11,13 +11,13 @@ const LINKS = [
 export default function Contact() {
   return (
     <section id="contact" className="border-t bg-card/50">
-      <div className="wrap grid gap-14 py-20 md:py-28 lg:grid-cols-12 lg:gap-16">
+      <div className="wrap grid gap-10 py-10 md:py-12 lg:grid-cols-12 lg:items-center lg:gap-12">
         <div className="lg:col-span-5">
-          <h2 className="max-w-[14ch] text-4xl font-semibold leading-[1.04] sm:text-5xl">
+          <h2 className="max-w-[14ch] text-3xl font-semibold leading-[1.06] sm:text-4xl">
             Hiring for an AI or full-stack role?
           </h2>
           <p className="mt-5 max-w-[44ch] text-muted-foreground">
-            Email is the fastest way to reach me, or send a note with the form.
+            Email is the fastest way to reach me, or send a note with the form. Remote, contract or full-time.
           </p>
           <a
             href={`mailto:${profile.email}`}
@@ -26,7 +26,7 @@ export default function Contact() {
             {profile.email}
           </a>
 
-          <ul className="mt-8 space-y-1">
+          <ul className="mt-5 space-y-0">
             {LINKS.map(({ href, label, Icon }) => (
               <li key={href}>
                 <a
@@ -42,18 +42,6 @@ export default function Contact() {
             ))}
           </ul>
 
-          <div className="mt-12 border-t pt-8">
-            <h3 className="text-lg font-medium">Education</h3>
-            <p className="mt-3 text-[0.95rem]">
-              {education.degree}, {education.school}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {education.period}. {education.award}.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {education.coursework.join(", ")}.
-            </p>
-          </div>
         </div>
 
         <div className="lg:col-span-7">
