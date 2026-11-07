@@ -147,6 +147,43 @@ html {
   animation: swap 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Scroll reveal: hidden only when scripting is on and motion is welcome */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tilt: eased return when the pointer leaves */
+.tilt {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Slow float for the hero portrait */
+@keyframes float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hide scrollbar on the project carousel */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Native <details> role rows: rotate the chevron when open */
 details[open] > summary .chevron {
   transform: rotate(180deg);
@@ -166,8 +203,12 @@ details > summary::-webkit-details-marker {
     opacity: 1;
     animation: none;
   }
-  .swap {
+  .swap,
+  .float {
     animation: none;
+  }
+  .tilt {
+    transform: none !important;
   }
   *,
   *::before,

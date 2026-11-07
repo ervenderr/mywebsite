@@ -86,7 +86,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+      <div className="grid gap-3 sm:grid-cols-2">
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium">
           Name <span className="text-destructive">*</span>
@@ -121,6 +122,7 @@ export default function ContactForm() {
           <p className="text-sm text-destructive">{errors.email.message}</p>
         )}
       </div>
+      </div>
 
       <div className="space-y-2">
         <label htmlFor="subject" className="text-sm font-medium">
@@ -146,7 +148,7 @@ export default function ContactForm() {
           id="message"
           {...register("message")}
           placeholder="Tell me about your project or inquiry..."
-          rows={5}
+          rows={3}
           disabled={isSubmitting}
           className={errors.message ? "border-destructive" : ""}
         />

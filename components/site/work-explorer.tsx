@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/data/projects";
 import { projectHasTech, techGroups } from "@/lib/data/tech";
@@ -52,6 +53,7 @@ export default function WorkExplorer({ featured, archive }: WorkExplorerProps) {
 
   const [category, setCategory] = useState<string>(ALL);
   const [tool, setTool] = useState<string>(ALL);
+  const [showFilters, setShowFilters] = useState(false);
 
   const matches = (project: Project) =>
     (category === ALL || project.category === category) &&
@@ -67,7 +69,18 @@ export default function WorkExplorer({ featured, archive }: WorkExplorerProps) {
 
   return (
     <>
-      <div className="mt-10 space-y-3 rounded-lg border bg-card p-4 sm:p-5">
+      <button
+        type="button"
+        aria-expanded={showFilters}
+        onClick={() => setShowFilters((v) => !v)}
+        className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-lg border bg-card px-3 text-sm transition-colors hover:bg-background active:scale-[0.98]"
+      >
+        <SlidersHorizontal className="h-4 w-4" aria-hidden />
+        Filter projects
+        {filtered && <span className="rounded bg-primary px-1.5 text-xs text-primary-foreground">on</span>}
+      </button>
+      {showFilters && (
+      <div className="mt-3 space-y-2.5 rounded-lg border bg-card p-3 sm:p-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
           <span className="w-20 shrink-0 text-sm text-muted-foreground">Type</span>
           <div role="group" aria-label="Filter by type" className="flex flex-wrap gap-2">
@@ -119,11 +132,11 @@ export default function WorkExplorer({ featured, archive }: WorkExplorerProps) {
             ))}
           </div>
         </div>
+        {filtered && (
         <div className="flex items-center justify-between gap-4 border-t pt-3 text-sm text-muted-foreground">
           <p aria-live="polite">
             Showing {shown} of {all.length} projects
           </p>
-          {filtered && (
             <button
               type="button"
               onClick={() => {
@@ -134,12 +147,13 @@ export default function WorkExplorer({ featured, archive }: WorkExplorerProps) {
             >
               Clear filters
             </button>
-          )}
         </div>
+        )}
       </div>
+      )}
 
       {shown === 0 ? (
-        <p className="mt-10 rounded-lg border border-dashed p-8 text-center text-muted-foreground">
+        <p className="mt-6 rounded-lg border border-dashed p-8 text-center text-muted-foreground">
           No project matches both filters. Clear one to see more.
         </p>
       ) : (
